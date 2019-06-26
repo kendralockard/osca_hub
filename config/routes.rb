@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   patch '/users/:id/edit', to: 'users#edit'
 
   resources :users
+  resources :account_activations, only: [:edit]
 end
