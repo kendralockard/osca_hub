@@ -2,22 +2,14 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_area :content, placeholder: "Starch..." %>
-  </div>
 
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Protein..." %>
-  </div>
+    <%= f.text_field :content, placeholder: "Protein..." %>
 
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Vegetable..." %>
-  </div>
+    <%= f.text_field :content, placeholder: "Vegetable..." %>
 
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Restrictions..." %>
-  </div>
+    <%= f.text_field :content, placeholder: "Restrictions..." %>
 
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Notes?" %>
+    <%= f.text_field :content, placeholder: "Notes?" %>
   </div>
   <%= f.submit "Post Menu", class: "btn btn-primary" %>
 <% end %>
