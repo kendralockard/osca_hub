@@ -35,10 +35,4 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "Contact | #{@base_title}"
   end
-
-  test "should get logged in home" do
-    get home_path
-    assert_response :success
-    assert_select "title", "Home | #{@base_title}"
-  end
 end

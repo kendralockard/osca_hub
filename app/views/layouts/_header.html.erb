@@ -1,14 +1,10 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <% if logged_in? %>
-      <%= link_to "OSCA Hub", home_path, id: "logo" %>
-    <% else %>
       <%= link_to "OSCA Hub", root_path, id: "logo" %>
-    <% end %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <li><%= link_to "Home", home_path %></li>
+          <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Meals", "#" %></li>
           <li><%= link_to "Workchart", "#" %></li>
           <li><%= link_to "Save Plates", "#" %></li>
