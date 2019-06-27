@@ -19,7 +19,7 @@ class MenusControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to login_url
   end
 
-  test "should redirect destroy for wrong micropost" do
+  test "should redirect destroy for wrong menu" do
     log_in_as(users(:kendra))
     menu = menus(:ants)
     assert_no_difference 'Menu.count' do
