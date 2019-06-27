@@ -1,0 +1,23 @@
+<%= form_for(@menu) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Starch..." %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Protein..." %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Vegetable..." %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Restrictions..." %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Notes?" %>
+  </div>
+  <%= f.submit "Post Menu", class: "btn btn-primary" %>
+<% end %>

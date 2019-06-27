@@ -14,4 +14,11 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
+  def menu
+    if logged_in?
+      @menu  = current_user.menus.build
+      @menulist_items = current_user.menulist.paginate(page: params[:page])
+    end
+  end
 end

@@ -1,0 +1,16 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="menu_form">
+        <%= render 'shared/menu_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Meal Menus</h3>
+      <%= render 'shared/menulist' %>
+    </div>
+  </div>
+<% end %>

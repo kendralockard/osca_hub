@@ -77,10 +77,18 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember, '')
   end
 
-  test "associated microposts should be destroyed" do
+  test "associated announcements should be destroyed" do
     @user.save
     @user.announcements.create!(content: "Lorem ipsum")
     assert_difference 'Announcement.count', -1 do
+      @user.destroy
+    end
+  end
+
+  test "associated menus should be destroyed" do
+    @user.save
+    @user.menus.create!(content: "Lentils")
+    assert_difference 'Menu.count', -1 do
       @user.destroy
     end
   end

@@ -1,0 +1,31 @@
+lunch:
+  content: "Bring a bowl or perish"
+  created_at: <%= 10.minutes.ago %>
+
+dinner:
+  content: "I made dinner yum"
+  created_at: <%= 3.years.ago %>
+
+most_recent:
+  content: "Writing a short test"
+  created_at: <%= Time.zone.now %>
+
+ants:
+  content: "We're eating ants for dinner"
+  created_at: <%= 2.years.ago %>
+  user: django
+
+zone:
+  content: "This is the dinner zone"
+  created_at: <%= 3.days.ago %>
+  user: tazz
+
+salad:
+  content: "Fruit salad yummy yummy"
+  created_at: <%= 10.minutes.ago %>
+  user: tazz
+
+tofu:
+  content: "Why do we even have other proteins in the co op"
+  created_at: <%= 4.hours.ago %>
+  user: julie
