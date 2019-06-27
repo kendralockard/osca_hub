@@ -16,7 +16,7 @@ class MenusController < ApplicationController
   def destroy
     @menu.destroy
     flash[:success] = "Menu deleted"
-    redirect_to request.referrer || root_url
+    redirect_to request.referrer || menu_path
   end
 
   private
@@ -27,6 +27,6 @@ class MenusController < ApplicationController
 
     def correct_user
       @menu = current_user.menus.find_by(id: params[:id])
-      redirect_to root_url if @menu.nil?
+      redirect_to menu_path if @menu.nil?
     end
 end
