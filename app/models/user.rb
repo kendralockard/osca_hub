@@ -69,11 +69,11 @@ class User < ApplicationRecord
   end
 
   def feed
-  #  Announcement.where("user_id = ?", id)
+    Announcement.where("user_id = ?", id)
   end
 
   def menulist
-  #  menus
+    menus
   end
 
   private
