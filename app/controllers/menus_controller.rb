@@ -22,7 +22,7 @@ class MenusController < ApplicationController
   private
 
     def menu_params
-      params.require(:menu).permit(:starch, :protein, :vegetable, :restrictions)
+      params.require(:menu).permit(:starch, :protein, :vegetable, :restrictions, :notes)
     end
 
     def correct_user
