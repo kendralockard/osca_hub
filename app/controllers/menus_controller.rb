@@ -5,7 +5,7 @@ class MenusController < ApplicationController
   def create
     @menu = current_user.menus.build(menu_params)
     if @menu.save
-      flash[:success] = "Delicious menu posted"
+      flash[:success] = "Delicious menu posted!"
       redirect_to menus_path
     else
       @menulist_items = []
