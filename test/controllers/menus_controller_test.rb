@@ -7,7 +7,12 @@ class MenusControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect create when not logged in" do
     assert_no_difference 'Menu.count' do
-      post menus_path, params: { menu: { content: "Lentils" } }
+      post menus_path, params: { menu: {
+        starch: "Rice",
+        protein: "Lentils",
+        vegetable: "Corn",
+        restrictions: "Tofu"
+       } }
     end
     assert_redirected_to login_url
   end

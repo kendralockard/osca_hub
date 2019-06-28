@@ -1,16 +1,21 @@
 <%= form_for(@menu) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_field :content, placeholder: "Starch..." %>
+    <%= f.label :starch %>
+    <%= f.text_field :starch, class: 'form-control' %>
 
-    <%= f.text_field :content, placeholder: "Protein..." %>
+    <%= f.label :protein %>
+    <%= f.text_field :protein, class: 'form-control' %>
 
-    <%= f.text_field :content, placeholder: "Vegetable..." %>
+    <%= f.label :vegetable %>
+    <%= f.text_field :vegetable, class: 'form-control' %>
 
-    <%= f.text_field :content, placeholder: "Restrictions..." %>
+    <%= f.label :restrictions %>
+    <%= f.text_field :restrictions, class: 'form-control' %>
 
-    <%= f.text_field :content, placeholder: "Notes?" %>
-    
+    <%= f.label :notes %>
+    <%= f.text_field :notes, class: 'form-control' %>
+
     <%= f.submit "Post Menu", class: "btn btn-primary" %>
   </div>
 <% end %>

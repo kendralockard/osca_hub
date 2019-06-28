@@ -87,7 +87,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "associated menus should be destroyed" do
     @user.save
-    @user.menus.create!(content: "Lentils")
+    @user.menus.create!(starch: "Rice", protein: "Lentils", vegetable: "Corn", restrictions: "Tofu")
     assert_difference 'Menu.count', -1 do
       @user.destroy
     end

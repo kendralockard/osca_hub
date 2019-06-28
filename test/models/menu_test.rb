@@ -3,7 +3,12 @@ require 'test_helper'
 class MenuTest < ActiveSupport::TestCase
   def setup
     @user = users(:kendra)
-    @menu = @user.menus.build(content: "Lentils")
+    @menu = @user.menus.build(
+      starch: "Rice",
+      protein: "Lentils",
+      vegetable: "Corn",
+      restrictions: "Tofu"
+    )
   end
 
   test "should be valid" do
@@ -15,8 +20,11 @@ class MenuTest < ActiveSupport::TestCase
     assert_not @menu.valid?
   end
 
-  test "content should be present" do
-    @menu.content = "   "
+  test "required fields should be present" do
+    @menu.starch = "   "
+    @menu.protein = "   "
+    @menu.vegetable = "   "
+    @menu.restrictions = "   "
     assert_not @menu.valid?
   end
 

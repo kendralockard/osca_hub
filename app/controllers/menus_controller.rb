@@ -6,7 +6,7 @@ class MenusController < ApplicationController
     @menu = current_user.menus.build(menu_params)
     if @menu.save
       flash[:success] = "Delicious menu posted"
-      redirect_to menu_path
+      redirect_to menus_path
     else
       @menulist_items = []
       render 'static_pages/menu'
@@ -16,17 +16,17 @@ class MenusController < ApplicationController
   def destroy
     @menu.destroy
     flash[:success] = "Menu deleted"
-    redirect_to request.referrer || menu_path
+    redirect_to request.referrer || menus_path
   end
 
   private
 
     def menu_params
-      params.require(:menu).permit(:content)
+      params.require(:menu).permit(:starch, :protein, :vegetable, :restrictions)
     end
 
     def correct_user
       @menu = current_user.menus.find_by(id: params[:id])
-      redirect_to menu_path if @menu.nil?
+      redirect_to menus_path if @menu.nil?
     end
 end
