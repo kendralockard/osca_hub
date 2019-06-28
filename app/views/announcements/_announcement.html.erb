@@ -3,9 +3,9 @@
   <span class="user"><%= link_to announcement.user.name, announcement.user %></span>
   <span class="content"><%= announcement.content %></span>
   <span class="timestamp">
-    posted <%= time_ago_in_words(announcement.created_at) %> ago | 
+    posted <%= time_ago_in_words(announcement.created_at) %> ago
     <% if current_user?(announcement.user) %>
-      <%= link_to "delete", announcement, method: :delete,
+      | <%= link_to "delete", announcement, method: :delete,
                                        data: { confirm: "You sure?" } %>
     <% end %>
   </span>

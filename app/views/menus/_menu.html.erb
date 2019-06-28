@@ -7,9 +7,9 @@
   <span class="content"><h4>restrictions: </h4><%= menu.restrictions %></span>
   <span class="content"><%= menu.notes %></span>
   <span class="timestamp">
-    posted <%= time_ago_in_words(menu.created_at) %> ago |
+    posted <%= time_ago_in_words(menu.created_at) %> ago 
     <% if current_user?(menu.user) %>
-      <%= link_to "delete", menu, method: :delete,
+      | <%= link_to "delete", menu, method: :delete,
                                        data: { confirm: "You sure?" } %>
     <% end %>
   </span>
