@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   patch '/users/:id/edit', to: 'users#edit'
 
   get '/menus',      to: 'static_pages#menu'
+  get '/saveplates',  to: 'static_pages#save_plates'
 
   resources :users
   resources :account_activations, only: [:edit]

@@ -21,4 +21,9 @@ class StaticPagesController < ApplicationController
       @menulist_items = current_user.menulist.paginate(page: params[:page])
     end
   end
+
+  def save_plates
+    @plates = User.all
+    @plates = @plates.to_json.html_safe
+  end
 end
