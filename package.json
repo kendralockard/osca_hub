@@ -1,7 +1,5 @@
 {
   "name": "osca_hub",
   "private": true,
-  "dependencies": {
-    "handsontable": "^7.1.0"
-  }
+  "dependencies": {}
 }

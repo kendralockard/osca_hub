@@ -23,7 +23,8 @@ class StaticPagesController < ApplicationController
   end
 
   def save_plates
-    @plates = User.all
-    @plates = @plates.to_json.html_safe
+  end
+
+  def workchart
   end
 end

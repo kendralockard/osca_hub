@@ -1,35 +1,13 @@
 <% provide(:title, 'Save Plates') %>
-<script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css" rel="stylesheet">
 
 <% if logged_in? %>
   <h1>Save Plates</h1>
+  <center>
+    <p>You can directly add or remove your name from the Save Plates chart below.</p>
+    <p>Remember to check the temporary <strong>and</strong> permanent tabs!</p>
 
-  <div id="plates"></div>
-
-  <script>
-    var data = <%=@plates%>;
-    $(document).ready(function() {
-
-      var container = document.getElementById('plates');
-      var hot = new Handsontable(container, {
-        data: <%=@plates%>,
-        rowHeaders: ['Lunch', 'Dinner'],
-        colHeaders: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        columns: [
-            {data: 'sunday'},
-            {data: 'monday'},
-            {data: 'tuesday'},
-            {data: 'wednesday'},
-            {data: 'thursday'},
-            {data: 'friday'},
-            {data: 'saturday'},
-          ],
-        licenseKey: 'non-commercial-and-evaluation',
-      });
-  });
-  </script>
-
+    <br>
+<iframe src="https://docs.google.com/spreadsheets/d/15zY6MmnLXYJpx_4RqQBn3LMYcomuLLM7D_7KFHUd36A/edit?rm=minimal" style="border-width:0" width="860" height="910" frameborder="0"></iframe>  </center>
 <% else %>
   <%= render 'static_pages/logged_out_home' %>
 <% end %>

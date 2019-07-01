@@ -1,2 +1,0 @@
-class SavePlatesController < ApplicationController
-end

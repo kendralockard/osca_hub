@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get '/menus',      to: 'static_pages#menu'
   get '/saveplates',  to: 'static_pages#save_plates'
+  get '/workchart',   to: 'static_pages#workchart'
+
 
   resources :users
   resources :account_activations, only: [:edit]

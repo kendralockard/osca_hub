@@ -1,0 +1,9 @@
+<% provide(:title, 'Workchart') %>
+
+<% if logged_in? %>
+  <h1>Workchart</h1>
+  <center>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS3a4owjJ6D_grdapsdge2Vni8nXFFOoaOXgXKhN_SRqP7fFmOtMa-eb3zdqqph0BZFPtiq_olkzaC7/pubhtml?widget=true&amp;headers=false" style="border-width:0" width="900" height="915" frameborder="0"></iframe>  </center>
+<% else %>
+  <%= render 'static_pages/logged_out_home' %>
+<% end %>
