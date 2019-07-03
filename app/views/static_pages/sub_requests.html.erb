@@ -1,0 +1,12 @@
+<% if logged_in? %>
+  <% provide(:title, 'Sub Requests') %>
+  <h1>Sub Requests</h1>
+  <br>
+  <div id="calendar"></div>
+  <script type="text/javascript">
+    $('#calendar').fullCalendar({});
+  </script>
+
+<% else %>
+  <%= render 'static_pages/logged_out_home' %>
+<% end %>

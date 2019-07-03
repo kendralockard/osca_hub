@@ -27,4 +27,7 @@ class StaticPagesController < ApplicationController
 
   def workchart
   end
+
+  def sub_requests
+  end
 end

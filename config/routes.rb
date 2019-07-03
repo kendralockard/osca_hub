@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
   get '/menus',      to: 'static_pages#menu'
   get '/saveplates',  to: 'static_pages#save_plates'
   get '/workchart',   to: 'static_pages#workchart'
+  get '/subrequests', to: 'static_pages#sub_requests'
 
 
   resources :users
