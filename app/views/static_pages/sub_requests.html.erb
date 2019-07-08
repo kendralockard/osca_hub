@@ -3,9 +3,51 @@
   <h1>Sub Requests</h1>
   <br>
   <div id="calendar"></div>
-  <div id="remote_container"></div>
   <script type="text/javascript">
-    $('#calendar').fullCalendar({});
+    $(function() {
+
+      $('#calendar').each(function(){
+        var calendar = $(this);
+        calendar.fullCalendar({
+        defaultView: 'month',
+
+        header: {
+          left: 'prev,next addEventButton',
+          center: 'title',
+          right: 'today month,agendaWeek,agendaDay'
+        },
+
+        customButtons: {
+          addEventButton: {
+            text: 'request a sub...',
+            click: function() {
+              var dateStr = prompt('Enter a date in YYYY-MM-DD format');
+              var date = moment(dateStr);
+
+              if (date.isValid()) {
+                $('#calendar').fullCalendar('renderEvent', {
+                  title: 'my sub request',
+                  start: date,
+                  allDay: true
+                });
+                $.ajax({
+                  url: events.create,
+                  data: {
+                    title: 'my sub request',
+                    start: date,
+                    allDay: true
+                  },
+                  type: 'POST',
+                });
+              } else {
+                alert('Invalid date.');
+              }
+            }
+          }
+        }
+      });
+    });
+  });
   </script>
 
 <% else %>

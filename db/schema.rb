@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 20190703223401) do
     t.index ["user_id"], name: "index_announcements_on_user_id"
   end
 
+  create_table "events", force: :cascade do |t|
+    
+
   create_table "menus", force: :cascade do |t|
     t.text "content"
     t.integer "user_id"
