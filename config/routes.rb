@@ -27,10 +27,12 @@ Rails.application.routes.draw do
   get '/workchart',   to: 'static_pages#workchart'
   get '/subrequests', to: 'static_pages#sub_requests'
 
+  post '/event', to: 'events#create'
 
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :announcements,       only: [:create, :destroy]
   resources :menus,               only: [:create, :destroy]
+  resources :events
 end
