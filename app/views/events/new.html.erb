@@ -1,0 +1,15 @@
+<%= form_for(@event) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.datetime_field :date, class: 'form-control' %>
+
+    <%= f.label :shift %>
+    <%= f.text_field :shift, placeholder: "hour, lunch/dinner", class: 'form-control'%>
+
+    <%= f.label :message %>
+    <%= f.text_area :message, class: 'form-control' %>
+
+    <%= f.submit "Submit Sub Request", class: "btn btn-primary" %>
+  </div>
+<% end %>

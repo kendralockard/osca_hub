@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :events
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -27,10 +26,10 @@ Rails.application.routes.draw do
   get '/workchart',   to: 'static_pages#workchart'
   get '/subrequests', to: 'static_pages#sub_requests'
 
-
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :announcements,       only: [:create, :destroy]
   resources :menus,               only: [:create, :destroy]
+  resources :events
 end

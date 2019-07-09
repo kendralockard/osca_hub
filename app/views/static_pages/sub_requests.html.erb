@@ -21,27 +21,7 @@
           addEventButton: {
             text: 'request a sub...',
             click: function() {
-              var dateStr = prompt('Enter a date in YYYY-MM-DD format');
-              var date = moment(dateStr);
-
-              if (date.isValid()) {
-                $('#calendar').fullCalendar('renderEvent', {
-                  title: 'my sub request',
-                  start: date,
-                  allDay: true
-                });
-                $.ajax({
-                  url: events.create,
-                  data: {
-                    title: 'my sub request',
-                    start: date,
-                    allDay: true
-                  },
-                  type: 'POST',
-                });
-              } else {
-                alert('Invalid date.');
-              }
+              location.href = "/events/new"
             }
           }
         }
