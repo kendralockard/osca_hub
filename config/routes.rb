@@ -25,11 +25,12 @@ Rails.application.routes.draw do
   get '/saveplates',  to: 'static_pages#save_plates'
   get '/workchart',   to: 'static_pages#workchart'
   get '/subrequests', to: 'static_pages#sub_requests'
+  get '/events/new',  to: 'events#new'
 
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :announcements,       only: [:create, :destroy]
   resources :menus,               only: [:create, :destroy]
-  resources :events
+  resources :events,              only: [:create, :destroy]
 end
