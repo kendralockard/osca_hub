@@ -4,14 +4,17 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
+    @event = current_user.events.build(event_params)
     if @event.save
       flash[:success] = "Sub requested!"
       redirect_to subrequests_path
     else
       @event_items = []
-      render 'static_pages/sub_requests'
+      redirect_to subrequests_path
     end
+  end
+
+  def destroy
   end
 
   private

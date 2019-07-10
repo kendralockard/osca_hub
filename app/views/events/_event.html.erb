@@ -1,0 +1,36 @@
+<div id="calendar"></div>
+<script type="text/javascript">
+  $(function() {
+
+    $('#calendar').each(function(){
+      var calendar = $(this);
+      calendar.fullCalendar({
+      defaultView: 'month',
+
+      header: {
+        left: 'prev,next addEventButton',
+        center: 'title',
+        right: 'today month,agendaWeek,agendaDay'
+      },
+
+      eventLimit: true,
+
+      customButtons: {
+        addEventButton: {
+          text: 'request a sub...',
+          click: function() {
+            location.href = "/events/new"
+          }
+        }
+      },
+    });
+    
+    var newEvent = {
+      title: "sub request",
+      start: moment("2019-07-09"),
+    };
+
+  $('#calendar').fullCalendar("renderEvent", newEvent);
+  });
+});
+</script>

@@ -2,34 +2,7 @@
   <% provide(:title, 'Sub Requests') %>
   <h1>Sub Requests</h1>
   <br>
-  <div id="calendar"></div>
-  <script type="text/javascript">
-    $(function() {
-
-      $('#calendar').each(function(){
-        var calendar = $(this);
-        calendar.fullCalendar({
-        defaultView: 'month',
-
-        header: {
-          left: 'prev,next addEventButton',
-          center: 'title',
-          right: 'today month,agendaWeek,agendaDay'
-        },
-
-        customButtons: {
-          addEventButton: {
-            text: 'request a sub...',
-            click: function() {
-              location.href = "/events/new"
-            }
-          }
-        }
-      });
-    });
-  });
-  </script>
-
+  <%= render 'shared/eventlist' %>
 <% else %>
   <%= render 'static_pages/logged_out_home' %>
 <% end %>

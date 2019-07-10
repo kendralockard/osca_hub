@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :announcements, dependent: :destroy    # Do we want to automatically destroy a user's posts when that user is destroyed?
   has_many :menus, dependent: :destroy
-  has_many :events
+  has_many :events, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -75,6 +75,10 @@ class User < ApplicationRecord
 
   def menulist
     menus
+  end
+
+  def eventlist
+    events
   end
 
   private

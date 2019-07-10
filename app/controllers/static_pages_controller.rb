@@ -29,5 +29,9 @@ class StaticPagesController < ApplicationController
   end
 
   def sub_requests
+    if logged_in?
+      @event  = current_user.events.build
+      @event_items = current_user.eventlist.paginate(page: params[:page])
+    end
   end
 end
