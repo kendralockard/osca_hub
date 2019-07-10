@@ -34,9 +34,8 @@
     $('#calendar').each(function(){
     var events = {
       title: "<%= event.shift %>",
-      date: moment("<%= event.date %>"),
-      color: '#decade',
-
+      start: moment("<%= event.date %>"),
+      color: '#b778a1',
     };
 
     $('#calendar').fullCalendar("renderEvent", events, true);
