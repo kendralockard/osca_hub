@@ -15,4 +15,5 @@
  *= require_tree .
  *= require_self
  *= require fullcalendar
+ *= require apercu-font/stylesheet
  */
