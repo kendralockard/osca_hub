@@ -13,8 +13,13 @@ $gray-medium-light: #eaeaea;
 
 @font-face {
   font-family: "Apercu";
-  src: url("apercu-cufonfonts/Apercu_Regular.otf")format('woff');
+  src: url("Apercu_Regular.eot")format('woff');
+  src: url("Apercu_Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+       url("Apercu_Regular.otf") format("woff"), /* Modern Browsers */
+       url("Apercu_Regular.ttf")  format("truetype"), /* Safari, Android, iOS */
+       url("Apercu_Regular.svg#svgFontName") format("svg"); /* Legacy iOS */
 }
+
 
 /* universal */
 
