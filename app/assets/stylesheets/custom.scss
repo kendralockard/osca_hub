@@ -11,21 +11,11 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
-@font-face {
-    font-family: 'Apercu';
-    src: url('apercu-font/apercu_regular-webfont.woff2') format('woff2'),
-         url('apercu-font/apercu_regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
 /* universal */
 
 body {
   padding-top: 60px;
-  font-family: "Apercu", sans-serif;
+  font-family: 'Apercu', sans-serif;
 }
 
 section {
