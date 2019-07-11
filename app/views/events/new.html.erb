@@ -1,15 +1,19 @@
-<%= form_for(@event) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.label :date, "*Date" %>
-    <%= f.date_field :date, class: 'form-control' %>
+<% if logged_in? %>
+  <%= form_for(@event) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.label :date, "*Date" %>
+      <%= f.date_field :date, class: 'form-control' %>
 
-    <%= f.label :shift, "*Shift" %>
-    <%= f.text_field :shift, placeholder: "1st hour lunch", class: 'form-control'%>
+      <%= f.label :shift, "*Shift" %>
+      <%= f.text_field :shift, placeholder: "1st hour lunch", class: 'form-control'%>
 
-    <%= f.label :message %>
-    <%= f.text_area :message, class: 'form-control' %>
+      <%= f.label :message %>
+      <%= f.text_area :message, class: 'form-control' %>
 
-    <%= f.submit "Request Sub", class: "btn btn-primary" %>
-  </div>
+      <%= f.submit "Request Sub", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+<% else %>
+  <%= render 'static_pages/logged_out_home' %>
 <% end %>
