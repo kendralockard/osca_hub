@@ -15,5 +15,16 @@
  *= require_tree .
  *= require_self
  *= require fullcalendar
- *= require apercu-font/stylesheet
  */
+
+ @font-face {
+     font-family: 'apercuregular';
+     src: asset-url('apercu-font/apercu_regular-webfont.eot');
+     src: asset-url('apercu-font/apercu_regular-webfont.eot?#iefix') format('embedded-opentype'),
+          asset-url('apercu-font/apercu_regular-webfont.woff2') format('woff2'),
+          asset-url('apercu-font/apercu_regular-webfont.woff') format('woff'),
+          asset-url('apercu-font/apercu_regular-webfont.ttf') format('truetype');
+     font-weight: normal;
+     font-style: normal;
+
+ }

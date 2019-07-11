@@ -4,11 +4,11 @@
 
 @font-face {
     font-family: 'apercuregular';
-    src: url('apercu_regular-webfont.eot');
-    src: url('apercu_regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('apercu_regular-webfont.woff2') format('woff2'),
-         url('apercu_regular-webfont.woff') format('woff'),
-         url('apercu_regular-webfont.ttf') format('truetype');
+    src: asset-url('apercu_regular-webfont.eot');
+    src: asset-url('apercu_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-url('apercu_regular-webfont.woff2') format('woff2'),
+         asset-url('apercu_regular-webfont.woff') format('woff'),
+         asset-url('apercu_regular-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
