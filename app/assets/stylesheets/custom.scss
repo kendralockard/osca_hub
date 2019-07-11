@@ -12,8 +12,12 @@ $gray-medium-light: #eaeaea;
 }
 
 @font-face {
-  font-family: Apercu;
-  src: url("Apercu_Regular.otf") format("opentype");
+    font-family: 'Apercu';
+    src: url('apercu-font/apercu_regular-webfont.woff2') format('woff2'),
+         url('apercu-font/apercu_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 
@@ -21,7 +25,7 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
-  font-family: Apercu, sans-serif;
+  font-family: "Apercu", sans-serif;
 }
 
 section {
