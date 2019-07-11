@@ -1,6 +1,5 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url("apercu-font/stylesheet.css");
 
 /* mixins, variables, etc. */
 
@@ -16,7 +15,7 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
-  font-family: 'Apercu', sans-serif;
+  font-family: 'apercuregular', sans-serif;
 }
 
 section {
