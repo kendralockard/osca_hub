@@ -1,4 +1,5 @@
 <div id="calendar"></div>
+<%= render 'events/show' %>
 
 <script type="text/javascript">
   $(function() {
@@ -25,6 +26,14 @@
           },
         }
       },
+
+      eventClick: function(event, jsEvent, view) {
+          $('#modalTitle').html(event.title);
+          $('#modalBody').html(event.description);
+          $('#submittedBy').html("submitted by "+event.user_name);
+          $('#emailSubmitter').attr('href',"mailto:"+event.user_email);
+          $('#fullCalModal').modal();
+      },
     });
   });
 });
@@ -37,6 +46,9 @@
     var events = {
       title: "<%= event.shift %>",
       start: moment("<%= event.date %>"),
+      description: "<%= event.message %>",
+      user_name: "<%= User.find(event.user_id).name %>",
+      user_email: "<%= User.find(event.user_id).email %>",
       color: '#b778a1',
     };
 

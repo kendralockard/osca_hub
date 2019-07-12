@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.build(event_params)
     if @event.save
-      flash[:success] = "Sub requested!"
+      flash[:success] = "Sub request posted!"
       redirect_to subrequests_path
     else
       @event_items = []
