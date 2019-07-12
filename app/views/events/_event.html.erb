@@ -1,21 +1,26 @@
 <div id="calendar"></div>
-<%= render 'events/show' %>
+<%= render 'events/show', ev: event %>
 <%= render 'events/new' %>
 
 <script type="text/javascript">
   $(function() {
+
     $('#calendar').each(function(){
+
       var calendar = $(this);
       calendar.fullCalendar({
-      defaultView: 'month',
+
       header: {
         left: 'prev,next subRequestButton',
         center: 'title',
         right: 'today month,agendaWeek,agendaDay'
       },
+
+      defaultView: 'month',
       eventLimit: true,
       editable: true,
       displayEventTime: false,
+
       customButtons: {
         subRequestButton: {
           text: 'request a sub...',
@@ -26,21 +31,30 @@
           },
         }
       },
+
       eventClick: function(event) {
-          $('#eventPopupModal').modal();
-          $('#requestShift').html(event.title);
-          $('#requestMessage').html(event.description);
-          $('#submittedBy').html("submitted by "+event.user_name+" on "+event.created_at);
-          $('#swapButton').attr('href',"mailto:"+event.user_email+"?subject=Re: Sub Request for "+event.date);
+        $('#eventPopupModal').modal();
+        $('#requestShift').html(event.title);
+        $('#requestMessage').html(event.description);
+        $('#submittedBy').html("submitted by "
+                                +event.user_name
+                                +" on "
+                                +event.created_at);
+        $('#swapButton').attr('href',"mailto:"
+                                      +event.user_email
+                                      +"?subject=Re: Sub Request for "
+                                      +event.date);
       },
     });
-  });
-});
-</script>
 
-<script type="text/javascript">
-  $(function() {
-    $('#calendar').each(function(){
+    var col;
+    if (moment().add(-1,'days') > moment("<%= event.date %>")) {
+      col = '#8b8b8b';
+    }
+    else {
+      col = '#b778a1';
+    };
+
     var events = {
       title: "<%= event.shift %>",
       date: "<%= event.date&.strftime("%b %d") %>",
@@ -49,9 +63,11 @@
       user_name: "<%= User.find(event.user_id).name %>",
       user_email: "<%= User.find(event.user_id).email %>",
       created_at: "<%= event.created_at&.strftime("%b %d, %Y") %>",
-      color: '#b778a1',
+      id: "<%= event.id %>",
+      color: col,
     };
-    $('#calendar').fullCalendar("renderEvent", events, true);
+
+    calendar.fullCalendar("renderEvent", events, true);
   });
 });
 </script>

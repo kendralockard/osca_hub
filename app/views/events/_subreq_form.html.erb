@@ -1,0 +1,20 @@
+<%= form_for(@event) do |f| %>
+  <div class="field">
+    <%= f.label :date, "*Date" %>
+    <%= f.date_field :date,
+                     class: 'form-control',
+                     :required => true %>
+
+    <%= f.label :shift, "*Shift" %>
+    <%= f.text_field :shift,
+                     placeholder: "1st hour lunch",
+                     class: 'form-control',
+                     :required => true %>
+
+    <%= f.label :message %>
+    <%= f.text_area :message,
+                    class: 'form-control' %>
+
+    <%= f.submit "Request", class: "btn btn-primary" %>
+</div>
+<% end %>

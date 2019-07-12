@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get  '/help',     to: 'static_pages#help'
   get  '/about',    to: 'static_pages#about'
   get  '/contact',  to: 'static_pages#contact'
+  get '/menus',      to: 'static_pages#menu'
+  get '/saveplates',  to: 'static_pages#save_plates'
+  get '/workchart',   to: 'static_pages#workchart'
+
+  get '/subrequests', to: 'static_pages#sub_requests'
 
   get '/signup',    to: 'users#new'
   post '/signup',   to: 'users#create'
@@ -20,12 +25,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   patch '/users/:id/edit', to: 'users#edit'
-
-  get '/menus',      to: 'static_pages#menu'
-  get '/saveplates',  to: 'static_pages#save_plates'
-  get '/workchart',   to: 'static_pages#workchart'
-  get '/subrequests', to: 'static_pages#sub_requests'
-  get '/events/new',  to: 'events#new'
 
   resources :users
   resources :account_activations, only: [:edit]
