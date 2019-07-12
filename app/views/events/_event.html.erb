@@ -30,8 +30,8 @@
       eventClick: function(event, jsEvent, view) {
           $('#modalTitle').html(event.title);
           $('#modalBody').html(event.description);
-          $('#submittedBy').html("submitted by "+event.user_name);
-          $('#emailSubmitter').attr('href',"mailto:"+event.user_email);
+          $('#submittedBy').html("submitted by "+event.user_name+" on "+event.created_at);
+          $('#emailSubmitter').attr('href',"mailto:"+event.user_email+"?subject=Re: Sub Request for "+event.date);
           $('#fullCalModal').modal();
       },
     });
@@ -45,10 +45,12 @@
     $('#calendar').each(function(){
     var events = {
       title: "<%= event.shift %>",
+      date: "<%= event.date&.strftime("%b %d") %>",
       start: moment("<%= event.date %>"),
       description: "<%= event.message %>",
       user_name: "<%= User.find(event.user_id).name %>",
       user_email: "<%= User.find(event.user_id).email %>",
+      created_at: "<%= event.created_at&.strftime("%b %d, %Y") %>",
       color: '#b778a1',
     };
 
