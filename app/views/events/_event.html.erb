@@ -1,5 +1,6 @@
 <div id="calendar"></div>
 <%= render 'events/show' %>
+<%= render 'events/new' %>
 
 <script type="text/javascript">
   $(function() {
@@ -7,32 +8,30 @@
       var calendar = $(this);
       calendar.fullCalendar({
       defaultView: 'month',
-
       header: {
-        left: 'prev,next addEventButton',
+        left: 'prev,next subRequestButton',
         center: 'title',
         right: 'today month,agendaWeek,agendaDay'
       },
-
       eventLimit: true,
       editable: true,
       displayEventTime: false,
-
       customButtons: {
-        addEventButton: {
+        subRequestButton: {
           text: 'request a sub...',
           click: function() {
-            location.href = "/events/new";
+            $('#subreqFormModal').modal();
+            $('#subreqFormTitle').html("Request a Sub");
+            $('#subreqFormPage').attr('href', 'events/new');
           },
         }
       },
-
-      eventClick: function(event, jsEvent, view) {
-          $('#modalTitle').html(event.title);
-          $('#modalBody').html(event.description);
+      eventClick: function(event) {
+          $('#eventPopupModal').modal();
+          $('#requestShift').html(event.title);
+          $('#requestMessage').html(event.description);
           $('#submittedBy').html("submitted by "+event.user_name+" on "+event.created_at);
-          $('#emailSubmitter').attr('href',"mailto:"+event.user_email+"?subject=Re: Sub Request for "+event.date);
-          $('#fullCalModal').modal();
+          $('#swapButton').attr('href',"mailto:"+event.user_email+"?subject=Re: Sub Request for "+event.date);
       },
     });
   });
@@ -41,7 +40,6 @@
 
 <script type="text/javascript">
   $(function() {
-
     $('#calendar').each(function(){
     var events = {
       title: "<%= event.shift %>",
@@ -53,7 +51,6 @@
       created_at: "<%= event.created_at&.strftime("%b %d, %Y") %>",
       color: '#b778a1',
     };
-
     $('#calendar').fullCalendar("renderEvent", events, true);
   });
 });
