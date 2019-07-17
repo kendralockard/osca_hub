@@ -6,7 +6,6 @@
       left: 50%; top: 28%; transform: translate(-50%, -28%);">
         <div class="modal-content">
             <div class="modal-header">
-
                 <button type="button"
                         class="close"
                         data-dismiss="modal">
@@ -43,14 +42,8 @@
                      Swap Shifts via Email
                  </a>
                </button>
-
+               
                <%= ev.id %>
-                <% if current_user?(ev.user) %>
-                <div id="delete" style="float: right;">
-                    <%= button_to "delete", ev, class: "btn btn-default", method: :delete,
-                                                     data: { confirm: "Delete sub request?" } %>
-                  </div>
-               <% end %>
 
             </div>
 
