@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/workchart',   to: 'static_pages#workchart'
 
   get '/subrequests', to: 'static_pages#sub_requests'
+  delete '/events/destroy/:id', to: 'events#destroy'
 
   get '/signup',    to: 'users#new'
   post '/signup',   to: 'users#create'

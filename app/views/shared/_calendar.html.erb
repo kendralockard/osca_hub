@@ -1,0 +1,94 @@
+<div id="calendar"></div>
+<div id="newEvent"></div>
+<div id="showEvent"></div>
+
+<script type="text/javascript">
+
+  $(function() {
+    $('#calendar').each(function(){
+      var calendar = $(this);
+
+      console.log(<%= raw @events.to_json %>);
+      console.log(<%= raw @users.to_json %>);
+
+        calendar.fullCalendar({
+
+          header: {
+            left: 'prev,next subRequestButton',
+            center: 'title',
+            right: 'today month,agendaWeek,agendaDay'
+          },
+
+          defaultView: 'month',
+          eventLimit: true,
+          editable: true,
+          displayEventTime: false,
+          customButtons: {
+            subRequestButton: {
+              text: 'request a sub...',
+              click: function() {
+                $('#newEvent').replaceWith("<%= j render 'events/new' %>");
+                $('#subreqFormModal').modal();
+                $('#subreqFormTitle').html("Request a Sub");
+              },
+            }
+          },
+
+          eventClick: function(event) {
+            $('#showEvent').replaceWith("<%= j render 'events/show' %>");
+            $('#eventPopupModal').modal();
+            $('#shiftRequested').html(event.title);
+            $('#requestMessage').html(event.description);
+            $('#submittedBy').html(" submitted by "
+                                    +event.user_name
+                                    +" on "
+                                    +event.created_at);
+            $('#swapButton').attr('href',"mailto:"
+                                          +event.user_email
+                                          +"?subject=Re: Sub Request for "
+                                          +event.formatted_start);
+            $("#delete").click(function(){
+              if (confirm('Delete sub request?')) {
+                $.ajax({
+                  type: "delete",
+                  url: "/events/destroy/"+event.id,
+                  data: {event_id: event.id},
+                });
+              }
+            })
+          }
+      });
+
+      const events = <%= raw @events.to_json %>;
+      const users = <%= raw @users.to_json %>;
+      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+      events.map(function(event){
+
+        var created_at_date = new Date(event.created_at);
+        var start_date = new Date(moment(event.date).format());
+
+        if (moment().add(-1,'days') > moment(event.date)) {
+          var color = '#8b8b8b';
+        } else {
+          var color = '#b778a1';
+        };
+
+        var ev = {
+          title: event.shift,
+          start: moment(event.date),
+          description: event.message,
+          formatted_start: months[parseInt(start_date.getMonth())] + " " + start_date.getDate(),
+          id: event.id,
+          created_at: months[parseInt(created_at_date.getMonth())] + " " + created_at_date.getDate(),
+          user_name: users[event.user_id-1].name,
+          user_email: users[event.user_id-1].email,
+          color: color,
+        }
+
+        calendar.fullCalendar("renderEvent", ev, true);
+      });
+
+  });
+});
+</script>

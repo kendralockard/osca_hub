@@ -1,4 +1,4 @@
-<%= form_for(@event) do |f| %>
+<%= form_for Event.new do |f| %>
   <div class="field">
     <%= f.label :date, "*Date" %>
     <%= f.date_field :date,

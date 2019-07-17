@@ -18,6 +18,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    @event = Event.find(params[:event_id])
     @event.destroy
     flash[:success] = "Sub request deleted"
     redirect_to request.referrer || subrequests_path
