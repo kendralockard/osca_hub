@@ -1,3 +1,4 @@
+<div id="d1">
 <div id="eventPopupModal"
      class="modal fade">
     <div class="modal-dialog"
@@ -13,7 +14,7 @@
                   <span class="sr-only">close</span>
                 </button>
 
-                <h3 id="requestShift"
+                <h3 id="shiftRequested"
                     class="modal-title">
                 </h3>
             </div>
@@ -43,14 +44,17 @@
                  </a>
                </button>
 
-               <% if current_user?(ev.user) %>
-                 <div style="float: right;">
-                   <%= button_to "delete", ev, class: "btn btn-default", method: :delete,
-                                                    data: { confirm: "Delete sub request?" } %>
-                 </div>
+               <%= ev.id %>
+                <% if current_user?(ev.user) %>
+                <div id="delete" style="float: right;">
+                    <%= button_to "delete", ev, class: "btn btn-default", method: :delete,
+                                                     data: { confirm: "Delete sub request?" } %>
+                  </div>
                <% end %>
+
             </div>
 
         </div>
     </div>
+</div>
 </div>

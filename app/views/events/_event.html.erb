@@ -4,12 +4,9 @@
 
 <script type="text/javascript">
   $(function() {
-
     $('#calendar').each(function(){
-
       var calendar = $(this);
       calendar.fullCalendar({
-
       header: {
         left: 'prev,next subRequestButton',
         center: 'title',
@@ -27,16 +24,15 @@
           click: function() {
             $('#subreqFormModal').modal();
             $('#subreqFormTitle').html("Request a Sub");
-            $('#subreqFormPage').attr('href', 'events/new');
           },
         }
       },
 
-      eventClick: function(event) {
+      eventClick: function(event, element) {
         $('#eventPopupModal').modal();
-        $('#requestShift').html(event.title);
+        $('#shiftRequested').html(event.title);
         $('#requestMessage').html(event.description);
-        $('#submittedBy').html("submitted by "
+        $('#submittedBy').html(event.id+" submitted by "
                                 +event.user_name
                                 +" on "
                                 +event.created_at);
@@ -44,19 +40,19 @@
                                       +event.user_email
                                       +"?subject=Re: Sub Request for "
                                       +event.date);
-      },
+      }
     });
 
-    var col;
+    var color;
     if (moment().add(-1,'days') > moment("<%= event.date %>")) {
-      col = '#8b8b8b';
+      color = '#8b8b8b';
     }
     else {
-      col = '#b778a1';
+      color = '#b778a1';
     };
 
     var events = {
-      title: "<%= event.shift %>",
+      title: "<%= event.shift %>".replace("&#39;", "\'"),
       date: "<%= event.date&.strftime("%b %d") %>",
       start: moment("<%= event.date %>"),
       description: "<%= event.message %>",
@@ -64,9 +60,8 @@
       user_email: "<%= User.find(event.user_id).email %>",
       created_at: "<%= event.created_at&.strftime("%b %d, %Y") %>",
       id: "<%= event.id %>",
-      color: col,
+      color: color,
     };
-
     calendar.fullCalendar("renderEvent", events, true);
   });
 });
