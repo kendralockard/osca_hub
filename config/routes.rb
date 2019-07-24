@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   patch '/users/:id/edit', to: 'users#edit'
+  get '/join_coop', to: "coops#join"
+  post '/join_coop', to: "coops#join"
 
   resources :users
   resources :account_activations, only: [:edit]
@@ -33,4 +35,5 @@ Rails.application.routes.draw do
   resources :announcements,       only: [:create, :destroy]
   resources :menus,               only: [:create, :destroy]
   resources :events,              only: [:create, :destroy]
+  resources :coops
 end

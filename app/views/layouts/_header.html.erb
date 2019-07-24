@@ -2,8 +2,15 @@
   <div class="container">
       <%= link_to "OSCA Hub", root_path, id: "logo" %>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
+
         <% if logged_in? %>
+          <ul class="nav navbar-nav navbar-center">
+            <% coops = ["", "Brown Bag", "Fairkid", "Harkness", "Keep", "Pyle", "Tank", "TWC"] %>
+            <% coopID = current_user.coop_id || 0 %>
+            <li id="coop"><%= coops[coopID] %></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Menus", menus_path %></li>
           <li><%= link_to "Save Plates", saveplates_path %></li>
@@ -25,9 +32,11 @@
           </li>
 
         <% else %>
+        <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Help", help_path %></li>
           <li><%= link_to "Log in", login_path %></li>
+        </ul>
         <% end %>
       </ul>
     </nav>
