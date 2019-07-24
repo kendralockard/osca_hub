@@ -70,11 +70,11 @@ class User < ApplicationRecord
   end
 
   def announcement_feed
-    announcements
+    Announcement.all
   end
 
   def menu_feed
-    menus
+    Menu.all
   end
 
   private
