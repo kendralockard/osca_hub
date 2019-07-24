@@ -1,11 +1,7 @@
 class EventsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user,   only: :destroy
-
-  def new
-    @event = Event.new
-  end
-
+  
   def create
     @event = current_user.events.build(event_params)
     if @event.save
@@ -21,7 +17,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:event_id])
     @event.destroy
     flash[:success] = "Sub request deleted"
-    redirect_to request.referrer || subrequests_path
+    redirect_to subrequests_path
   end
 
   private

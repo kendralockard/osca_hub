@@ -69,16 +69,12 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
-  def feed
-    Announcement.where("user_id = ?", id)
+  def announcement_feed
+    announcements
   end
 
-  def menulist
+  def menu_feed
     menus
-  end
-
-  def eventlist
-    events
   end
 
   private

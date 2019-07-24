@@ -8,7 +8,7 @@ class AnnouncementsController < ApplicationController
       flash[:success] = "Announcement created!"
       redirect_to root_url
     else
-      @feed_items = []
+      @announcements = []
       redirect_to root_url
     end
   end

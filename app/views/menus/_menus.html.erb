@@ -1,0 +1,6 @@
+<% if @menus.any? %>
+  <ol class="menus">
+    <%= render @menus %>
+  </ol>
+  <%= will_paginate @menus %>
+<% end %>

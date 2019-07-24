@@ -8,7 +8,7 @@ class MenusController < ApplicationController
       flash[:success] = "Delicious menu posted!"
       redirect_to menus_path
     else
-      @menulist_items = []
+      @menus = []
       render 'static_pages/menu'
     end
   end

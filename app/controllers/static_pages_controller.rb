@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   def home
     if logged_in?
       @announcement = current_user.announcements.build
-      @feed_items = current_user.feed.paginate(page: params[:page])
+      @announcements = current_user.announcement_feed.paginate(page: params[:page])
     end
   end
 
@@ -18,7 +18,7 @@ class StaticPagesController < ApplicationController
   def menu
     if logged_in?
       @menu  = current_user.menus.build
-      @menulist_items = current_user.menulist.paginate(page: params[:page])
+      @menus = current_user.menu_feed.paginate(page: params[:page])
     end
   end
 

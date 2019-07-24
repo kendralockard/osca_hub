@@ -1,0 +1,99 @@
+<div id="calendar"></div>
+<div id="newEvent"></div>
+<div id="showEvent"></div>
+
+<script type="text/javascript">
+
+  $('#calendar').each(function(){
+    var calendar = $(this);
+
+    calendar.fullCalendar({
+
+      header: {
+        left: 'prev,next subRequestButton',
+        center: 'title',
+        right: 'today month,agendaWeek,agendaDay'
+      },
+
+      defaultView: 'month',
+      eventLimit: true,
+      editable: true,
+      displayEventTime: false,
+
+      customButtons: {
+        subRequestButton: {
+          text: 'request a sub...',
+          click: function() {
+            $('#newEvent').replaceWith("<%= j render 'events/new' %>");
+            $('#subreqFormModal').modal();
+            $('#subreqFormTitle').html("Request a Sub");
+          },
+        }
+      },
+
+      eventClick: function(event) {
+        $('#showEvent').replaceWith("<%= j render 'events/show' %>");
+        $('#eventPopupModal').modal();
+        $('#shiftRequested').html(event.title);
+        $('#requestMessage').html(event.description);
+
+        $('#submittedBy').html(" submitted by "
+                                +event.user_name
+                                +" on "
+                                +event.formatted_created_at);
+
+        $('#swapButton').attr('href',"mailto:"
+                                      +event.user_email
+                                      +"?subject=Re: Sub Request for "
+                                      +event.formatted_start);
+
+        $("#delete").click(function(){
+          if (confirm('Delete sub request?')) {
+            $.ajax({
+              type: "delete",
+              url: "/events/destroy/"+event.id,
+              data: {event_id: event.id},
+            });
+          }
+        })
+      }
+
+    });
+
+    const events = <%= raw @events.to_json %>;
+    const users = <%= raw @users.to_json %>;
+
+    const grey = '#8b8b8b';
+    const purple = '#b778a1';
+
+    const today = moment().add(-1,'days');
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    events.map(function(event){
+
+      var created_at = new Date(event.created_at);
+      var start = new Date(moment(event.date).format());
+
+      var color = (today > moment(event.date)) ? grey : purple;
+
+      var this_event = {
+        title: event.shift,
+        start: moment(event.date),
+        description: event.message,
+        id: event.id,
+        user_name: users[event.user_id-1].name,
+        user_email: users[event.user_id-1].email,
+        color: color,
+        formatted_created_at: months[parseInt(created_at.getMonth())]
+                                        + " " + created_at.getDate(),
+        formatted_start: months[parseInt(start.getMonth())]
+                                    + " " + start.getDate(),
+      }
+
+      calendar.fullCalendar("renderEvent", this_event, true);
+
+  });
+});
+
+</script>
