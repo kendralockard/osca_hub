@@ -4,4 +4,5 @@ class Event < ApplicationRecord
   validates :user_id, presence: true
   validates :date, presence: true
   validates :shift, presence: true
+  validates :coop_id, presence: true
 end
