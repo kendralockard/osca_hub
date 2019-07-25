@@ -71,8 +71,8 @@
     });
 
     const events = <%= raw @events.to_json %>;
-    const user_names = <%= raw @users_name_by_id.to_json %>;
-    const user_emails = <%= raw @users_email_by_id.to_json %>;
+    const user_names = <%= raw @users_by_name.to_json %>;
+    const user_emails = <%= raw @users_by_email.to_json %>;
 
     const grey = '#8b8b8b';
     const purple = '#b778a1';
