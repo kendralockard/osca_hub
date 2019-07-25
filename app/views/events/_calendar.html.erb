@@ -71,7 +71,8 @@
     });
 
     const events = <%= raw @events.to_json %>;
-    const users = <%= raw @users.to_json %>;
+    const user_names = <%= raw @users_name_by_id.to_json %>;
+    const user_emails = <%= raw @users_email_by_id.to_json %>;
 
     const grey = '#8b8b8b';
     const purple = '#b778a1';
@@ -92,9 +93,9 @@
         start: moment(event.date),
         description: event.message,
         id: event.id,
-        user_id: users[event.user_id-1].id,
-        user_name: users[event.user_id-1].name,
-        user_email: users[event.user_id-1].email,
+        user_id: event.user_id,
+        user_name: user_names[event.user_id],
+        user_email: user_emails[event.user_id],
         color: color,
         formatted_created_at: months[parseInt(created_at.getMonth())]
                                         + " " + created_at.getDate(),
