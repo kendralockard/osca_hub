@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190724222305) do
+ActiveRecord::Schema.define(version: 20190725181019) do
 
   create_table "announcements", force: :cascade do |t|
     t.text "content"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20190724222305) do
     t.text "vegetable"
     t.text "restrictions"
     t.text "notes"
+    t.integer "coop_id"
+    t.index ["coop_id"], name: "index_menus_on_coop_id"
     t.index ["user_id", "created_at"], name: "index_menus_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_menus_on_user_id"
   end

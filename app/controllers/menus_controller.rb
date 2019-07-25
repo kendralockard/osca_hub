@@ -4,6 +4,7 @@ class MenusController < ApplicationController
 
   def create
     @menu = current_user.menus.build(menu_params)
+    @menu.coop_id = current_user.coop_id
     if @menu.save
       flash[:success] = "Delicious menu posted!"
       redirect_to menus_path

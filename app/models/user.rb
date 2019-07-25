@@ -78,7 +78,7 @@ class User < ApplicationRecord
   end
 
   def menu_feed
-    Menu.all
+    Menu.where(coop_id: coop_id)
   end
 
   private
