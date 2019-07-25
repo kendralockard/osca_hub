@@ -81,6 +81,10 @@ class User < ApplicationRecord
     Menu.where(coop_id: coop_id)
   end
 
+  def events_feed
+    Event.where(coop_id: coop_id)
+  end
+
   private
 
     # Converts email to all lower-case

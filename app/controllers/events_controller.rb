@@ -1,9 +1,10 @@
 class EventsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user,   only: :destroy
-  
+
   def create
     @event = current_user.events.build(event_params)
+    @event.coop_id = current_user.coop_id
     if @event.save
       flash[:success] = "Sub request posted!"
       redirect_to subrequests_path

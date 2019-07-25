@@ -30,8 +30,9 @@ class StaticPagesController < ApplicationController
 
   def sub_requests
     if logged_in?
-      @events = Event.all
+      @events = current_user.events_feed
       @users = User.all
+      @user = current_user
     end
   end
 end
