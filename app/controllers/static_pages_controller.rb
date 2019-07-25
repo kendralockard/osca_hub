@@ -31,8 +31,8 @@ class StaticPagesController < ApplicationController
   def sub_requests
     if logged_in?
       @events = current_user.events_feed
-      @users_name_by_id = User.all.to_h { |user| [user.id, user.name] }
-      @users_email_by_id = User.all.to_h { |user| [user.id, user.email] }
+      @users_name_by_id = User.all.collect.to_h { |user| [user.id, user.name] }
+      @users_email_by_id = User.all.collect.to_h { |user| [user.id, user.email] }
       @user = current_user
     end
   end
