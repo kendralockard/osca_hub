@@ -1,0 +1,19 @@
+<% provide(:title, "Join Co-op") %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+
+      <%= f.select :coop_id,
+          { 'Brown Bag': 1, 'Fairkid': 2, 'Harkness': 3, 'Keep': 4,
+          'Pyle': 5, 'Tank': 6, 'TWC': 7 },
+          { :include_blank => 'Select...' },
+          class: 'form-control',
+          required: true,
+          multiple: false %>
+
+      <%= f.submit "Request to Join", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

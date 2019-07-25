@@ -1,21 +1,10 @@
-<% provide(:title, "Join Co-op") %>
-<h1>Join a Co-op</h1>
+<%= render 'coops/join_modal' %>
+<br style="line-height: 300px;">
+<%= image_tag "oscahublogo.png", alt: "OSCA Hub logo", class: "logo" %>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
+<script type="text/javascript">
 
-      <%= f.label :coop, "Co-op" %>
-      <%= f.select :coop_id,
-          { 'Brown Bag': 1, 'Fairkid': 2, 'Harkness': 3, 'Keep': 4,
-          'Pyle': 5, 'Tank': 6, 'TWC': 7 },
-          { :include_blank => '' },
-          class: 'form-control',
-          required: true,
-          multiple: false %>
+  $('#joinCoopModal').modal({backdrop: 'static', keyboard: false});
+  $('#joinCoopTitle').html("Join a Co-op");
 
-      <%= f.submit "Request to Join", class: "btn btn-primary" %>
-    <% end %>
-
-  </div>
-</div>
+</script>
