@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/saveplates',  to: 'static_pages#save_plates'
   get '/workchart',   to: 'static_pages#workchart'
   get '/subrequests', to: 'static_pages#sub_requests'
+  get '/join_coop', to: "coops#join"
 
   delete '/events/destroy/:id', to: 'events#destroy'
 
@@ -33,4 +34,7 @@ Rails.application.routes.draw do
   resources :announcements,       only: [:create, :destroy]
   resources :menus,               only: [:create, :destroy]
   resources :events,              only: [:create, :destroy]
+  resources :coops do
+    get 'join', :on => :member
+  end
 end

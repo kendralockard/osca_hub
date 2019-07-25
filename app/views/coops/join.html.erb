@@ -1,0 +1,15 @@
+<% provide(:title, "Join Co-op") %>
+<h1>Join a Co-op</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+
+      <%= f.label :coop, "Co-op" %>
+      <%= f.select(:coop, [[""],["Brown Bag"],["Fairchild"],["Harkness"],["Keep"],["Pyle"],["Tank"],["TWC"]], {:multiple => false}) %>
+
+      <%= f.submit "Request to Join", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

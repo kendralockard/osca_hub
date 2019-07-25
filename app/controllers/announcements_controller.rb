@@ -5,6 +5,7 @@ class AnnouncementsController < ApplicationController
   def create
     @announcement = current_user.announcements.build(announcement_params)
     @announcement.coop_id = current_user.coop_id
+    
     if @announcement.save
       flash[:success] = "Announcement created!"
       redirect_to root_url
