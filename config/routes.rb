@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   get '/saveplates',  to: 'static_pages#save_plates'
   get '/workchart',   to: 'static_pages#workchart'
   get '/subrequests', to: 'static_pages#sub_requests'
-  get '/join_coop', to: "coops#join"
 
   delete '/events/destroy/:id', to: 'events#destroy'
 
@@ -27,8 +26,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   patch '/users/:id/edit', to: 'users#edit'
-  
-  patch '/join_coop', to: 'coops#join'
+  get '/join_coop', to: "coops#join"
 
   resources :users
   resources :account_activations, only: [:edit]
