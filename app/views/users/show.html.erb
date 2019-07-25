@@ -6,7 +6,20 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
-      <%= link_to "Join a Coop", join_coop_path %>
+
+      <% if @user.coop_id.nil? %>
+        <%= link_to join_coop_path do %>
+        <button type="button"
+                class="btn btn-default"
+                style="float: left;
+                       margin-top: 5px;
+                       background: #9668b6;
+                       color: #ffffff;">
+                       Join a Co-op
+                     </button>
+        <% end %>
+      <% end %>
+
     </section>
   </aside>
   <div class="col-md-8">
