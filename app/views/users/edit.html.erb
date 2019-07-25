@@ -4,7 +4,8 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <% if @user.coop_id.nil? == false %>
-      <%= link_to join_coop_path do %>
+      <%= link_to join_coop_path,
+          data: {confirm: "Are you sure you want to switch co-ops?"} do %>
       <center><button type="button"
               class="btn btn-default"
               style="float: center;
