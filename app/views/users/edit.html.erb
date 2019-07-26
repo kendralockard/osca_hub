@@ -3,20 +3,6 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <% if @user.coop_id.nil? == false %>
-      <%= link_to join_coop_path,
-          data: {confirm: "Are you sure you want to switch co-ops?"} do %>
-      <center><button type="button"
-              class="btn btn-default"
-              style="float: center;
-              background: #b778a1;
-              color: #ffffff;">
-                     Switch Co-ops
-                   </button></center>
-      <% end %>
-    <% end %>
-    <br>
-
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
@@ -39,5 +25,23 @@
       <%= gravatar_for @user %>
       <a href="http://gravatar.com/emails">change via Gravatar</a>
     </div>
+
+    <br>
+
+    <div align="right">
+    <% if @user.coop_id.nil? == false %>
+      <%= link_to join_coop_path,
+          data: {confirm: "This action is only for people who have joined a new OSCA co-op. Are you sure you want to switch co-ops?"} do %>
+      <button type="button"
+              class="btn btn-default"
+              style="float: center;
+              background: #ffffff;
+              color: #ff6262;">
+                     Switch co-op
+                   </button>
+      <% end %>
+    <% end %>
+    </div>
+
   </div>
 </div>

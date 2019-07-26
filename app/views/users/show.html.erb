@@ -9,15 +9,18 @@
 
       <% if @user.coop_id.nil? %>
         <% if @user == current_user %>
+          <p style="padding: 6px;">
+            Welcome <%= @user.name.partition(" ").first %>!
+            Join your co-op by clicking the button below.
+          </p>
+
           <%= link_to join_coop_path do %>
-          <button type="button"
+          <center><button type="button"
                   class="btn btn-default"
-                  style="float: left;
-                         margin-top: 5px;
-                         background: #be5b9b;
+                  style="background: #be5b9b;
                          color: #ffffff;">
-                         Join a Co-op
-                       </button>
+                         Join my co-op
+                       </button></center>
           <% end %>
         <% end %>
 
