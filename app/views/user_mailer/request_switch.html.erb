@@ -1,0 +1,10 @@
+<h1>OSCA Hub</h1>
+
+<p>Hi MemCo,</p>
+
+<p>
+<%= @user.name %> is requesting to join <%= @coop_id %>.
+To accept their request, click the link below.
+</p>
+
+<%= link_to "Accept", controller: "users", action: "update", id: @user.id, switch: true %>
