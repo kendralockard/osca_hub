@@ -4,6 +4,9 @@
 
 <script type="text/javascript">
 
+  $('#joinCoopModal').modal('hide');
+  $(document.body).removeClass('modal-open');
+  $('.modal-backdrop').remove();
   $('#joinCoopModal').modal({backdrop: 'static', keyboard: false});
   $('#joinCoopTitle').html("Join a Co-op");
 
