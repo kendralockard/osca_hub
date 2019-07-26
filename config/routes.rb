@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'password_resets/new'
   get 'password_resets/edit'
+  get 'users/accept_user'
 
   get 'sessions/new'
 
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
 
   patch '/users/:id/edit', to: 'users#edit'
   get '/join_coop', to: "coops#join"
-  post '/join_coop', to: "coops#join"
+  patch '/join_coop', to: "coops#join"
 
   resources :users
   resources :account_activations, only: [:edit]

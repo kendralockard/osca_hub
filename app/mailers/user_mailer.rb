@@ -9,4 +9,12 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: user.email, subject: "OSCA Hub: Password Reset"
   end
+
+  def request_switch(coop_id, user)
+    coops = ["", "Brown Bag", "Fairkid", "Harkness", "Keep", "Pyle", "Tank", "TWC"]
+    @user = user
+    @coop_id = coop_id
+    @coop = coops[coop_id]
+    mail to: 'oscamemco@gmail.com', subject: "Pending Join Request"
+  end
 end

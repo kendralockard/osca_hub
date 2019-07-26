@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   belongs_to :coop, optional: true
-  has_many :announcements, dependent: :destroy    # Do we want to automatically destroy a user's posts when that user is destroyed?
+  has_many :announcements, dependent: :destroy
   has_many :menus, dependent: :destroy
   has_many :events, dependent: :destroy
 

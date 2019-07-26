@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       flash[:info] = "Please check your email to activate your account."
       redirect_to root_url
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -33,12 +33,34 @@ class UsersController < ApplicationController
   end
 
   def update
+    prev_coop = @user.coop_id
     if @user.update_attributes(user_params)
-      flash[:success] = "Settings updated"
+      switched_coop?(prev_coop) ?
+        request_switch(prev_coop) :
+        flash[:success] = "Settings updated"
       redirect_to @user
     else
-      render 'edit'
+      render "edit"
     end
+  end
+
+  def switched_coop?(prev_coop)
+    @user.coop_id != prev_coop
+  end
+
+  def request_switch(prev_coop)
+    @requested_coop = @user.coop_id
+    @user.update_attributes(coop_id: prev_coop)
+    UserMailer.request_switch(@requested_coop, @user).deliver_now
+    flash[:success] = "Co-op request sent"
+  end
+
+  def accept_user
+    user = User.find(params[:id])
+    coop_id = params[:coop_id]
+    user.update_attributes(coop_id: coop_id)
+    flash[:success] = "User admitted"
+    redirect_to root_url
   end
 
   def destroy
