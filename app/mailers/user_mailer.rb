@@ -15,6 +15,6 @@ class UserMailer < ApplicationMailer
     @user = user
     @coop_id = coop_id
     @coop = coops[coop_id]
-    mail to: 'oscamemco@gmail.com', subject: "Pending Join Request"
+    mail to: 'oscamemco@gmail.com', subject: @coop.upcase + ": Pending Join Request"
   end
 end

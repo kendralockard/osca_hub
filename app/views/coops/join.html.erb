@@ -1,5 +1,5 @@
 <%= render 'coops/join_modal' %>
-<br style="line-height: 300px;">
+<br style="line-height: 350px;">
 <%= image_tag "oscahublogo.png", alt: "OSCA Hub logo", class: "logo" %>
 
 <script type="text/javascript">
@@ -9,5 +9,7 @@
   $('.modal-backdrop').remove();
   $('#joinCoopModal').modal();
   $('#joinCoopTitle').html("Join a Co-op");
+  $('#joinCoopMessage').html("Select your co-op and click \"Join\" to send a request to your new MemCo. \
+          You will be notified through email when your request has been accepted.");
 
 </script>

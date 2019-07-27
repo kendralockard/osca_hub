@@ -44,6 +44,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def coops
+    ["", "Brown Bag", "Fairkid", "Harkness", "Keep", "Pyle", "Tank", "TWC"]
+  end
+
   def switched_coop?(prev_coop)
     @user.coop_id != prev_coop
   end
@@ -52,14 +56,15 @@ class UsersController < ApplicationController
     @requested_coop = @user.coop_id
     @user.update_attributes(coop_id: prev_coop)
     UserMailer.request_switch(@requested_coop, @user).deliver_now
-    flash[:success] = "Co-op request sent"
+    flash[:success] = "Your request to join " + coops()[@requested_coop] + \
+                       " has been sent to your MemCo."
   end
 
   def accept_user
     user = User.find(params[:id])
-    coop_id = params[:coop_id]
-    user.update_attributes(coop_id: coop_id)
-    flash[:success] = "User admitted"
+    user.update_attributes(coop_id: params[:coop_id])
+    flash[:success] = user.name + " has been admitted to " + \
+                      coops()[user.coop_id] + ". Thanks MemCo!"
     redirect_to root_url
   end
 

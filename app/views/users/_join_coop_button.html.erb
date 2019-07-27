@@ -1,0 +1,14 @@
+<p style="padding: 6px;">
+  Welcome <%= @user.name.partition(" ").first %>!
+  Join your co-op by clicking the button below.
+</p>
+
+<%= link_to join_coop_path, :method=> :patch do %>
+<center><button type="button"
+        class="btn btn-default"
+        style="background: #be5b9b;
+               color: #ffffff;"
+               data-backdrop="false">
+               Join my co-op
+             </button></center>
+<% end %>

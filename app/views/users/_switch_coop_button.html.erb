@@ -1,0 +1,15 @@
+<div align="right">
+<% if @user.coop_id.nil? == false %>
+  <%= link_to join_coop_path, :method=> :patch,
+      data: {confirm: "This action is only for people who have joined a new " \
+      "OSCA co-op. Are you sure you want to switch co-ops?"} do %>
+  <button type="button"
+          class="btn btn-default"
+          style="float: center;
+          background: #ffffff;
+          color: #ff6262;">
+                 Switch co-op
+               </button>
+  <% end %>
+<% end %>
+</div>

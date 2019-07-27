@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   get 'password_resets/new'
   get 'password_resets/edit'
-  get 'users/accept_user'
 
   get 'sessions/new'
 
   get 'users/new'
+  get 'users/accept_user'
 
   get  '/help',     to: 'static_pages#help'
   get  '/about',    to: 'static_pages#about'
