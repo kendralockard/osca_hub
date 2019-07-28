@@ -21,12 +21,12 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <% if @user.announcements.any? %>
-      <h3>Announcements (<%= @user.announcements.count %>)</h3>
+    <% if @user == current_user %>
+      <h3> Recent News in <%= coops[@user.coop_id] %> </h3>
       <ol class="announcements">
-        <%= render @announcements %>
+        <%= render Announcement.where('created_at > ?', 2.days.ago)
+                               .where(coop_id: @user.coop_id) %>
       </ol>
-      <%= will_paginate @announcements %>
     <% end %>
   </div>
 </div>
