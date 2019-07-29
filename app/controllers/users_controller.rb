@@ -55,7 +55,7 @@ class UsersController < ApplicationController
   def request_switch(prev_coop)
     @requested_coop = @user.coop_id
     @user.update_attributes(coop_id: prev_coop)
-    UserMailer.request_switch(@requested_coop, @user).deliver_now
+    UserMailer.request_switch(@user, @requested_coop).deliver_now
     flash[:success] = "Your request to join " + coops()[@requested_coop] + \
                        " has been sent to your MemCo."
   end
@@ -73,6 +73,16 @@ class UsersController < ApplicationController
     @user = user
     @coop_id = coop_id
     UserMailer.notify_user_of_approval(@user, @coop_id)
+  end
+
+  def notify_user_of_denial
+    user = User.find(params[:id])
+    @user = user
+    @coop_id = params[:coop_id]
+    flash[:danger] = user.name + " was denied access to " + \
+                      coops()[user.coop_id] + "."
+    UserMailer.notify_user_of_denial(@user, @coop_id)
+    redirect_to root_url
   end
 
   def destroy

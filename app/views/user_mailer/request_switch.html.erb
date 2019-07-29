@@ -4,7 +4,12 @@
 
 <p>
 <b><%= @user.name %></b> (<%= @user.email %>) is requesting to join <b><%= @coop %></b>.
-To approve this request, click the link below.
+To approve this request, click the link below:
 </p>
 
 <%= link_to "Approve", users_approve_user_url(id: @user.id, coop_id: @coop_id) %>
+
+If <em><%= @user.name %></em> is not a member of <%= @coop %>,
+deny their request by clicking the link below:
+
+<%= link_to "Deny", notify_user_of_denial(id: @user.id, coop_id: @coop_id) %>

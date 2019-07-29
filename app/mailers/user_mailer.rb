@@ -14,7 +14,7 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: "OSCA Hub: Password Reset"
   end
 
-  def request_switch(coop_id, user)
+  def request_switch(user, coop_id)
     @user = user
     @coop_id = coop_id
     @coop = coops()[coop_id]
@@ -26,4 +26,12 @@ class UserMailer < ApplicationMailer
     @coop_id = coop_id
     @coop = coops()[coop_id]
     mail to: user.email, subject: "OSCA Hub: Your request to join " + @coop + " has been approved"
+  end
+
+  def notify_user_of_denial(user, coop_id)
+    @user = user
+    @coop_id = coop_id
+    @coop = coops()[coop_id]
+    mail to: user.email, subject: "OSCA Hub: Your request to join " + @coop + " has been denied"
+  end
 end
