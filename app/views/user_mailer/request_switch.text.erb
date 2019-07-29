@@ -3,4 +3,7 @@ Hi MemCo,
 <%= @user.name %> is requesting to join <%= @coop_id %>.
 To accept their request, click the link below.
 
-<%= users_accept_user_url(id: @user.id, coop_id: @coop_id) %>
+<%= users_approve_user_url(id: @user.id, coop_id: @coop_id) %>
+
+If <%= @user.name %> is not a member of <%= @coop %>, you may ignore this email
+  and their OSCA Hub membership will not be changed.
