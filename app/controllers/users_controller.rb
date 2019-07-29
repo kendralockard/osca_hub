@@ -60,12 +60,19 @@ class UsersController < ApplicationController
                        " has been sent to your MemCo."
   end
 
-  def accept_user
+  def approve_user
     user = User.find(params[:id])
     user.update_attributes(coop_id: params[:coop_id])
     flash[:success] = user.name + " has been admitted to " + \
                       coops()[user.coop_id] + ". Thanks MemCo!"
+    notify_user_of_approval(user, coop_id: params[:coop_id])
     redirect_to root_url
+  end
+
+  def notify_user_of_approval(user, coop_id: coop_id)
+    @user = user
+    @coop_id = coop_id
+    UserMailer.notify_user_of_approval(@user, @coop_id)
   end
 
   def destroy

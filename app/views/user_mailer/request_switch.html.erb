@@ -3,8 +3,8 @@
 <p>Hi MemCo,</p>
 
 <p>
-<b><%= @user.name %></b> is requesting to join <b><%= @coop %></b>.
-To accept their request, click the link below.
+<b><%= @user.name %></b> (<%= @user.email %>) is requesting to join <b><%= @coop %></b>.
+To approve this request, click the link below.
 </p>
 
-<%= link_to "Accept", users_accept_user_url(id: @user.id, coop_id: @coop_id) %> 
+<%= link_to "Approve", users_approve_user_url(id: @user.id, coop_id: @coop_id) %>

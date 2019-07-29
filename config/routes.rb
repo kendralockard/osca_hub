@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   get 'users/new'
-  get 'users/accept_user'
+  get 'users/approve_user'
 
   get  '/help',     to: 'static_pages#help'
   get  '/about',    to: 'static_pages#about'
