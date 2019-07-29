@@ -20,4 +20,11 @@ class UserMailer < ApplicationMailer
     @coop = coops()[coop_id]
     mail to: 'oscamemco@gmail.com', subject: @coop.upcase + ": Pending Join Request"
   end
+
+  def notify_user_approval(user, coop_id)
+    @user = user
+    @coop_id = coop_id
+    @coop = coops()[coop_id]
+    mail to: user.email, subject: "OSCA Hub: " + @coop + " Request Approved"
+  end
 end
