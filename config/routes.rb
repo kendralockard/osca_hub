@@ -30,10 +30,12 @@ Rails.application.routes.draw do
   get '/join_coop', to: "coops#join"
   patch '/join_coop', to: "coops#join"
 
+  post '/announcements/:id', to: "announcements#notify_thru_email"
+
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :announcements,       only: [:create, :destroy]
+  resources :announcements,       only: [:create, :destroy, :notify_thru_email]
   resources :menus,               only: [:create, :destroy]
   resources :events,              only: [:create, :destroy]
   resources :coops

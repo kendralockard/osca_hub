@@ -1,3 +1,5 @@
+<% coops = ["", "Brown Bag", "Fairkid", "Harkness", "Keep", "Pyle", "Tank", "TWC"] %>
+
 <li id="announcement-<%= announcement.id %>">
   <%= link_to gravatar_for(announcement.user, size: 50), announcement.user %>
   <span class="user"><%= link_to announcement.user.name, announcement.user %></span>
@@ -5,6 +7,9 @@
   <span class="timestamp">
     posted <%= time_ago_in_words(announcement.created_at) %> ago
     <% if current_user?(announcement.user) %>
+      | <%= link_to "push thru email", announcement, method: :notify_thru_email, style: "color: #9900b6;",
+                                      data: { confirm: "Email this announcement to " \
+                                              +coops[current_user.coop_id]+"?" } %>
       | <%= link_to "delete", announcement, method: :delete,
                                        data: { confirm: "You sure?" } %>
     <% end %>

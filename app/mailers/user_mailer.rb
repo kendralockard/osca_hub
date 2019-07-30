@@ -27,4 +27,12 @@ class UserMailer < ApplicationMailer
     @coop = coops()[coop_id]
     mail to: user.email, subject: "OSCA Hub: " + @coop + " Request Approved"
   end
+
+  def push_announcement(user, announcement)
+    @user = user
+    @coop = coops()[user.coop_id]
+    @announcement = announcement
+    recipients = User.where(coop_id: user.coop_id).map { |user| p user.email }
+    mail from: user.email, bcc: recipients, subject: "Announcement from " + @coop
+  end
 end

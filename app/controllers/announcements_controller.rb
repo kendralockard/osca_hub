@@ -5,7 +5,7 @@ class AnnouncementsController < ApplicationController
   def create
     @announcement = current_user.announcements.build(announcement_params)
     @announcement.coop_id = current_user.coop_id
-    
+
     if @announcement.save
       flash[:success] = "Announcement created!"
       redirect_to root_url
@@ -19,6 +19,14 @@ class AnnouncementsController < ApplicationController
     @announcement.destroy
     flash[:success] = "Announcement deleted"
     redirect_to request.referrer || root_url
+  end
+
+  def notify_thru_email
+    @announcement = Announcement.find(params[:id])
+    @user = @announcement.user
+    UserMailer.push_announcement(@user, @announcement.content).deliver_now
+    flash[:success] = "Your announcement has been pushed through email to your co-op."
+    redirect_to root_url
   end
 
   private
