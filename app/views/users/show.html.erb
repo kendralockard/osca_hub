@@ -28,8 +28,9 @@
                                .where(coop_id: @user.coop_id) %>
       </ol>
       <ol class="events">
-        <%= render Event.where('date > ?', 1.days.ago)
-                        .where(coop_id: @user.coop_id) %>
+        <%= render Event.where('date >= ?', Date.today)
+                        .where(coop_id: @user.coop_id)
+                        .order(date: :asc) %>
       </ol>
     <% end %>
   </div>
