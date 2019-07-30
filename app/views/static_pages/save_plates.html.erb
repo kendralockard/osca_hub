@@ -1,13 +1,45 @@
 <% if logged_in? %>
 <% provide(:title, 'Save Plates') %>
   <h1>Save Plates</h1>
-  <center>
-    <p>You can directly add or remove your name from the Save Plates chart below.</p>
-    <p style="color: #eb5e55;">Remember to check the temporary <strong>and</strong> permanent tabs!</p>
+
+  <% if current_user.coop_id == nil %>
+    <h2>Check back here for your workchart once you are approved to join your co-op's OSCA Hub.</h2>
+  <% elsif current_user.coop_id != 1 %>
+
+    <center><p>You can directly add or remove your name from the Save Plates chart below.</p>
+    <p style="color: #eb5e55;">Remember to check the temporary <strong>and</strong> permanent tabs!</p></center>
     <br>
 
-    <iframe src="https://docs.google.com/spreadsheets/d/15zY6MmnLXYJpx_4RqQBn3LMYcomuLLM7D_7KFHUd36A/edit?rm=minimal" style="border-width:0" width="860" height="910" frameborder="0"></iframe>
-  </center>
+    <% if current_user.coop_id == 1 %>
+      <% redirect_to '/' %>
+    <% end %>
+
+    <% if current_user.coop_id == 2 %>
+      <%= render 'save_plates/fairkid' %>
+    <% end %>
+
+    <% if current_user.coop_id == 3 %>
+      <%= render 'save_plates/harkness' %>
+    <% end %>
+
+    <% if current_user.coop_id == 4 %>
+      <%= render 'save_plates/keep' %>
+    <% end %>
+
+    <% if current_user.coop_id == 5 %>
+      <%= render 'save_plates/pyle' %>
+    <% end %>
+
+    <% if current_user.coop_id == 6 %>
+      <%= render 'save_plates/tank' %>
+    <% end %>
+
+    <% if current_user.coop_id == 7 %>
+      <%= render 'save_plates/twc' %>
+    <% end %>
+
+  <% end %>
+
 <% else %>
   <%= render 'static_pages/logged_out_home' %>
 <% end %>
