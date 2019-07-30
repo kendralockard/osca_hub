@@ -12,6 +12,7 @@ class UserMailer < ApplicationMailer
 
   def password_reset(user)
     @user = user
+    email_images
     mail to: user.email, subject: "OSCA Hub: Password Reset"
   end
 
@@ -41,6 +42,6 @@ class UserMailer < ApplicationMailer
   private
 
     def email_images
-        attachments.inline['logosmall.png'] = File.read('app/assets/images/logosmall.png')
+        attachments.inline['logosmall.ico'] = File.read('app/assets/images/logosmall.ico')
     end
 end
