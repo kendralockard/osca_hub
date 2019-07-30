@@ -1,16 +1,39 @@
 <% if logged_in? %>
 <% provide(:title, 'Workchart') %>
-  <h1>Workchart</h1>
-  <center>
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS3a4owjJ6D_grdapsdge2Vni8nXFFOoaOXgXKhN_SRqP7fFmOtMa-eb3zdqqph0BZFPtiq_olkzaC7/pubhtml?widget=true&amp;headers=false" style="border-width: 0" width="903" height="840" frameborder="0"></iframe>
- </center>
+<h1>Workchart</h1>
 
- <br>
+  <% if current_user.coop_id == nil %>
+    <h2>Check back here for your workchart once you are approved to join your co-op's OSCA Hub.</h2>
+  <% end %>
 
- <h1>Special Meals</h1>
- <center>
-   <iframe src="https://docs.google.com/spreadsheets/d/1L8dSqEnuYnehVg3m90IsO6xy9yCMcj5jQHjuTez4KuE/edit?rm=minimal" style="border-width: 0" width="903" height="460" frameborder="0"></iframe>
- </center>
+  <% if current_user.coop_id == 1 %>
+    <%= render 'workcharts/brown_bag' %>
+  <% end %>
+
+  <% if current_user.coop_id == 2 %>
+    <%= render 'workcharts/fairkid' %>
+  <% end %>
+
+  <% if current_user.coop_id == 3 %>
+    <%= render 'workcharts/harkness' %>
+  <% end %>
+
+  <% if current_user.coop_id == 4 %>
+    <%= render 'workcharts/keep' %>
+  <% end %>
+
+  <% if current_user.coop_id == 5 %>
+    <%= render 'workcharts/pyle' %>
+  <% end %>
+
+  <% if current_user.coop_id == 6 %>
+    <%= render 'workcharts/tank' %>
+  <% end %>
+
+  <% if current_user.coop_id == 7 %>
+    <%= render 'workcharts/twc' %>
+  <% end %>
+
 <% else %>
   <%= render 'static_pages/logged_out_home' %>
 <% end %>
