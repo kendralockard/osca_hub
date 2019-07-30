@@ -8,3 +8,18 @@ Welcome to OSCA Hub! Click on the link below to activate your account:
 
 <%= link_to "Activate now", edit_account_activation_url(@user.activation_token,
                                                     email: @user.email) %>
+
+<p>
+After following the link above, you may request to join your co-op's OSCA Hub
+to see contact information, workcharts, save plates, as well as post announcements,
+meal menus, and sub requests to your co-op.
+</p>
+
+<br>
+
+<em><p>In cooperation,</p>
+  <p>OSCA Hub</p></em>
+
+<center>
+  <%= image_tag(attachments['logosmall.png'].url) -%>
+</center>

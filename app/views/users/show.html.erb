@@ -21,7 +21,7 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <% if @user == current_user %>
+    <% if @user == current_user && @user.coop_id.nil? == false %>
       <h3> Recent News in <%= coops[@user.coop_id] %> </h3>
       <ol class="events">
         <%= render Event.where('date > ?', Date.yesterday)

@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   patch '/users/:id/edit', to: 'users#edit'
+
   get '/join_coop', to: "coops#join"
   patch '/join_coop', to: "coops#join"
 

@@ -6,6 +6,7 @@ class UserMailer < ApplicationMailer
 
   def account_activation(user)
     @user = user
+    email_images
     mail to: user.email, subject: "OSCA Hub: Account Activation"
   end
 
@@ -25,6 +26,7 @@ class UserMailer < ApplicationMailer
     @user = user
     @coop_id = coop_id
     @coop = coops()[coop_id]
+    email_images
     mail to: user.email, subject: "OSCA Hub: " + @coop + " Request Approved"
   end
 
@@ -33,6 +35,12 @@ class UserMailer < ApplicationMailer
     @coop = coops()[user.coop_id]
     @announcement = announcement
     recipients = User.where(coop_id: user.coop_id).map { |user| p user.email }
-    mail from: @coop, bcc: recipients, subject: "Announcement from " + @coop
+    mail from: @coop, bcc: recipients, subject: "OSCA Hub: Announcement from " + @user.name
   end
+
+  private
+
+    def email_images
+        attachments.inline['logosmall.png'] = File.read('app/assets/images/logosmall.png')
+    end
 end
