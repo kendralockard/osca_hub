@@ -1,17 +1,37 @@
 <center>
 <h2 style="text-decoration: underline;">OSCA Student Contact</h2>
-<ul>
-  <li><strong>FSCs:</strong> </li>
-  <li><strong>New Member Trainer:</strong> </li>
-  <li><strong>MemCo:</strong> </li>
-  <li><strong>AccessCo:</strong> </li>
-  <li><strong>NutCo:</strong> </li>
-  <li><strong>KitchCo:</strong> </li>
-  <li><strong>DLECs:</strong> </li>
-  <li><strong>Treasurer:</strong> </li>
-  <li><strong>Board Rep:</strong> </li>
-  <li><strong>Food Unpacker/Recycler:</strong> </li>
-</ul>
-<br>
+
+<% if current_user.coop_id == nil %>
+  <h4>Check back here for contact information once you are approved to join your co-op's OSCA Hub.</h4>
+<% end %>
+
+<% if current_user.coop_id == 1 %>
+  <%= render 'contact/brown_bag' %>
+<% end %>
+
+<% if current_user.coop_id == 2 %>
+  <%= render 'contact/fairkid' %>
+<% end %>
+
+<% if current_user.coop_id == 3 %>
+  <%= render 'contact/harkness' %>
+<% end %>
+
+<% if current_user.coop_id == 4 %>
+  <%= render 'contact/keep' %>
+<% end %>
+
+<% if current_user.coop_id == 5 %>
+  <%= render 'contact/pyle' %>
+<% end %>
+
+<% if current_user.coop_id == 6 %>
+  <%= render 'contact/tank' %>
+<% end %>
+
+<% if current_user.coop_id == 7 %>
+  <%= render 'contact/twc' %>
+<% end %>
+
 <%= render 'static_pages/logged_out_contact' %>
 </center>
