@@ -33,6 +33,6 @@ class UserMailer < ApplicationMailer
     @coop = coops()[user.coop_id]
     @announcement = announcement
     recipients = User.where(coop_id: user.coop_id).map { |user| p user.email }
-    mail from: user.email, bcc: recipients, subject: "Announcement from " + @coop
+    mail from: @coop, bcc: recipients, subject: "Announcement from " + @coop
   end
 end
