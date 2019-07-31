@@ -1,0 +1,9 @@
+<ol class="events">
+  <%= render Event.where('date > ?', Date.yesterday)
+                  .where(coop_id: @user.coop_id)
+                  .order(date: :asc) %>
+</ol>
+<ol class="announcements">
+  <%= render Announcement.where('created_at > ?', 2.days.ago)
+                         .where(coop_id: @user.coop_id) %>
+</ol>

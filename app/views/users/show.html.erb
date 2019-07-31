@@ -19,19 +19,17 @@
       <% end %>
 
     </section>
-  </aside>
-  <div class="col-md-8">
+
     <% if @user == current_user && @user.coop_id.nil? == false %>
+      <h5 style="line-height: 1.1em;">The feed to the right shows all open sub requests from your
+        co-op and all announcements from the past 2 days. Check here for
+        current information on your co-op!</h5>
+
+      </aside>
+
+    <div class="col-md-8">
       <h3> Recent News in <%= coops[@user.coop_id] %> </h3>
-      <ol class="events">
-        <%= render Event.where('date > ?', Date.yesterday)
-                        .where(coop_id: @user.coop_id)
-                        .order(date: :asc) %>
-      </ol>
-      <ol class="announcements">
-        <%= render Announcement.where('created_at > ?', 2.days.ago)
-                               .where(coop_id: @user.coop_id) %>
-      </ol>
-    <% end %>
-  </div>
+      <%= render 'recent_news' %>
+      <% end %>
+    </div>
 </div>
