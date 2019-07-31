@@ -1,6 +1,10 @@
+<script type="text/javascript" src="app/assets/javascripts/popovers.js">
+</script>
+
 <% if logged_in? %>
   <% provide(:title, 'Sub Requests') %>
-  <h1 data-toggle="popover" data-html="true"
+  <h1 data-toggle="popover"
+      data-placement="bottom"
       data-title="<center>How do I use Sub Requests?</center>"
       data-content=
         "<b>To request a sub,</b> click <em>request a sub...</em>
@@ -10,25 +14,13 @@
          <em>Swap Shifts</em> to send an email to the requester. <hr />
          <b>If your request has been covered,</b> please delete it from the
          calendar so it's clear which requests are still in need of a sub.">
-   Sub Requests
- </h1>
+    Sub Requests
+  </h1>
+
   <br>
   <%= render 'events/calendar' %>
   <br>
+  
 <% else %>
   <%= render 'static_pages/logged_out_home' %>
 <% end %>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        $('.className').popover('disable');
-      }
-    else {
-      $('[data-toggle="popover"]').popover({
-        placement: 'bottom',
-        trigger: 'hover',
-      });
-    }
-  });
-</script>

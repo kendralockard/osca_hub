@@ -1,44 +1,43 @@
+<script type="text/javascript" src="app/assets/javascripts/popovers.js">
+</script>
+
 <% if logged_in? %>
 <% provide(:title, 'Save Plates') %>
-  <h1 data-toggle="popover" data-html="true"
+  <h1 data-toggle="popover"
+      data-placement="bottom"
       data-title="<center>How do I request a Save Plate?</center>"
       data-content=
-        "<center>You can <b>directly add or remove</b> your name from the chart below
-        - it will be updated automatically!</center>">
-    Save Plates</h1>
+        "<center>You can <b>directly add or remove</b> your name from the chart
+          below - it will be updated automatically!</center>">
+    Save Plates
+  </h1>
 
-  <% if current_user.coop_id == nil %>
-    <h2>Check back here for save plates once you are approved to join your co-op's OSCA Hub.</h2>
-  <% elsif current_user.coop_id != 1 %>
+  <% if current_user.coop_id.nil? %>
+    <h2>Check back here for save plates after you are approved
+      to join your co-op's OSCA Hub.</h2>
 
-    <center><p style="color: #eb5e55;">Remember to check the temporary <strong>and</strong> permanent tabs!</p>
+  <% else %>
+    <center>
+      <p style="color: #eb5e55;">
+        Remember to check the temporary <em>and</em> permanent tabs!
+      </p>
+    </center>
     <br>
 
-    <% if current_user.coop_id == 1 %>
-      <% redirect_to '/' %>
-    <% end %>
-
-    <% if current_user.coop_id == 2 %>
+    <% case current_user.coop_id %>
+    <% when 1 %>
+      <% controller.redirect_to root_url %>
+    <% when 2 %>
       <%= render 'save_plates/fairkid' %>
-    <% end %>
-
-    <% if current_user.coop_id == 3 %>
+    <% when 3 %>
       <%= render 'save_plates/harkness' %>
-    <% end %>
-
-    <% if current_user.coop_id == 4 %>
+    <% when 4 %>
       <%= render 'save_plates/keep' %>
-    <% end %>
-
-    <% if current_user.coop_id == 5 %>
+    <% when 5 %>
       <%= render 'save_plates/pyle' %>
-    <% end %>
-
-    <% if current_user.coop_id == 6 %>
+    <% when 6 %>
       <%= render 'save_plates/tank' %>
-    <% end %>
-
-    <% if current_user.coop_id == 7 %>
+    <% when 7 %>
       <%= render 'save_plates/twc' %>
     <% end %>
 
@@ -47,17 +46,3 @@
 <% else %>
   <%= render 'static_pages/logged_out_home' %>
 <% end %>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        $('.className').popover('disable');
-      }
-    else {
-      $('[data-toggle="popover"]').popover({
-        placement: 'bottom',
-        trigger: 'hover',
-      });
-    }
-  });
-</script>
