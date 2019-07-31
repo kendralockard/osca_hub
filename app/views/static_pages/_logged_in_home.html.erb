@@ -1,15 +1,22 @@
+<script type="text/javascript" src="app/assets/javascripts/popovers.js">
+</script>
+
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <%= render 'shared/user_info' %>
     </section>
+
     <section class="announcement_form">
       <%= render 'announcements/announcement_form' %>
     </section>
+
     <br>
   </aside>
+
   <div class="col-md-8">
-    <h3 data-toggle="popover" data-html="true"
+    <h3 data-toggle="popover"
+        data-placement="left"
         data-title="What's an Announcement?"
         data-content=
           "<b>Announcements</b> are messages that concern your entire co-op. <br />
@@ -18,20 +25,8 @@
           of your co-op.">
       Announcements
     </h3>
+
     <%= render 'announcements/announcements' %>
+    
   </div>
 </div>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        $('.className').popover('disable');
-      }
-    else {
-      $('[data-toggle="popover"]').popover({
-        placement: 'left',
-        trigger: 'hover',
-      });
-    }
-  });
-</script>

@@ -2,13 +2,5 @@
 <br style="line-height: 350px;">
 <%= image_tag "oscahublogo.png", alt: "OSCA Hub logo", class: "logo" %>
 
-<script type="text/javascript">
-
-  $('#joinCoopModal').modal('hide');
-  $(document.body).removeClass('modal-open');
-  $('.modal-backdrop').remove();
-  $('#joinCoopModal').modal();
-  $('#joinCoopTitle').html("Join a Co-op");
-  $('#joinCoopMessage').html("Select your co-op and click \"Request to Join\" to send a request to your MemCo. You will be notified by email when your request is approved.");
-
+<script type="text/javascript" src="app/assets/javascripts/join_coop.js">
 </script>

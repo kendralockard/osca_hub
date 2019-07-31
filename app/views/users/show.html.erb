@@ -1,3 +1,6 @@
+<script type="text/javascript" src="app/assets/javascripts/popovers.js">
+</script>
+
 <% provide(:title, @user.name) %>
 <div class="row">
   <aside class="col-md-4">
@@ -8,45 +11,22 @@
       </h1>
 
       <% if @user.coop_id.nil? %>
-        <% if @user == current_user %>
+        <% if current_user == @user %>
           <%= render 'join_coop_button' %>
         <% end %>
 
       <% else %>
-        <% coops = ["", "Brown Bag", "Fairkid", "Harkness", "Keep", "Pyle", "Tank", "TWC"] %>
-        <p style="color: #b778a1"><%= coops[@user.coop_id] %></p>
-
+        <p style="color: #b778a1">
+          <%= Coop.coops[@user.coop_id] %>
+        </p>
       <% end %>
 
     </section>
   </aside>
 
   <div class="col-md-8">
-    <% if @user == current_user && @user.coop_id.nil? == false %>
-
-      <h3 data-toggle="popover" data-html="true"
-          data-title="What's in Recent News?"
-          data-content=
-          "This feed shows all <b>open sub requests</b> from your co-op and
-          <b>announcements from the past 48 hours.</b> Check here
-          for current information on your co-op!">
-        Recent News in <%= coops[@user.coop_id] %>
-      </h3>
+    <% if @user == current_user && !@user.coop_id.nil? %>
       <%= render 'recent_news' %>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 </div>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        $('.className').popover('disable');
-      }
-    else {
-      $('[data-toggle="popover"]').popover({
-        placement: 'left',
-        trigger: 'hover',
-      });
-    }
-  });
-</script>

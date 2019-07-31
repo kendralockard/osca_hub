@@ -5,17 +5,18 @@
 
         <% if logged_in? %>
           <ul class="nav navbar-nav navbar-center">
-            <% coops = ["", "Brown Bag", "Fairkid", "Hark", "Keep", "Pyle", "Tank", "TWC"] %>
-            <% coopID = current_user.coop_id || 0 %>
-            <li id="coop"><%= coops[coopID] %></li>
+            <% coop_ID = current_user.coop_id || 0 %>
+            <li id="coop"><%= Coop.coops[coop_ID] %></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Home", root_path %></li>
-          <% if coopID != 1 %>
+
+          <% if coop_ID != 1 %>
             <li><%= link_to "Menus", menus_path %></li>
             <li><%= link_to "Save Plates", saveplates_path %></li>
           <% end %>
+
           <li><%= link_to "Workchart", workchart_path %></li>
           <li><%= link_to "Sub Requests", subrequests_path %></li>
 

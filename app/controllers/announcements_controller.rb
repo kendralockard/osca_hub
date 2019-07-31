@@ -25,7 +25,7 @@ class AnnouncementsController < ApplicationController
     @announcement = Announcement.find(params[:id])
     @user = @announcement.user
     UserMailer.push_announcement(@user, @announcement.content).deliver_now
-    flash[:success] = "Your announcement has been pushed through email to your co-op."
+    flash[:success] = "Your announcement has been pushed to #{Coop.coops[@user.coop_id]}."
     redirect_to root_url
   end
 
