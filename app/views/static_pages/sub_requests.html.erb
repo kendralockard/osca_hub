@@ -1,18 +1,28 @@
 <% if logged_in? %>
   <% provide(:title, 'Sub Requests') %>
-  <h1>Sub Requests</h1>
-  <center>
-    <h5>Please check the open sub requests and try swapping shifts before posting your own request.</h5>
-    <h5><b>To post a new sub request,</b> click the "request a sub..." button on the
-      top left of the calendar.
-    </h5>
-    <h5><b>To cover a sub request,</b> open the item on the calendar and click
-    the "Swap Shifts" button.</h5>
-    <h5><b>When your sub request has been covered,</b> please delete it from the
-    calendar.</h5></center>
+  <h1 data-toggle="popover" data-html="true"
+      data-title="<center>How do I use Sub Requests?</center>"
+      data-content=
+        "<b>To request a sub,</b> click the <em>request a sub...</em> button
+         on the top left of the calendar. <br />
+         <b>To cover a request,</b> open the request on the calendar and click
+         <em>Swap Shifts</em> to email its poster. <br />
+         <b>If your request has been covered,</b> please delete it from the
+         calendar so it's clear which requests are still open.">
+   Sub Requests
+ </h1>
   <br>
   <%= render 'events/calendar' %>
   <br>
 <% else %>
   <%= render 'static_pages/logged_out_home' %>
 <% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('[data-toggle="popover"]').popover({
+      placement: 'bottom',
+      trigger: 'hover'
+    });
+  });
+</script>

@@ -19,17 +19,30 @@
       <% end %>
 
     </section>
+  </aside>
 
+  <div class="col-md-8">
     <% if @user == current_user && @user.coop_id.nil? == false %>
-      <h5 style="line-height: 1.1em;">Check here for current information on
-        your co-op! This page shows all open sub requests from your
-        co-op and all announcements from the past 2 days.</h5>
 
-      </aside>
-
-    <div class="col-md-8">
-      <h3> Recent News in <%= coops[@user.coop_id] %> </h3>
+      <h3 data-toggle="popover" data-html="true"
+          data-title="What's in Recent News?"
+          data-content=
+          "This feed shows all <b>open sub requests</b> from your co-op and
+          <b>announcements from the past 48 hours.</b> Check here
+          for current information on your co-op!">
+        Recent News in <%= coops[@user.coop_id] %>
+      </h3>
       <%= render 'recent_news' %>
       <% end %>
     </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('[data-toggle="popover"]').popover({
+      placement: 'left',
+      trigger: 'hover',
+      offset: 20,
+    });
+  });
+</script>

@@ -1,13 +1,17 @@
 <% if logged_in? %>
 <% provide(:title, 'Save Plates') %>
-  <h1>Save Plates</h1>
+  <h1 data-toggle="popover" data-html="true"
+      data-title="<center>How do I request a Save Plate?</center>"
+      data-content=
+        "<center>You can <b>directly add or remove</b> your name from the chart below
+        - it will be updated automatically!</center>">
+    Save Plates</h1>
 
   <% if current_user.coop_id == nil %>
     <h2>Check back here for save plates once you are approved to join your co-op's OSCA Hub.</h2>
   <% elsif current_user.coop_id != 1 %>
 
     <center><p style="color: #eb5e55;">Remember to check the temporary <strong>and</strong> permanent tabs!</p>
-    <h5>You may directly add or remove your name from the Save Plates chart below.</h5></center>
     <br>
 
     <% if current_user.coop_id == 1 %>
@@ -43,3 +47,13 @@
 <% else %>
   <%= render 'static_pages/logged_out_home' %>
 <% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('[data-toggle="popover"]').popover({
+      placement: 'bottom',
+      trigger: 'hover',
+      offset: 20,
+    });
+  });
+</script>

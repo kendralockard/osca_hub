@@ -3,16 +3,29 @@
     <section class="user_info">
       <%= render 'shared/user_info' %>
     </section>
-    <h5 style="line-height: 1.1em;">This page is for announcements that concern your entire co-op.
-    If your announcement is time-sensitive, you have the option to push the announcement
-    through email to all members of your co-op after posting it below.</h5>
     <section class="announcement_form">
       <%= render 'announcements/announcement_form' %>
     </section>
     <br>
   </aside>
   <div class="col-md-8">
-    <h3>Announcements</h3>
+    <h3 data-toggle="popover" data-html="true"
+        data-title="What's an Announcement?"
+        data-content=
+          "<b>Announcements</b> are messages that concern your entire co-op. <br />
+           <b>If your announcement is time sensitive,</b> use the <em>push</em>
+           button to email the announcement to all members of your co-op.">
+      Announcements
+    </h3>
     <%= render 'announcements/announcements' %>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('[data-toggle="popover"]').popover({
+      placement: 'left',
+      trigger: 'hover',
+    });
+  });
+</script>
