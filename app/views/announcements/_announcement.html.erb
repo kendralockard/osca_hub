@@ -10,7 +10,7 @@
       | <%= link_to "push", announcement, method: :notify_thru_email, style: "color: #9900b6;",
                                       data: { confirm: "Email this announcement to " \
                                               +coops[current_user.coop_id]+"?" } %>
-      | <%= link_to "delete", announcement, method: :delete,
+      | <%= link_to "delete", announcement, method: :delete, style: "color: #666666;",
                                        data: { confirm: "You sure?" } %>
     <% end %>
   </span>
