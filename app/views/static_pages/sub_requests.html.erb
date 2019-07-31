@@ -20,9 +20,14 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $('[data-toggle="popover"]').popover({
-      placement: 'bottom',
-      trigger: 'hover'
-    });
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $('.className').popover('disable');
+      }
+    else {
+      $('[data-toggle="popover"]').popover({
+        placement: 'bottom',
+        trigger: 'hover',
+      });
+    }
   });
 </script>
