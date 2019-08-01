@@ -17,28 +17,11 @@
       to join your co-op's OSCA Hub.</h2>
 
   <% else %>
-    <center>
-      <p style="color: #eb5e55;">
-        Remember to check the temporary <em>and</em> permanent tabs!
-      </p>
-    </center>
-    <br>
 
-    <% case current_user.coop_id %>
-    <% when 1 %>
-      <% controller.redirect_to root_url %>
-    <% when 2 %>
-      <%= render 'save_plates/fairkid' %>
-    <% when 3 %>
-      <%= render 'save_plates/harkness' %>
-    <% when 4 %>
-      <%= render 'save_plates/keep' %>
-    <% when 5 %>
-      <%= render 'save_plates/pyle' %>
-    <% when 6 %>
-      <%= render 'save_plates/tank' %>
-    <% when 7 %>
-      <%= render 'save_plates/twc' %>
+    <% if mobile? %>
+     <%= render 'save_plates/mobile_view/save_plates' %>
+    <% else %>
+       <%= render 'save_plates/desktop_view/save_plates' %>
     <% end %>
 
   <% end %>
