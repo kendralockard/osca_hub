@@ -1,0 +1,28 @@
+<center>
+  <p>Hi there! It looks like you're viewing Save Plates on a mobile device.</p>
+
+  <% case current_user.coop_id %>
+  <% when 1 %>
+    <% controller.redirect_to root_url %>
+  <% when 2 %>
+    <%= render 'save_plates/mobile_view/fairkid' %>
+  <% when 3 %>
+    <%= render 'save_plates/mobile_view/harkness' %>
+  <% when 4 %>
+    <%= render 'save_plates/mobile_view/keep' %>
+  <% when 5 %>
+    <%= render 'save_plates/mobile_view/pyle' %>
+  <% when 6 %>
+    <%= render 'save_plates/mobile_view/tank' %>
+  <% when 7 %>
+    <%= render 'save_plates/mobile_view/twc' %>
+  <% end %>
+
+  <p style="color: #eb5e55;">
+    Remember to check the temporary <em>and</em> permanent tabs!
+  </p>
+
+</center>
+
+<br>
+<%= link_to image_tag("oscahublogo.png", alt: "OSCA Hub logo", class: "logo"), '/' %>

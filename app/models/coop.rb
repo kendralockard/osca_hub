@@ -5,6 +5,6 @@ class Coop < ApplicationRecord
   has_many :events, through: :users
 
   def self.coops
-    ["", "Brown Bag", "Fairkid", "Harkness", "Keep", "Pyle", "Tank", "TWC"]
+    ["", "Brown Bag", "Fairkid", "Hark", "Keep", "Pyle", "Tank", "TWC"]
   end
 end
