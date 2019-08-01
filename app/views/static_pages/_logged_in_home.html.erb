@@ -22,11 +22,11 @@
           "<b>Announcements</b> are messages that concern your entire co-op. <br />
            <b>If your announcement is urgent,</b> such as a meal cancellation,
            use the <em>push</em> button to email the announcement to all members
-          of your co-op.">
+          of <%= Coop.coops[current_user.coop_id] %>.">
       Announcements
     </h3>
 
     <%= render 'announcements/announcements' %>
-    
+
   </div>
 </div>

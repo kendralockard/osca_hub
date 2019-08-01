@@ -9,21 +9,10 @@
 
   <% else %>
 
-    <% case current_user.coop_id %>
-    <% when 1 %>
-      <%= render 'workcharts/brown_bag' %>
-    <% when 2 %>
-      <%= render 'workcharts/fairkid' %>
-    <% when 3 %>
-      <%= render 'workcharts/harkness' %>
-    <% when 4 %>
-      <%= render 'workcharts/keep' %>
-    <% when 5 %>
-      <%= render 'workcharts/pyle' %>
-    <% when 6 %>
-      <%= render 'workcharts/tank' %>
-    <% when 7 %>
-      <%= render 'workcharts/twc' %>
+    <% if mobile? %>
+      <%= render 'workcharts/mobile_view/workcharts' %>
+    <% else %>
+      <%= render 'workcharts/desktop_view/workcharts' %>
     <% end %>
 
   <% end %>

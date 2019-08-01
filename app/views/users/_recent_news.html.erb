@@ -2,9 +2,9 @@
     data-placement="left"
     data-title="What's in Recent News?"
     data-content=
-    "This feed shows all <b>open sub requests</b> from your co-op and
-    <b>announcements from the past 48 hours.</b> Check here
-    for current information on your co-op!">
+    "This feed shows all <b>open sub requests</b> and
+    <b>announcements posted in the last 48 hours.</b> Check here
+    for current information on <%= Coop.coops[@user.coop_id] %>!">
   Recent News in <%= Coop.coops[@user.coop_id] %>
 </h3>
 

@@ -1,10 +1,11 @@
 <hr style="margin: 10px;">
 <li id="event-<%= event.id %>">
   <%= link_to gravatar_for(event.user, size: 50), event.user %>
-  <span class="user"><b style="color: #ce0e5b;">*Sub Needed*</b></span> for <%= event.user.name %>
+  <span class="user"><b style="color: #ce0e5b;">*Sub Needed*</b></span>
+  for <%= link_to event.user.name, event.user, style: "color: #444444; font-decoration: light;" %>
   <br>
   <span class="content">
-    <%= event.date.strftime("%A %b %d") %>, <%= event.shift %>
+  <%= event.date.strftime("%A %b%_d") %>, <%= event.shift %>
   </span>
   <br>
   <span class="timestamp" style="color: #727272;">

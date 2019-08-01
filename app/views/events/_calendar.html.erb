@@ -10,15 +10,16 @@
     calendar.fullCalendar({
 
       header: {
-        left: 'prev,next subRequestButton',
+        left: 'subRequestButton',
         center: 'title',
-        right: 'today month,agendaWeek,agendaDay'
+        right: 'today prev,next'
       },
 
       defaultView: 'month',
       eventLimit: true,
       editable: true,
       displayEventTime: false,
+      eventOrder: "title",
 
       customButtons: {
         subRequestButton: {
@@ -78,6 +79,7 @@
     const purple = '#b778a1';
 
     const today = moment().add(-1,'days');
+    const tomorrow = moment();
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
