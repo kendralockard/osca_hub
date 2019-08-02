@@ -1,0 +1,14 @@
+<h4>
+  <%= @event.user %> needs a sub for <%= @event.shift %> on <%= @event.date.strftime("%b%_d") %>.
+
+  <% if !@event.message.nil? %>
+    Message: <%= @event.message %>
+  <% end %>
+</h4>
+
+<%= @user.name %> pushed this sub request to <%= @coop %>.
+Please cover their shift if you are able.
+
+<br>
+<em><p>In cooperation,</p>
+<p>OSCA Hub</p></em>
