@@ -11,6 +11,10 @@
     </aside>
     <div class="col-md-8">
       <h3>Meal Menus</h3>
+      <% if current_user.coop_id.nil? %>
+        <h2 style="text-align: left">Check back here for meal menus after you
+          are approved to join your co-op's OSCA Hub.</h2>
+      <% end %>
       <%= render 'menus/menus' %>
     </div>
   </div>

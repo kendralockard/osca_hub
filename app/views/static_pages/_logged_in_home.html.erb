@@ -15,16 +15,25 @@
   </aside>
 
   <div class="col-md-8">
-    <h3 data-toggle="popover"
-        data-placement="left"
-        data-title="What's an Announcement?"
-        data-content=
-          "<b>Announcements</b> are messages that concern your entire co-op. <br />
-           <b>If your announcement is urgent,</b> such as a meal cancellation,
-           use the <em>push</em> button to email the announcement to all members
-          of <%= Coop.coops[current_user.coop_id] %>.">
-      Announcements
-    </h3>
+    <% if current_user.coop_id.nil? %>
+      <h3>Announcements</h3>
+      <h2 style="text-align: left">Check back here for announcements after
+        you are approved to join your co-op's OSCA Hub.</h2>
+
+    <% else %>
+
+      <h3 data-toggle="popover"
+          data-placement="left"
+          data-title="What's an Announcement?"
+          data-content=
+            "<b>Announcements</b> are messages that concern your entire co-op. <br />
+             <b>If your announcement is urgent,</b> such as a cancelled meal
+             or understaffed shift, use the <em>push</em> button to email the
+             announcement to all members of <%= Coop.coops[current_user.coop_id] %>.">
+        Announcements
+      </h3>
+
+    <% end %>
 
     <%= render 'announcements/announcements' %>
 

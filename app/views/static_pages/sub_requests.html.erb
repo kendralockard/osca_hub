@@ -3,24 +3,32 @@
 
 <% if logged_in? %>
   <% provide(:title, 'Sub Requests') %>
-  <h1 data-toggle="popover"
-      data-placement="bottom"
-      data-title="<center>How do I use Sub Requests?</center>"
-      data-content=
-        "<b>To request a sub,</b> click <em>request a sub...</em>
-         on the top left of the calendar. Please submit a separate request for
-         each hour you need covered. <hr />
-         <b>To cover a request,</b> open the request on the calendar and click
-         <em>Swap Shifts</em> to send an email to the requester. <hr />
-         <b>If your request has been covered,</b> please delete it from the
-         calendar so it's clear which requests are still in need of a sub.">
-    Sub Requests
-  </h1>
+  <% if current_user.coop_id.nil? %>
+    <h1>Sub Requests</h1>
+    <h2>Check back here for the Sub Request calendar after you are approved
+      to join your co-op's OSCA Hub.</h2>
 
-  <br>
-  <%= render 'events/calendar' %>
-  <br>
-  
+  <% else %>
+
+    <h1 data-toggle="popover"
+        data-placement="bottom"
+        data-title="<center>How do I use Sub Requests?</center>"
+        data-content=
+          "<b>To request a sub,</b> click <em>request a sub...</em>
+           on the top left of the calendar. Please submit a separate request for
+           each hour you need covered. <hr />
+           <b>To cover a request,</b> open the request on the calendar and click
+           <em>Swap Shifts</em> to send an email to the requester. <hr />
+           <b>If your request has been covered,</b> please delete it from the
+           calendar so it's clear which requests are still in need of a sub.">
+      Sub Requests
+    </h1>
+
+    <br>
+    <%= render 'events/calendar' %>
+    <br>
+  <% end %>
+
 <% else %>
   <%= render 'static_pages/logged_out_home' %>
 <% end %>

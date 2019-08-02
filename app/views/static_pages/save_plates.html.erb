@@ -3,20 +3,22 @@
 
 <% if logged_in? %>
 <% provide(:title, 'Save Plates') %>
-  <h1 data-toggle="popover"
-      data-placement="bottom"
-      data-title="<center>How do I request a Save Plate?</center>"
-      data-content=
-        "<center>You can <b>directly add or remove</b> your name from the chart
-          below - it will be updated automatically!</center>">
-    Save Plates
-  </h1>
 
   <% if current_user.coop_id.nil? %>
+    <h1>Save Plates</h1>
     <h2>Check back here for save plates after you are approved
       to join your co-op's OSCA Hub.</h2>
 
   <% else %>
+
+    <h1 data-toggle="popover"
+        data-placement="bottom"
+        data-title="<center>How do I request a Save Plate?</center>"
+        data-content=
+          "<center>You can <b>directly add or remove</b> your name from the chart
+            below - it will be updated automatically!</center>">
+      Save Plates
+    </h1>
 
     <% if mobile? %>
      <%= render 'save_plates/mobile_view/save_plates' %>

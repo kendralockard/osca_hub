@@ -2,11 +2,15 @@
 <h1>Help</h1>
 <p style="text-align: center;">
   Having issues or running into bugs on OSCA Hub?
-  Contact Kendra Lockard at
-  <a href="mailto:klockard@oberlin.edu">
-      klockard@oberlin.edu
-    </a>
-  to get help.
+  <% if logged_in? %>
+    Contact Kendra Lockard at
+    <a href="mailto:klockard@oberlin.edu">
+        klockard@oberlin.edu
+      </a>
+  <% else %>
+    Send an email to Kendra Lockard
+  <% end %>
+    to get help.
 </p>
 
 <br><br>
