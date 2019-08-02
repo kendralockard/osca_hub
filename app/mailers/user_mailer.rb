@@ -44,6 +44,18 @@ class UserMailer < ApplicationMailer
     )
   end
 
+  def push_event(user, event)
+    @user = user
+    @coop = Coop.coops[user.coop_id]
+    @event = event
+    recipients = User.where(coop_id: user.coop_id).map { |user| p user.email }
+    mail(
+      from: @user.email,
+      bcc: recipients,
+      subject: "OSCA Hub: Sub Needed for #{@event.date.strftime("%b%_d")}"
+    )
+  end
+
   private
 
     def email_images

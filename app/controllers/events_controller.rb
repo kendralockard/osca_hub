@@ -21,6 +21,14 @@ class EventsController < ApplicationController
     redirect_to subrequests_path
   end
 
+  def push_event
+    @event = Event.find(params[:id])
+    @user = @event.user
+    UserMailer.push_event(@user, @event).deliver_now
+    flash[:success] = "Your sub request has been pushed to #{Coop.coops[@user.coop_id]}."
+    redirect_to root_url
+  end
+
   private
 
     def event_params

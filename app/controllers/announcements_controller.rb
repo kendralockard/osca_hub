@@ -21,7 +21,7 @@ class AnnouncementsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
-  def notify_thru_email
+  def push_announcement
     @announcement = Announcement.find(params[:id])
     @user = @announcement.user
     UserMailer.push_announcement(@user, @announcement.content).deliver_now
