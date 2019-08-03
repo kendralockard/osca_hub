@@ -1,6 +1,8 @@
 <%= form_for(@menu) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
+
+
     <%= f.label :starch, "*Starch" %>
     <%= f.text_field :starch, class: 'form-control', required: true %>
 
@@ -15,6 +17,19 @@
 
     <%= f.label :notes, "Notes" %>
     <%= f.text_field :notes, class: 'form-control' %>
+
+
+    <center>
+      <div class="radio-inline">
+        <%= f.radio_button :meal, true, checked: true %>
+        <%= f.label :meal, "Lunch", :value => "false", style: "padding-right: 5rem;" %>
+
+        <%= f.radio_button :meal, false, checked: false %>
+        <%= f.label :meal, "Dinner", :value => "true" %>
+      </div>
+    </center>
+
+    <br>
 
     <%= f.submit "Post Menu", class: "btn btn-primary" %>
   </div>
