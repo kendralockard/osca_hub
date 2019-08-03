@@ -1,16 +1,22 @@
-<li id="menu-<%= menu.id %>">
+<li class="menus">
   <%= link_to gravatar_for(menu.user, size: 50), menu.user %>
-  <span class="user"><%= link_to menu.user.name, menu.user %></span>
+  <span class="title">
+    <%= menu.created_at.strftime("%A") %>
+    <%= menu.meal? ? " Lunch" : " Dinner" %>
+  </span>
   <span class="content"><h4>starch: </h4><%= menu.starch %></span>
   <span class="content"><h4>protein: </h4><%= menu.protein %></span>
   <span class="content"><h4>vegetable: </h4><%= menu.vegetable %></span>
   <span class="content"><h4>restrictions: </h4><%= menu.restrictions %></span>
   <span class="content"><%= menu.notes %></span>
   <span class="timestamp">
-    posted <%= time_ago_in_words(menu.created_at) %> ago 
     <% if current_user?(menu.user) %>
-      | <%= link_to "delete", menu, method: :delete,
+      posted <%= time_ago_in_words(menu.created_at) %> ago
+      | <%= link_to "delete", menu, method: :delete, style: "color: #666666;",
                                        data: { confirm: "You sure?" } %>
+    <% else %>
+      posted <%= time_ago_in_words(menu.created_at) %> ago
+      by <%= link_to menu.user.name, menu.user, style: "color: #666;" %>
     <% end %>
   </span>
 </li>

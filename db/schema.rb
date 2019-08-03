@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190725205438) do
+ActiveRecord::Schema.define(version: 20190803230253) do
 
   create_table "announcements", force: :cascade do |t|
     t.text "content"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 20190725205438) do
     t.text "restrictions"
     t.text "notes"
     t.integer "coop_id"
+    t.text "title"
+    t.boolean "meal"
     t.index ["coop_id"], name: "index_menus_on_coop_id"
     t.index ["user_id", "created_at"], name: "index_menus_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_menus_on_user_id"
@@ -70,6 +72,7 @@ ActiveRecord::Schema.define(version: 20190725205438) do
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.integer "coop_id"
+    t.datetime "remember_created_at"
     t.index ["coop_id"], name: "index_users_on_coop_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
