@@ -1,14 +1,19 @@
-<%= @event.user.name %> needs a sub for <b><%= @event.shift %></b> on <b><%= @event.date.strftime("%b%_d") %></b>.
+<div class="emails content">
+  <%= @event.user.name %> needs a sub for <b><%= @event.shift %></b> on <b><%= @event.date.strftime("%b%_d") %></b>.
 
-<br><br>
+  <br><br>
 
   <% if !@event.message.nil? %>
     <b><%= @event.message %></b>
   <% end %>
+</div>
 
 <br><br>
-<em><%= @user.name %> pushed this sub request to <%= @coop %>.
-Please cover their shift if you are able!</em>
 
-<em><p>In cooperation,</p>
-<p>OSCA Hub</p></em>
+<div class="emails signature">
+  <%= @user.name %> pushed this sub request to <%= @coop %>.
+  Please consider covering their shift if you are able.
+
+  In cooperation,
+  <%= image_tag(attachments['oscahub.ico'].url, style: 'height:100px; width:100px;') -%>
+</div>

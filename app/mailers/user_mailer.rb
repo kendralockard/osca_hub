@@ -33,6 +33,7 @@ class UserMailer < ApplicationMailer
   end
 
   def push_announcement(user, announcement)
+    email_images
     @user = user
     @coop = Coop.coops[user.coop_id]
     @announcement = announcement
@@ -45,12 +46,13 @@ class UserMailer < ApplicationMailer
   end
 
   def push_event(user, event)
+    email_images
     @user = user
     @coop = Coop.coops[user.coop_id]
     @event = event
     recipients = User.where(coop_id: user.coop_id).map { |user| p user.email }
     mail(
-      from: @user.email,
+      from: @user.name,
       bcc: recipients,
       subject: "OSCA Hub: Sub Needed for #{@event.date.strftime("%b%_d")}"
     )
