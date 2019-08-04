@@ -1,11 +1,13 @@
-<%= @event.user %> needs a sub for <%= @event.shift %> on <%= @event.date.strftime("%b%_d") %>.
+<%= @event.user.name %> pushed a sub request to <%= @coop %>:
 
-<% if !@event.message.nil? %>
-  Message: <%= @event.message %>
-<% end %>
+<%= @event.shift %> on <%= @event.date.strftime("%A %b %_d") %>
 
-<%= @user.name %> pushed this sub request to <%= @coop %>.
-Please cover their shift if you are able.
+  <% if !@event.message.blank? %>
+      <%= @event.message %>
+  <% end %>
 
-In cooperation,
-OSCA Hub
+Please consider covering their shift if you are able!
+<%= @event.user.name %> can be reached at <%= @event.user.email %>.
+
+<em><p>In cooperation,</p></em>
+<em><p>OSCA Hub</p></em>

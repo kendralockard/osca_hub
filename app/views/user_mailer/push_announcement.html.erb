@@ -1,10 +1,9 @@
-<h4>
+<p style="font-size: 15px;">
 <%= @announcement %>
-</h4>
-
-<em><p><%= @user.name %> pushed this announcement to <%= @coop %>. </p></em>
+</p>
 
 <br>
 
-<em><p>In cooperation,</p>
-<p>OSCA Hub</p></em>
+<em><%= @user.name %> pushed this announcement to <%= @coop %>.</em>
+<em><p>In cooperation,</p></em>
+<%= image_tag(attachments['oscahub.ico'].url, style: 'height:100px; width:100px;') -%>
