@@ -1,0 +1,18 @@
+<% @comments.each do |comment| %>
+
+  <% if comment != @comments.first %>
+    <hr style="margin: 1rem 0rem;" width="95%" float="left">
+  <% end %>
+
+  <div class=comments>
+    <%= link_to gravatar_for(comment.user, size: 25), comment.user %>
+    <span class="user"><%= link_to comment.user.name, comment.user %></span>
+    <span class="content"><%= comment.content %></span>
+    <span class="timestamp">
+    posted <%= time_ago_in_words(comment.created_at) %> ago
+    <% if current_user?(comment.user) %>
+      | <%= link_to "delete", [comment.announcement, comment], method: :delete, style: "color: #666;",
+                                                      data: { confirm: "Delete comment?" } %>
+    <% end %>
+  </div>
+<% end %>

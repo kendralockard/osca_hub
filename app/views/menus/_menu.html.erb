@@ -12,7 +12,7 @@
   <span class="timestamp">
     <% if current_user?(menu.user) %>
       posted <%= time_ago_in_words(menu.created_at) %> ago
-      | <%= link_to "delete", menu, method: :delete, style: "color: #666666;",
+      | <%= link_to "delete", menu, method: :delete, style: "color: #666;",
                                        data: { confirm: "You sure?" } %>
     <% else %>
       posted <%= time_ago_in_words(menu.created_at) %> ago

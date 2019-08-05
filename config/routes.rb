@@ -41,4 +41,7 @@ Rails.application.routes.draw do
   resources :menus,               only: [:create, :destroy]
   resources :events,              only: [:create, :destroy, :push_event]
   resources :coops
+  resources :announcements do
+    resources :comments
+  end
 end
