@@ -1,35 +1,21 @@
-<div id="subreqFormModal"
-   class="modal fade">
+<div id="subreqFormModal" class="modal fade">
 
-  <div class="modal-dialog"
-       style="position: absolute;
-              left: 50%;
-              top: 25%;
-              transform: translate(-50%, -20%);">
-
+  <div class="modal-dialog subreq-form">
       <div class="modal-content">
-
           <div class="modal-header">
 
-              <button type="button"
-                      class="close"
-                      data-dismiss="modal">
-                <span aria-hidden="true">×</span>
-                <span class="sr-only">close</span>
+              <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">×</span>
+                  <span class="sr-only">close</span>
               </button>
 
-              <h3 id="subreqFormTitle"
-                  class="modal-title"
-                  style="text-align: center">
-              </h3>
+              <h3 id="subreqFormTitle" class="modal-title subreq-form-title"></h3>
 
           </div>
 
-          <div id="subreqFormPage"
-               class="modal-body">
+          <div id="subreqFormPage" class="modal-body">
                <%= render 'events/subreq_form' %>
-
-        </div>
+          </div>
 
     </div>
   </div>

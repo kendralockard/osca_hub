@@ -2,7 +2,7 @@
   list-style: none;
   padding: 0;
   li {
-    padding: 10px 0;
+    padding: 7px 0 15px 0;
     border-top: 1px solid #e8e8e8;
   }
   .user {
@@ -12,15 +12,16 @@
   .content {
     display: block;
     margin-left: 60px;
+    padding: 0.5rem;
     img {
       display: block;
       padding: 5px 0;
     }
   }
   .timestamp {
-    color: #727272;
-    display: block;
-    margin-left: 60px;
+    color: #9f9f9f;
+    font-size: 1.3rem;
+    margin: 0.5rem 0.25rem;
   }
   .gravatar {
     float: left;
@@ -40,5 +41,23 @@ span.picture {
   margin-top: 10px;
   input {
     border: 0;
+  }
+}
+
+.dropdown-menu.actions {
+  float: right;
+  font-size: 1.3rem;
+  min-width: 60px;
+  position: relative;
+  text-align-last: center;
+  hr {
+    margin: 5px 0;
+  }
+  li {
+    display: inline;
+    list-style-type: none;
+  }
+  a {
+    padding: 0 7px;
   }
 }

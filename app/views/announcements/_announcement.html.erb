@@ -1,22 +1,20 @@
 <li id="announcement-<%= announcement.id %>">
   <%= link_to gravatar_for(announcement.user, size: 50), announcement.user %>
-  <span class="user"><%= link_to announcement.user.name, announcement.user %></span>
+  <span class="user"><%= link_to announcement.user.name, announcement.user %>
+    <span class="timestamp">
+      <% if announcement.created_at > 1.day.ago %>
+          <%= time_ago_in_words(announcement.created_at) %> ago
+      <% else %>
+          <%= announcement.created_at.strftime("%b %_d, %Y") %>
+      <% end %>
+    </span>
+  </span>
+
+  <%= render 'announcements/actions', announcement: announcement %>
+
   <span class="content"><%= announcement.content %></span>
-  <span class="timestamp">
-    posted <%= time_ago_in_words(announcement.created_at) %> ago |
-
-    <%= render 'comments/buttons', announcement: announcement %>
-
-    <% if current_user?(announcement.user) %>
-      | <%= link_to "push", announcement, method: :push_announcement, style: "color: #9900b6;",
-                                      data: { confirm: "Email this announcement to " \
-                                              +Coop.coops[current_user.coop_id]+"?" } %>
-      | <%= link_to "delete", announcement, method: :delete, style: "color: #666;",
-                                       data: { confirm: "Delete announcement?" } %>
-    <% end %>
 
     <%= render 'comments/new', announcement: announcement %>
     <%= render 'comments/comments', announcement: announcement %>
 
-  </span>
 </li>

@@ -1,0 +1,18 @@
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="float: right;">
+    <b class="expand_caret caret"></b>
+  </a>
+
+  <ul class="dropdown-menu actions">
+    <li><%= render 'comments/buttons', announcement: announcement %></li>
+    <% if current_user?(announcement.user) %>
+    <hr>
+    <li><%= link_to "push", announcement, method: :push_announcement, style: "color: var(--email-purple);",
+                                    data: { confirm: "This action is only for urgent announcements, " \
+                                    "such as meal cancellations or understaffed shifts.\n\n" \
+                                    "Email this announcement to " \
+                                    +Coop.coops[current_user.coop_id]+"?" } %></li>
+    <hr>
+    <li><%= link_to "delete", announcement, method: :delete, style: "color: var(--delete-red);",
+                                       data: { confirm: "Delete announcement?" } %></li>
+    <% end %>
+  </ul>

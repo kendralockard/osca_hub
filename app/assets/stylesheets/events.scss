@@ -9,3 +9,40 @@
     margin-left: 60px;
   }
 }
+
+.btn.btn-default.delete {
+  float: right;
+  color: var(--delete-red);
+}
+
+.btn.btn-default.swap {
+  float: left;
+  color: var(--email-purple);
+}
+
+.modal-body.submitted-by {
+  color: #8b8b8b;
+  font-style: italic;
+  font-size: 0.95em;
+  text-align: right;
+}
+
+.modal-body.request-message {
+  font-size: 1.05em;
+}
+
+.modal-dialog.event {
+  position: absolute;
+  left: 30%;
+  top: 20%;
+}
+
+.modal-dialog.subreq-form {
+  position: absolute;
+  left: 30%;
+  top: 15%;
+}
+
+.modal-title.subreq-form-title {
+  text-align: center;
+}

@@ -1,18 +1,30 @@
 <% @comments.each do |comment| %>
 
   <% if comment != @comments.first %>
-    <hr style="margin: 1rem 0rem;" width="95%" float="left">
+    <hr style="margin: 1rem 6rem" width="85%">
   <% end %>
 
   <div class=comments>
     <%= link_to gravatar_for(comment.user, size: 25), comment.user %>
-    <span class="user"><%= link_to comment.user.name, comment.user %></span>
+    <span class="user"><%= link_to comment.user.name, comment.user %>
+
+      <span class="timestamp">
+        <% if comment.created_at > 1.day.ago %>
+            <%= time_ago_in_words(comment.created_at) %> ago
+        <% else %>
+            <%= comment.created_at.strftime("%b %_d, %Y") %>
+        <% end %>
+      </span>
+
+      <% if current_user?(comment.user) %>
+      <ul class="dropdown-menu comments" style="display: inline-block;">
+        <li><%= link_to "delete", [comment.announcement, comment], method: :delete, style: "color: var(--delete-red);",
+                                                        data: { confirm: "Delete comment?" } %></li>
+      </ul>
+      <% end %>
+    </span>
+
     <span class="content"><%= comment.content %></span>
-    <span class="timestamp">
-    posted <%= time_ago_in_words(comment.created_at) %> ago
-    <% if current_user?(comment.user) %>
-      | <%= link_to "delete", [comment.announcement, comment], method: :delete, style: "color: #666;",
-                                                      data: { confirm: "Delete comment?" } %>
-    <% end %>
+
   </div>
 <% end %>

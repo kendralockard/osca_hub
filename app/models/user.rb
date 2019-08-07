@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :announcements, dependent: :destroy
   has_many :menus, dependent: :destroy
   has_many :events, dependent: :destroy
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
