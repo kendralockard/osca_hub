@@ -1,6 +1,7 @@
-<div id="post-comment-<%= announcement.id %>" style="display: none;">
+<div id="post-comment-<%= announcement.id %>"
+     style="display: none; margin-bottom: -3rem;">
   <%= form_for([announcement, announcement.comments.build]) do |f| %>
-    <%= f.text_area :content, required: true, class: 'form-control', style: 'width: 45%; margin: 1rem 0 1rem 0;' %>
+    <%= f.text_area :content, required: true, class: 'comment-box' %>
     <%= f.submit "Post Comment", id: "post__button", class: "btn btn-primary" %>
   <% end %>
 </div>

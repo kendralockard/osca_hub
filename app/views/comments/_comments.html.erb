@@ -1,12 +1,11 @@
 <% @comments = Comment.where(announcement_id: announcement.id)
                       .order("created_at ASC") %>
-<% count = @comments.count %>
 
 <% if @comments.any? %>
   <div id="reveal-<%= announcement.id %>">
     <input type="button"
            id="view__comments"
-           value="view comments... (<%= count %>)"
+           value="view comments... (<%= @comments.count %>)"
            onclick="showComments(<%= announcement.id %>)" />
   </div>
 

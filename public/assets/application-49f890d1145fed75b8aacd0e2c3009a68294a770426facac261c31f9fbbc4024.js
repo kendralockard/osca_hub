@@ -1189,14 +1189,14 @@ function hideComments(id) {
 function postComment(id) {
    document.getElementById("reveal-"+id).style.display = "none";
    document.getElementById("post-comment-"+id).style.display = "block";
-   document.getElementById("post__comment-"+id).style.display = "none";
+   document.getElementById("comment__button-"+id).style.display = "none";
    document.getElementById("cancel__comment-"+id).style.display = "inline-block";
 }
 
 function cancelComment(id) {
   document.getElementById("cancel__comment-"+id).style.display = "none";
   document.getElementById("post-comment-"+id).style.display = "none";
-  document.getElementById("post__comment-"+id).style.display = "inline-block";
+  document.getElementById("comment__button-"+id).style.display = "inline-block";
   document.getElementById("reveal-"+id).style.display = "block";
 }
 ;

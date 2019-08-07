@@ -640,7 +640,7 @@ code {
 }
 
 /* line 49, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
-.post__comment {
+.comment__button {
   border: none;
   color: #007ba0;
   display: inline-block;
