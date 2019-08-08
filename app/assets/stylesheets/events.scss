@@ -1,23 +1,28 @@
 .events {
   .title {
     color: #ce0e5b;
-    font-style: bold;
+    font-weight: bolder;
   }
-  .timestamp {
-    color: #727272;
-    display: block;
-    margin-left: 60px;
+  .content {
+    padding: 0.5rem;
+  }
+  hr {
+    margin: 2rem 0 1rem 0;
   }
 }
 
 .btn.btn-default.delete {
   float: right;
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
   color: var(--delete-red);
 }
 
 .btn.btn-default.swap {
+  background: var(--email-purple);
+  border: none;
+  color: white;
   float: left;
-  color: var(--email-purple);
 }
 
 .modal-body.submitted-by {

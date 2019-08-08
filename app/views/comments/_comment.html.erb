@@ -9,22 +9,11 @@
     <span class="user"><%= link_to comment.user.name, comment.user %>
 
       <span class="timestamp">
-        <% if comment.created_at > 1.day.ago %>
-            <%= time_ago_in_words(comment.created_at) %> ago
-        <% else %>
-            <% if comment.created_at < 1.year.ago %>
-              <%= comment.created_at.strftime("%b %_d, %Y") %>
-            <% else %>
-              <%= comment.created_at.strftime("%b %_d") %>
-            <% end %>
-        <% end %>
+        <%= render 'layouts/timestamp', object: comment %>
       </span>
 
       <% if current_user?(comment.user) %>
-      <ul class="dropdown-menu comments" style="display: inline-block;">
-        <li><%= link_to "delete", [comment.announcement, comment], method: :delete, style: "color: var(--delete-red);",
-                                                        data: { confirm: "Delete comment?" } %></li>
-      </ul>
+        <%= render 'comments/dropdown', comment: comment %>
       <% end %>
     </span>
 

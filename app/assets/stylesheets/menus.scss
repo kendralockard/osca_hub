@@ -1,32 +1,30 @@
 .menus {
-  list-style: none;
-  padding: 0;
   li {
     border-top: 1px solid #e8e8e8;
     padding: 10px 0;
   }
   .user {
-    margin-top: 5em;
-    padding-top: 0;
+    font-size: 1.3rem;
   }
   .title {
-    color: var(--comment-blue);
-    display: block;
-    font-size: 16px;
-    margin-left: 60px;
+    color: var(--event-purple);
+    display: inline;
+    font-size: 15px;
+    font-weight: bold;
   }
   .content {
     display: block;
     margin-left: 60px;
+    padding: 0.2rem;
     img {
       display: block;
       padding: 5px 0;
     }
   }
   .timestamp {
-    color: #727272;
-    display: block;
-    margin-left: 60px;
+    color: #9f9f9f;
+    font-size: 1.3rem;
+    margin: 0.5rem 0.25rem;
   }
   .gravatar {
     float: left;
@@ -35,26 +33,9 @@
   }
 }
 
-
-/* menu styling */
-
 h4 {
   color: #535f67;
   display: inline;
-  font-size: 1.0em;
+  font-size: 1em;
   font-style: italic;
-}
-
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
-}
-
-span.picture {
-  margin-top: 10px;
-  input {
-    border: 0;
-  }
 }

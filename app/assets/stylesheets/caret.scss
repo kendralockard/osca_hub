@@ -1,8 +1,17 @@
 .expand_caret {
     transform: scale(1.3) rotate(90deg);
     color: var(--gray);
-    position: absolute;
+    float: right;
 }
 a[aria-expanded='false'] > .expand_caret {
     transform: scale(1.3);
+}
+
+.comment_caret {
+    transform: scale(1.1) rotate(-90deg);
+    color: var(--gray);
+    position: relative;
+}
+a[aria-expanded='false'] > .comment_caret {
+    transform: scale(1.1);
 }
