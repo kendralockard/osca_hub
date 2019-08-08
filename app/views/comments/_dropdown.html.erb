@@ -1,0 +1,10 @@
+<div class="comment dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    <b class="comment_caret caret"></b>
+  </a>
+
+  <ul class="dropdown-menu comments">
+    <li><%= link_to "delete", [comment.announcement, comment], method: :delete, style: "color: var(--delete-red);",
+                                                    data: { confirm: "Delete comment?" } %></li>
+  </ul>
+</div>

@@ -1,23 +1,28 @@
 .events {
   .title {
     color: #ce0e5b;
-    font-style: bold;
+    font-weight: bolder;
   }
-  .timestamp {
-    color: #727272;
-    display: block;
-    margin-left: 60px;
+  .content {
+    padding: 0.5rem;
+  }
+  hr {
+    margin: 2rem 0 1rem 0;
   }
 }
 
 .btn.btn-default.delete {
   float: right;
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
   color: var(--delete-red);
 }
 
 .btn.btn-default.swap {
+  background: var(--email-purple);
+  border: none;
+  color: white;
   float: left;
-  color: var(--email-purple);
 }
 
 .modal-body.submitted-by {
@@ -45,4 +50,18 @@
 
 .modal-title.subreq-form-title {
   text-align: center;
+}
+
+.dropdown-menu.events {
+  float: right;
+  font-size: 1.3rem;
+  margin-top: -0.7rem;
+  min-width: fit-content;
+  padding: 0.3rem 0.7rem;
+  position: relative;
+  text-align-last: center;
+  -webkit-box-shadow: none;
+  a {
+    padding: 0;
+  }
 }

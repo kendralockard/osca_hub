@@ -1,0 +1,9 @@
+<% if object.created_at > 1.day.ago %>
+    <%= time_ago_in_words(object.created_at) %> ago
+<% else %>
+  <% if object.created_at < 1.year.ago %>
+    <%= object.created_at.strftime("%b %_d, %Y") %>
+  <% else %>
+    <%= object.created_at.strftime("%b %_d") %>
+  <% end %>
+<% end %>
