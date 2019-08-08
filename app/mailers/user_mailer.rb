@@ -54,7 +54,7 @@ class UserMailer < ApplicationMailer
     mail(
       from: @coop,
       bcc: recipients,
-      subject: "OSCA Hub: Sub Needed for #{@event.date.strftime("%b %_d")}"
+      subject: "OSCA Hub: Sub Needed for #{@event.date.strftime("%b %-d")}"
     )
   end
 

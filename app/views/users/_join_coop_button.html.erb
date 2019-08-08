@@ -3,17 +3,13 @@
 <br>
 
 <center>
-  <p style="padding: 6px; font-size: 1.6rem;">
+  <p class="welcome">
     Welcome <%= @user.name.partition(" ").first %>!
     Join your OSCA Hub by clicking the button below.
   </p>
 
 <%= link_to join_coop_path, :method=> :patch do %>
-  <button type="button"
-          class="btn btn-default"
-          style="background: #be5b9b;
-                 color: #ffffff;"
-          data-backdrop="false">
+  <button type="button" class="btn btn-default join-coop">
     Join my co-op
   </button>
 

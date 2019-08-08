@@ -7,3 +7,19 @@
     padding: 10px 0;
   }
 }
+
+.btn.btn-default.switch-coop {
+  background: white;
+  color: var(--delete-red);
+  float: center;
+}
+
+.btn.btn-default.join-coop {
+  background: #be5b9b;
+  color: white;
+}
+
+.welcome {
+  padding: 6px;
+  font-size: 1.6rem;
+}
