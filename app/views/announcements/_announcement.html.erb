@@ -5,7 +5,11 @@
       <% if announcement.created_at > 1.day.ago %>
           <%= time_ago_in_words(announcement.created_at) %> ago
       <% else %>
+        <% if announcement.created_at < 1.year.ago %>
           <%= announcement.created_at.strftime("%b %_d, %Y") %>
+        <% else %>
+          <%= announcement.created_at.strftime("%b %_d") %>
+        <% end %>
       <% end %>
     </span>
   </span>

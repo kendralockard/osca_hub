@@ -12,7 +12,11 @@
         <% if comment.created_at > 1.day.ago %>
             <%= time_ago_in_words(comment.created_at) %> ago
         <% else %>
-            <%= comment.created_at.strftime("%b %_d, %Y") %>
+            <% if comment.created_at < 1.year.ago %>
+              <%= comment.created_at.strftime("%b %_d, %Y") %>
+            <% else %>
+              <%= comment.created_at.strftime("%b %_d") %>
+            <% end %>
         <% end %>
       </span>
 
