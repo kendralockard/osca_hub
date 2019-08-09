@@ -15,3 +15,12 @@ a[aria-expanded='false'] > .expand_caret {
 a[aria-expanded='false'] > .comment_caret {
     transform: scale(1.1);
 }
+
+.mobile_caret {
+    transform: scale(2) rotate(90deg);
+    color: var(--gray);
+    float: right;
+}
+a[aria-expanded='false'] > .mobile_caret {
+    transform: scale(2);
+}

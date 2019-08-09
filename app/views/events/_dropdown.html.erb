@@ -1,5 +1,9 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-  <b class="expand_caret caret"></b>
+  <% if mobile? %>
+    <b class="mobile_caret caret"></b>
+  <% else %>
+    <b class="expand_caret caret"></b>
+  <% end %>
 </a>
 
 <ul class="dropdown-menu events">

@@ -34,27 +34,27 @@ aside textarea {
 }
 
 /* line 34, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
-.dropdown-menu.actions {
+.dropdown-menu.announcements {
   float: right;
   font-size: 1.3rem;
   margin-top: -0.7rem;
   min-width: fit-content;
   padding: 0.1rem 0rem;
   position: relative;
-  text-align-last: center;
+  text-align: center;
   -webkit-box-shadow: none;
 }
 /* line 43, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
-.dropdown-menu.actions hr {
+.dropdown-menu.announcements hr {
   margin: 3px 0;
 }
 /* line 46, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
-.dropdown-menu.actions li {
+.dropdown-menu.announcements li {
   display: inline;
   list-style-type: none;
 }
 /* line 50, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
-.dropdown-menu.actions a {
+.dropdown-menu.announcements a {
   padding: 0;
 }
 /*Notes about grid:
@@ -611,6 +611,18 @@ a[aria-expanded='false'] > .expand_caret {
 /* line 15, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/caret.scss */
 a[aria-expanded='false'] > .comment_caret {
   transform: scale(1.1);
+}
+
+/* line 19, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/caret.scss */
+.mobile_caret {
+  transform: scale(2) rotate(90deg);
+  color: var(--gray);
+  float: right;
+}
+
+/* line 24, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/caret.scss */
+a[aria-expanded='false'] > .mobile_caret {
+  transform: scale(2);
 }
 /* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
 .comments {
@@ -9783,23 +9795,25 @@ input {
   font-size: 1.05em;
 }
 
-/* line 39, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
-.modal-dialog.event {
-  position: absolute;
-  left: 30%;
-  top: 20%;
-}
-
-/* line 45, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
-.modal-dialog.subreq-form {
-  position: absolute;
-  left: 30%;
-  top: 15%;
-}
-
-/* line 51, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
+/* line 40, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
 .modal-title.subreq-form-title {
   text-align: center;
+}
+
+/* line 44, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
+.dropdown-menu.events {
+  float: right;
+  font-size: 1.3rem;
+  margin-top: -0.7rem;
+  min-width: fit-content;
+  padding: 0.3rem 0.7rem;
+  position: relative;
+  text-align-last: center;
+  -webkit-box-shadow: none;
+}
+/* line 53, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
+.dropdown-menu.events a {
+  padding: 0;
 }
 /* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/menus.scss */
 .menus li {
@@ -9848,6 +9862,22 @@ h4 {
   font-size: 1em;
   font-style: italic;
 }
+
+/* line 43, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/menus.scss */
+.dropdown-menu.menus {
+  float: right;
+  font-size: 1.3rem;
+  margin-top: -0.7rem;
+  min-width: fit-content;
+  padding: 0.3rem 0.7rem;
+  position: relative;
+  text-align-last: center;
+  -webkit-box-shadow: none;
+}
+/* line 52, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/menus.scss */
+.dropdown-menu.menus a {
+  padding: 0;
+}
 /* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/users.scss */
 .users {
   list-style: none;
@@ -9858,6 +9888,25 @@ h4 {
   border-bottom: 1px solid #eeeeee;
   overflow: auto;
   padding: 10px 0;
+}
+
+/* line 11, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/users.scss */
+.btn.btn-default.switch-coop {
+  background: white;
+  color: var(--delete-red);
+  float: center;
+}
+
+/* line 17, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/users.scss */
+.btn.btn-default.join-coop {
+  background: #be5b9b;
+  color: white;
+}
+
+/* line 22, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/users.scss */
+.welcome {
+  padding: 6px;
+  font-size: 1.6rem;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which
