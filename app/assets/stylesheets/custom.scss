@@ -229,11 +229,16 @@ input {
 }
 
 .btn.btn-primary.toggle {
-  display: inline-block;
+  font-size: 1.3rem;
+  margin: 1rem;
+  padding: 0.2rem 0.6rem;
   width: fit-content;
 }
 
-.handsigns-text {
+.handsigns {
+  a {
+    color: var(--email-purple);
+  }
   span {
     background: #ffffdd;
     border: 1px dotted;
