@@ -17,8 +17,10 @@ Rails.application.routes.draw do
   get '/workchart',   to: 'static_pages#workchart'
   get '/subrequests', to: 'static_pages#sub_requests'
   get '/handsigns', to: 'static_pages#hand_signs'
+  get '/discussions', to: 'static_pages#discussions'
 
   delete '/events/destroy/:id', to: 'events#destroy'
+  delete '/discussions/destroy/:id', to: 'discussions#destroy'
 
   get '/signup',    to: 'users#new'
   post '/signup',   to: 'users#create'
@@ -45,4 +47,5 @@ Rails.application.routes.draw do
   resources :announcements do
     resources :comments
   end
+  resources :discussions,         only: [:create]
 end

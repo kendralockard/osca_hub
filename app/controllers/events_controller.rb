@@ -7,11 +7,8 @@ class EventsController < ApplicationController
     @event.coop_id = current_user.coop_id
     if @event.save
       flash[:success] = "Sub request posted!"
-      redirect_to subrequests_path
-    else
-      @event_items = []
-      redirect_to subrequests_path
     end
+    redirect_to subrequests_path
   end
 
   def destroy
@@ -32,7 +29,7 @@ class EventsController < ApplicationController
   private
 
     def event_params
-      params.require(:event).permit(:date, :shift, :message)
+      params.require(:event).permit(:date, :meal, :shift, :message)
     end
 
     def correct_user

@@ -1,0 +1,109 @@
+<div id="discussion"></div>
+<div id="newDiscussion"></div>
+<div id="showEvent"></div>
+
+<script type="text/javascript">
+
+  $('#discussion').each(function(){
+    var calendar = $(this);
+
+    calendar.fullCalendar({
+
+      header: {
+        left: 'postEventButton',
+        center: 'title',
+        right: 'today prev,next month,agendaWeek'
+      },
+
+      defaultView: 'month',
+      eventLimit: true,
+      editable: true,
+      displayEventTime: false,
+      defaultTimedEventDuration: '1:00',
+      minTime: "8:00:00",
+      maxTime: "22:00:00",
+
+      customButtons: {
+        postEventButton: {
+          text: 'add an upcoming discussion...',
+          click: function() {
+            $('#newDiscussion').replaceWith("<%= j render 'discussions/new' %>");
+            $('#discussionFormModal').modal();
+            $('#discussionFormTitle').html("Add an Upcoming Discussion");
+          },
+        }
+      },
+
+      eventClick: function(discussion) {
+        $('#showEvent').replaceWith("<%= j render 'events/show' %>");
+        $('#eventPopupModal').modal();
+        $('#shiftRequested').html(discussion.title);
+        $('#requestMessage').html(discussion.description);
+        $("#swapButton").hide();
+
+        $('#submittedBy').html(" posted by "
+                                +discussion.user_name
+                                +" on "
+                                +discussion.formatted_created_at);
+
+        var current_user_id = <%= @user.id %>
+
+        $("#delete").hide();
+        if (current_user_id == discussion.user_id) {
+          $("#delete").show();
+          $("#delete").click(function(){
+            if (confirm('Delete discussion?')) {
+              $.ajax({
+                type: "delete",
+                url: "/discussions/destroy/"+discussion.id,
+                data: {discussion_id: discussion.id},
+              });
+            }
+          })
+        }
+      }
+
+
+    });
+
+    const discussions = <%= raw @discussions.all.to_json %>;
+    const user_names = <%= raw @users_by_name.to_json %>;
+    const user_emails = <%= raw @users_by_email.to_json %>;
+
+    const grey = '#8b8b8b';
+    const purple = '#56358b';
+
+    const today = moment().add(-1,'days');
+    const tomorrow = moment();
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    discussions.map(function(discussion){
+
+      var created_at = new Date(discussion.created_at);
+      var start = new Date(moment(discussion.date).format());
+
+      var color = (today > moment(discussion.date)) ? grey : purple;
+      var time = (discussion.meal) ? '12:20' : '18:20';
+
+      var this_discussion = {
+        title: discussion.title,
+        description: discussion.message,
+        start: discussion.date+"T"+time,
+        id: discussion.id,
+        user_id: discussion.user_id,
+        user_name: user_names[discussion.user_id],
+        user_email: user_emails[discussion.user_id],
+        color: color,
+        formatted_created_at: months[parseInt(created_at.getMonth())]
+                                        + " " + created_at.getDate(),
+        formatted_start: months[parseInt(start.getMonth())]
+                                    + " " + start.getDate(),
+      }
+
+      calendar.fullCalendar("renderEvent", this_discussion, true);
+
+  });
+});
+
+</script>

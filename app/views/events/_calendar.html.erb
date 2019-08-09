@@ -19,7 +19,9 @@
       eventLimit: true,
       editable: true,
       displayEventTime: false,
-      eventOrder: "title",
+      defaultTimedEventDuration: '1:00',
+      minTime: "8:00:00",
+      maxTime: "22:00:00",
 
       customButtons: {
         subRequestButton: {
@@ -85,14 +87,25 @@
 
     events.map(function(event){
 
+      var color = (today > moment(event.date)) ? grey : purple;
       var created_at = new Date(event.created_at);
       var start = new Date(moment(event.date).format());
+      var hour = (event.shift) ? '1st hour ' : '2nd hour ';
+      var meal;
+      var time;
 
-      var color = (today > moment(event.date)) ? grey : purple;
+      if (event.meal) {
+        meal = 'lunch';
+        time = (event.shift) ? '10:20' : '11:20';
+      }
+      else {
+        meal = 'dinner';
+        time = (event.shift) ? '16:20' : '17:20';
+      };
 
       var this_event = {
-        title: event.shift,
-        start: moment(event.date),
+        title: hour+meal,
+        start: event.date+"T"+time,
         description: event.message,
         id: event.id,
         user_id: event.user_id,

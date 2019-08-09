@@ -8,6 +8,8 @@
       style: "color: var(--gray);" %></span>
   <br>
   <span class="content">
-    <%= event.date.strftime("%A %b %_d") %>, <%= event.shift %>
+    <% shift = event.shift ? " 1st hour" : " 2nd hour" %>
+    <% meal = event.meal ? " lunch" : " dinner" %>
+    <%= event.date.strftime("%A %b %_d") %>, <%= shift %> <%= meal %>
   </span>
 </li>

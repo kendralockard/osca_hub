@@ -13,6 +13,6 @@
                                     +Coop.coops[current_user.coop_id]+"?" } %></li>
   <% else %>
   <li><%= mail_to event.user.email, "cover shift",
-    subject: "Re: Sub Request for "+event.date.strftime("%b %_d"), style: "color: var(--email-purple)" %></li>
+    subject: "Re: Sub Request for "+event.date.strftime("%b %_d"), style: "color: var(--email-purple);" %></li>
   <% end %>
 </ul>

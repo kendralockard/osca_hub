@@ -1,5 +1,5 @@
 <% @comments = Comment.where(announcement_id: announcement.id)
-                      .order("created_at ASC") %>
+                      .order("created_at DESC") %>
 
 <% if @comments.any? %>
   <div id="reveal-<%= announcement.id %>">

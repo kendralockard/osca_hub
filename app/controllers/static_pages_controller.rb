@@ -39,4 +39,13 @@ class StaticPagesController < ApplicationController
 
   def hand_signs
   end
+
+  def discussions
+    if logged_in?
+      @discussions = current_user.discussions_feed
+      @users_by_name = User.all.map { |user| [user.id, user.name] }.to_h
+      @users_by_email = User.all.map { |user| [user.id, user.email] }.to_h
+      @user = current_user
+    end
+  end
 end

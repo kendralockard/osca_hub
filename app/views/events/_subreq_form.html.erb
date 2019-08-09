@@ -5,16 +5,29 @@
                      class: 'form-control',
                      :required => true %>
 
-    <%= f.label :shift, "*Shift" %>
-    <%= f.text_field :shift,
-                     placeholder: "lunch 1st hour",
-                     class: 'form-control',
-                     :required => true %>
+
+     <%= f.label :meal, "*Meal" %><br>
+     <div class="radio-inline">
+       <%= f.radio_button :meal, true, checked: true %>
+       <%= f.label :meal, "Lunch", value: "false", style: "padding-right: 4rem;" %>
+
+       <%= f.radio_button :meal, false, checked: false %>
+       <%= f.label :meal, "Dinner", value: "true" %>
+     </div><br><br>
+
+      <%= f.label :shift, "*Hour" %><br>
+        <div class="radio-inline">
+        <%= f.radio_button :shift, true, checked: true %>
+        <%= f.label :shift, "1st hour", value: "false", style: "padding-right: 3rem;" %>
+
+        <%= f.radio_button :shift, false, checked: false %>
+        <%= f.label :shift, "2nd hour", value: "true" %>
+      </div>
+    </div><br>
 
     <%= f.label :message %>
     <%= f.text_area :message,
                     class: 'form-control' %>
 
     <%= f.submit "Post Request", class: "btn btn-primary" %>
-</div>
 <% end %>

@@ -6,6 +6,9 @@
         <h1>
           <%= gravatar_for @user %>
           <%= @user.name %>
+          <% if @user.coop_id == current_user.coop_id %>
+            <%= auto_link(@user.email) %>
+          <% end %>
         </h1>
 
         <% if @user.coop_id.nil? %>
@@ -16,12 +19,6 @@
 
       </section>
     </aside>
-
-    <div class="col-md-8">
-      <% if @user == current_user && !@user.coop_id.nil? %>
-        <%= render 'recent_news' %>
-      <% end %>
-    </div>
   </div>
 <% else %>
   <% controller.redirect_to root_url %>

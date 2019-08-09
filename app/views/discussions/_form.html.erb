@@ -1,0 +1,27 @@
+<%= form_for Discussion.new do |f| %>
+  <div class="field">
+    <%= f.label :date, "*Date" %>
+    <%= f.date_field :date,
+                     class: 'form-control',
+                     :required => true %>
+
+   <div class="radio-inline">
+     <%= f.radio_button :meal, true, checked: true %>
+     <%= f.label :meal, "Lunch", value: "false", style: "padding-right: 5rem;" %>
+
+     <%= f.radio_button :meal, false, checked: false %>
+     <%= f.label :meal, "Dinner", value: "true" %>
+   </div><br><br>
+
+    <%= f.label :title, "*Discussion Topic" %>
+    <%= f.text_field :title,
+                     class: 'form-control',
+                     :required => true %>
+
+    <%= f.label :message %>
+    <%= f.text_area :message,
+                    class: 'form-control' %>
+
+    <%= f.submit "Add Discussion", class: "btn btn-primary" %>
+</div>
+<% end %>

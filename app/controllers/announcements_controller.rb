@@ -9,6 +9,7 @@ class AnnouncementsController < ApplicationController
     @announcement.coop_id = current_user.coop_id
 
     if @announcement.save
+      update_last_comment_at
       flash[:success] = "Announcement created!"
       redirect_to root_url
     else
@@ -40,5 +41,10 @@ class AnnouncementsController < ApplicationController
     def correct_user
       @announcement = current_user.announcements.find_by(id: params[:id])
       redirect_to root_url if @announcement.nil?
+    end
+
+    def update_last_comment_at
+      @announcement.last_comment_at = @announcement.created_at
+      @announcement.save
     end
 end

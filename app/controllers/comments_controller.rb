@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @announcement.comments.create(params[:comment].permit(:content))
     @comment.user_id = current_user.id
+    @comment.announcement.last_comment_at = @comment.created_at
 
     if @comment.save
       flash[:success] = "Comment posted!"

@@ -24,3 +24,13 @@ a[aria-expanded='false'] > .comment_caret {
 a[aria-expanded='false'] > .mobile_caret {
     transform: scale(2);
 }
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+ }
+
+.dropdown-menu {
+  min-width: fit-content;
+  text-align: right;
+}

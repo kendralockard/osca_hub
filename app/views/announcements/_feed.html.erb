@@ -1,0 +1,18 @@
+<ol class="discussions">
+  <%= render Discussion.where('date = ?', Date.today)
+                  .where(coop_id: current_user.coop_id)
+                  .order(meal: :desc) %>
+</ol>
+
+<ol class="events">
+  <%= render Event.where('date > ?', Date.yesterday)
+                  .where(coop_id: current_user.coop_id)
+                  .order(date: :asc) %>
+</ol>
+
+<% if @announcements.any? %>
+  <ol class="announcements">
+    <%= render @announcements %>
+  </ol>
+  <%= will_paginate @announcements %>
+<% end %>
