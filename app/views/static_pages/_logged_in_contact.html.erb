@@ -2,7 +2,7 @@
 
   <% if current_user.coop_id.nil? %>
     <h2><u>OSCA Student Contact</u></h2>
-    <h4>Check back here for contact information once you are approved to join your co-op's OSCA Hub.</h4>
+    <h4>Check back here for contact information after you are approved to join your co-op's OSCA Hub.</h4>
 
   <% else %>
     <h2><u><%= Coop.coops[current_user.coop_id] %> Student Contact</u></h2>
