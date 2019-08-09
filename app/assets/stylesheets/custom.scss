@@ -44,6 +44,14 @@ textarea {
   height: 250px;
 }
 
+.voting {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 500px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,6 +72,11 @@ h2 {
   text-align: center;
   font-weight: normal;
   color: $gray-light;
+}
+
+h5 {
+  font-size: 1.2em;
+  line-height: 1.5em;
 }
 
 p {
@@ -213,4 +226,23 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+.btn.btn-primary.toggle {
+  font-size: 1.3rem;
+  margin: 1rem;
+  padding: 0.2rem 0.6rem;
+  width: fit-content;
+}
+
+.handsigns {
+  a {
+    color: var(--email-purple);
+  }
+  span {
+    background: #ffffdd;
+    border: 1px dotted;
+    padding: 1.5rem;
+    text-align: center;
+  }
 }

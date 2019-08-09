@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/saveplates',  to: 'static_pages#save_plates'
   get '/workchart',   to: 'static_pages#workchart'
   get '/subrequests', to: 'static_pages#sub_requests'
+  get '/handsigns', to: 'static_pages#hand_signs'
 
   delete '/events/destroy/:id', to: 'events#destroy'
 
