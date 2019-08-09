@@ -2,6 +2,8 @@ class CommentsController < ApplicationController
   before_action :find_announcement
   before_action :find_comment, only: [:destroy]
 
+  require 'rails_autolink'
+
   def create
     @comment = @announcement.comments.create(params[:comment].permit(:content))
     @comment.user_id = current_user.id

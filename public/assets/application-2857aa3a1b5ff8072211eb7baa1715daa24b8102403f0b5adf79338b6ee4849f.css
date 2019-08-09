@@ -604,7 +604,7 @@ a[aria-expanded='false'] > .expand_caret {
 /* line 10, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/caret.scss */
 .comment_caret {
   transform: scale(1.1) rotate(-90deg);
-  color: var(--gray);
+  color: #888;
   position: relative;
 }
 
@@ -615,14 +615,14 @@ a[aria-expanded='false'] > .comment_caret {
 
 /* line 19, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/caret.scss */
 .mobile_caret {
-  transform: scale(1.8) rotate(90deg);
+  transform: scale(2) rotate(90deg);
   color: var(--gray);
   float: right;
 }
 
 /* line 24, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/caret.scss */
 a[aria-expanded='false'] > .mobile_caret {
-  transform: scale(1.8);
+  transform: scale(2);
 }
 /* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
 .comments {
@@ -707,7 +707,7 @@ a[aria-expanded='false'] > .mobile_caret {
 #post__button {
   background: var(--comment-blue);
   font-size: 1.3rem;
-  margin: 0 1rem 3rem 19rem;
+  margin: 0 1rem 4rem 19rem;
   padding: 0.3rem 0.6rem;
   width: fit-content;
 }

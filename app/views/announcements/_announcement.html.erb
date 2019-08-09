@@ -7,7 +7,7 @@
       <%= render 'layouts/timestamp', object: announcement %>
     </span>
   </span>
-  <span class="content"><%= announcement.content %></span>
+  <span class="content"><%= auto_link(announcement.content) %></span>
 
     <%= render 'comments/new', announcement: announcement %>
     <%= render 'comments/comments', announcement: announcement %>
