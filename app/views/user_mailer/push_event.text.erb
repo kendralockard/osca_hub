@@ -1,6 +1,6 @@
 <%= @event.user.name %> pushed a sub request to <%= @coop %>:
 
-<%= @event.shift %> on <%= @event.date.strftime("%A %b %_d") %>
+<%= @when %> on <%= @event.date.strftime("%A %b %_d") %>
 
   <% if !@event.message.blank? %>
       <%= @event.message %>

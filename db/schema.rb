@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190810172601) do
+ActiveRecord::Schema.define(version: 20190810182814) do
 
   create_table "announcements", force: :cascade do |t|
     t.text "content"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20190810172601) do
 
   create_table "coops", force: :cascade do |t|
     t.string "name"
+    t.integer "coop_id"
   end
 
   create_table "discussions", force: :cascade do |t|

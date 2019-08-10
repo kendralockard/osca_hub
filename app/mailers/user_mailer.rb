@@ -50,6 +50,9 @@ class UserMailer < ApplicationMailer
     @user = user
     @coop = Coop.coops[user.coop_id]
     @event = event
+    shift = event.shift ? "1st hour " : "2nd hour "
+    meal = event.meal ? "lunch" : "dinner"
+    @when = shift+meal
     recipients = User.where(coop_id: user.coop_id).map { |user| p user.email }
     mail(
       from: @coop,

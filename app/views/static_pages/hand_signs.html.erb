@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <% provide(:title, 'Hand Signs') %>
 <h1>OSCA Hand Signs</h1>
 
@@ -14,3 +15,6 @@
   blog post written and illustrated by Andres Cuervo '17.<br>
   Special thanks to Natalie Hartog '17 and Karalyn Grimes '16 for their help in compiling the list of images.</em>
 </center>
+<% else %>
+  <%= render 'static_pages/home/logged_out' %>
+<% end %>
