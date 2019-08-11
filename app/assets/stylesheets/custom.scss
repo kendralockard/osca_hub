@@ -1,10 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* mixins, variables, etc. */
-
-$gray-medium-light: #eaeaea;
-
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -14,8 +10,8 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 60px;
   font-family: 'apercuregular', sans-serif;
+  padding-top: 60px;
   .popover {
     font-family: 'apercuregular';
   }
@@ -40,17 +36,11 @@ textarea {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 250px;
   height: 250px;
+  width: 250px;
 }
 
-.voting {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 500px;
-  height: 500px;
-}
+
 
 /* typography */
 
@@ -66,12 +56,12 @@ h1 {
 }
 
 h2 {
+  color: $gray-light;
   font-size: 1.2em;
+  font-weight: normal;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
-  font-weight: normal;
-  color: $gray-light;
 }
 
 h5 {
@@ -89,28 +79,28 @@ p {
 /* header */
 
 #logo {
-  float: left;
-  margin-right: 10px;
+  color: white;
   font-size: 1.7em;
-  color: #fff;
-  letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
+  float: left;
+  letter-spacing: -1px;
+  margin-right: 10px;
+  padding-top: 9px;
   &:hover {
-    color: #377fc3;
+    color: var(--oscahub-blue);
     text-decoration: none;
   }
 }
 
 #coop {
+  color: var(--coop-gray);
   float: left;
-  margin-right: 10px;
-  margin-left: 4px;
   font-size: 1.2em;
-  color: #858585;
-  letter-spacing: -1.5px;
-  padding-top: 15px;
   font-weight: lighter;
+  letter-spacing: -1.5px;
+  margin-left: 4px;
+  margin-right: 10px;
+  padding-top: 15px;
 }
 
 /* footer */
@@ -118,7 +108,7 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
+  border-top: 1px solid #eaeaea;
   color: $gray-light;
   a {
     color: $gray;
@@ -137,9 +127,6 @@ footer {
       margin-left: 15px;
     }
   }
-
-  /* miscellaneous */
-
   .debug_dump {
     clear: both;
     float: left;
@@ -149,12 +136,14 @@ footer {
   }
 }
 
+
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
   margin-bottom: 15px;
+  width: 100%;
   @include box_sizing;
 }
 
@@ -181,31 +170,12 @@ input {
   margin-top: -10px;
   margin-bottom: 10px;
   span {
-    margin-left: 20px;
     font-weight: normal;
+    margin-left: 20px;
   }
 }
 
 #session_remember_me {
   width: auto;
   margin-left: 0;
-}
-
-.btn.btn-primary.toggle {
-  font-size: 1.3rem;
-  margin: 1rem;
-  padding: 0.2rem 0.6rem;
-  width: fit-content;
-}
-
-.handsigns {
-  a {
-    color: var(--email-purple);
-  }
-  span {
-    background: #ffffdd;
-    border: 1px dotted;
-    padding: 0.5rem;
-    text-align: center;
-  }
 }

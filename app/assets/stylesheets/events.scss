@@ -11,18 +11,18 @@
   }
 }
 
+.btn.btn-default.cover {
+  background: var(--email-purple);
+  border: none;
+  color: white;
+  float: left;
+}
+
 .btn.btn-default.delete {
   float: right;
   font-size: 1.3rem;
   padding: 0.5rem 1rem;
   color: var(--delete-red);
-}
-
-.btn.btn-default.swap {
-  background: var(--email-purple);
-  border: none;
-  color: white;
-  float: left;
 }
 
 .modal-body.submitted-by {
@@ -32,12 +32,11 @@
   text-align: right;
 }
 
-.modal-body.request-message {
+.modal-body.message {
   font-size: 1.05em;
 }
 
-
-.modal-title.subreq-form-title {
+.modal-title.form-title {
   text-align: center;
 }
 

@@ -1,10 +1,10 @@
 <% comments = announcement.comments.any? ? true : false %>
 
 <input type="button"
-         class="comment__button"
-         id="comment__button-<%= announcement.id %>"
-         value="comment"
-         onclick="postComment(<%= announcement.id %>, <%= comments %>)">
+     class="comment__button"
+     id="comment__button-<%= announcement.id %>"
+     value="comment"
+     onclick="postComment(<%= announcement.id %>, <%= comments %>)">
 
 <input type="button"
     class="cancel__button"

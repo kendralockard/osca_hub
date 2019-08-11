@@ -6,16 +6,12 @@ class AnnouncementsController < ApplicationController
 
   def create
     @announcement = current_user.announcements.build(announcement_params)
-    @announcement.coop_id = current_user.coop_id
-
+    set_coop_id
     if @announcement.save
       update_last_comment_at
       flash[:success] = "Announcement created!"
-      redirect_to root_url
-    else
-      @announcements = []
-      redirect_to root_url
     end
+    redirect_to root_url
   end
 
   def destroy
@@ -28,11 +24,16 @@ class AnnouncementsController < ApplicationController
     @announcement = Announcement.find(params[:id])
     @user = @announcement.user
     UserMailer.push_announcement(@user, @announcement.content).deliver_now
-    flash[:success] = "Your announcement has been pushed to #{Coop.coops[@user.coop_id]}."
+    flash[:success] = "Your announcement has been pushed to \
+                      #{Coop.find(@user.coop_id).name}."
     redirect_to root_url
   end
 
   private
+
+    def set_coop_id
+      @announcement.coop_id = current_user.coop_id
+    end
 
     def announcement_params
       params.require(:announcement).permit(:content)

@@ -15,7 +15,7 @@ class UserMailer < ApplicationMailer
   def request_switch(user, coop_id)
     @user = user
     @coop_id = coop_id
-    @coop = Coop.coops[coop_id]
+    @coop = Coop.find(coop_id).name
     mail(
       to: 'oscamemco@gmail.com',
       subject: "#{@coop.upcase}: Pending Join Request"
@@ -25,7 +25,7 @@ class UserMailer < ApplicationMailer
   def notify_user_approval(user, coop_id)
     email_images
     @user = user
-    @coop = Coop.coops[coop_id]
+    @coop = Coop.find(coop_id).name
     mail(
       to: user.email,
       subject: "OSCA Hub: #{@coop} Request Approved"
@@ -35,7 +35,7 @@ class UserMailer < ApplicationMailer
   def push_announcement(user, announcement)
     email_images
     @user = user
-    @coop = Coop.coops[user.coop_id]
+    @coop = Coop.find(user.coop_id).name
     @announcement = announcement
     recipients = User.where(coop_id: user.coop_id).map { |user| p user.email }
     mail(
@@ -48,7 +48,7 @@ class UserMailer < ApplicationMailer
   def push_event(user, event)
     email_images
     @user = user
-    @coop = Coop.coops[user.coop_id]
+    @coop = Coop.find(user.coop_id).name
     @event = event
     shift = event.shift ? "1st hour " : "2nd hour "
     meal = event.meal ? "lunch" : "dinner"

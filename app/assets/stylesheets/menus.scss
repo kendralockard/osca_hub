@@ -22,7 +22,7 @@
     }
   }
   .timestamp {
-    color: #9f9f9f;
+    color: var(--timestamp-gray);
     font-size: 1.3rem;
     margin: 0.5rem 0.25rem;
   }
@@ -34,7 +34,7 @@
 }
 
 h4 {
-  color: #535f67;
+  color: var(--gray);
   display: inline;
   font-size: 1em;
   font-style: italic;

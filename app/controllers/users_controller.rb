@@ -4,12 +4,6 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
-  def show
-    @user = User.find(params[:id])
-    @announcements = @user.announcements.paginate(page: params[:page])
-    redirect_to root_url and return unless true
-  end
-
   def new
     @user = User.new
   end
@@ -25,13 +19,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    redirect_to root_url and return unless true
+  end
+
   def edit
   end
 
+  # User updates their settings
   def update
     coop = @user.coop_id
+
+    # If they requested a co-op switch, send a request to their MemCo
+    # Else, update their settings
     if @user.update_attributes(user_params)
-      user_requested_switch?(coop) ?
+      user_switched?(coop) ?
         request_switch(coop) :
         flash[:success] = "Settings updated"
       redirect_to @user
@@ -40,29 +43,33 @@ class UsersController < ApplicationController
     end
   end
 
-  def user_requested_switch?(coop)
+  # Check if user requested a co-op switch
+  def user_switched?(coop)
     @user.coop_id != coop
   end
 
+  # Send co-op switch request to MemCo
   def request_switch(coop)
-    @requested = @user.coop_id            # Grab coop user requested to join
-    @user.update_attributes(coop_id: coop)     # Put user back in their original coop
+    @requested = @user.coop_id             # Grab co-op user requested to join
+    @user.update_attributes(coop_id: coop) # Put user back in their original co-op
 
     UserMailer.request_switch(@user, @requested).deliver_now
-    flash[:success] = "Your request to join #{Coop.coops[@requested]} \
+    flash[:success] = "Your request to join #{Coop.find(@requested).name} \
                        has been sent to your MemCo."
   end
 
+  # Approve user into their requested co-op
   def approve_user
     user = User.find(params[:id])
-    user.update_attributes(coop_id: params[:coop_id])   # Put user in their requested coop
-    flash[:success] = "#{user.name} has been admitted to #{Coop.coops[user.coop_id]}. \
-                       Thanks MemCo!"
+    user.update_attributes(coop_id: params[:coop_id])
+    flash[:success] = "#{user.name} has been admitted to \
+                      #{Coop.find(user.coop_id).name}. Thanks MemCo!"
 
     redirect_to root_url
     notify_user_approval(user, params[:coop_id])
   end
 
+  # Send user email notification that they have been approved into their co-op
   def notify_user_approval(user, coop_id)
     UserMailer.notify_user_approval(user, user.coop_id).deliver_now
   end

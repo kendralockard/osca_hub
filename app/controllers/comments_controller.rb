@@ -6,16 +6,13 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @announcement.comments.create(params[:comment].permit(:content))
-    @comment.user_id = current_user.id
-    @comment.announcement.last_comment_at = @comment.created_at
+    set_user_id
+    update_announcement_last_comment_at
 
     if @comment.save
       flash[:success] = "Comment posted!"
-      redirect_to root_url
-    else
-      flash[:danger] = "Comment failed"
-      redirect_to root_url
     end
+    redirect_to root_url
   end
 
   def destroy
@@ -25,6 +22,14 @@ class CommentsController < ApplicationController
   end
 
   private
+
+    def set_user_id
+      @comment.user_id = current_user.id
+    end
+
+    def update_announcement_last_comment_at
+      @comment.announcement.last_comment_at = @comment.created_at
+    end
 
     def find_announcement
       @announcement = Announcement.find(params[:announcement_id])

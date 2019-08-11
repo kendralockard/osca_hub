@@ -48,4 +48,5 @@ class StaticPagesController < ApplicationController
       @user = current_user
     end
   end
+  
 end

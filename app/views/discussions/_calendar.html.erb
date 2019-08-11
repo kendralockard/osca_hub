@@ -37,9 +37,9 @@
       eventClick: function(discussion) {
         $('#showEvent').replaceWith("<%= j render 'events/show' %>");
         $('#eventPopupModal').modal();
-        $('#shiftRequested').html(discussion.title);
-        $('#requestMessage').html(discussion.description);
-        $("#swapButton").hide();
+        $('#title').html(discussion.title);
+        $('#message').html(discussion.description);
+        $("#coverShiftButton").hide();
 
         $('#submittedBy').html(" posted by "
                                 +discussion.user_name

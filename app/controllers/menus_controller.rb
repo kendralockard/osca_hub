@@ -4,14 +4,11 @@ class MenusController < ApplicationController
 
   def create
     @menu = current_user.menus.build(menu_params)
-    @menu.coop_id = current_user.coop_id
+    set_coop_id
     if @menu.save
       flash[:success] = "Delicious menu posted!"
-      redirect_to menus_path
-    else
-      @menus = []
-      render 'static_pages/menu'
     end
+    redirect_to menus_path
   end
 
   def destroy
@@ -21,6 +18,10 @@ class MenusController < ApplicationController
   end
 
   private
+
+    def set_coop_id
+      @menu.coop_id = current_user.coop_id
+    end
 
     def menu_params
       params.require(:menu).permit(:starch, :protein, :vegetable, :restrictions, :notes, :meal)

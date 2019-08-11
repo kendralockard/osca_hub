@@ -4,7 +4,7 @@
     font-size: 1.3rem;
   }
   .title {
-    color: #333;
+    color: var(--discussion-purple);
     font-weight: bolder;
   }
   .content {
@@ -13,4 +13,28 @@
   hr {
     margin: 2rem 0 1rem 0;
   }
+}
+
+.btn.btn-primary.toggle {
+  font-size: 1.3rem;
+  margin: 1rem;
+  padding: 0.2rem 0.6rem;
+  width: fit-content;
+}
+
+.handsigns {
+  span {
+    background: var(--light-yellow);
+    border: 1px dotted;
+    padding: 0.5rem;
+    text-align: center;
+  }
+}
+
+.voting-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px;
+  width: 500px;
 }

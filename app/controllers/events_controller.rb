@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 
   def create
     @event = current_user.events.build(event_params)
-    @event.coop_id = current_user.coop_id
+    set_coop_id
     if @event.save
       flash[:success] = "Sub request posted!"
     end
@@ -22,11 +22,16 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @user = @event.user
     UserMailer.push_event(@user, @event).deliver_now
-    flash[:success] = "Your sub request has been pushed to #{Coop.coops[@user.coop_id]}."
+    flash[:success] = "Your sub request has been pushed to \
+                      #{Coop.find(@user.coop_id).name}."
     redirect_to root_url
   end
 
   private
+
+    def set_coop_id
+      @event.coop_id = current_user.coop_id
+    end
 
     def event_params
       params.require(:event).permit(:date, :meal, :shift, :message)

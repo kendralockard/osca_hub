@@ -4,7 +4,7 @@ class DiscussionsController < ApplicationController
 
   def create
     @discussion = current_user.discussions.build(event_params)
-    @discussion.coop_id = current_user.coop_id
+    set_coop_id
     if @discussion.save
       flash[:success] = "Discussion posted!"
     end
@@ -19,6 +19,10 @@ class DiscussionsController < ApplicationController
   end
 
   private
+
+    def set_coop_id
+      @discussion.coop_id = current_user.coop_id
+    end
 
     def event_params
       params.require(:discussion).permit(:date, :meal, :title, :message)

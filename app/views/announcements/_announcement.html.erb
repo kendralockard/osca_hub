@@ -1,15 +1,18 @@
 <hr>
 <li id="announcement-<%= announcement.id %>">
   <%= render 'announcements/dropdown', announcement: announcement %>
+
   <%= link_to gravatar_for(announcement.user, size: 50), announcement.user %>
   <span class="user"><%= link_to announcement.user.name, announcement.user %>
+
     <span class="timestamp">
       <%= render 'layouts/timestamp', object: announcement %>
     </span>
   </span>
+
   <span class="content"><%= auto_link(announcement.content) %></span>
 
-    <%= render 'comments/new', announcement: announcement %>
-    <%= render 'comments/comments', announcement: announcement %>
+  <%= render 'comments/new', announcement: announcement %>
+  <%= render 'comments/comments', announcement: announcement %>
 
 </li>

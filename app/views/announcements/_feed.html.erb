@@ -1,13 +1,11 @@
 <ol class="discussions">
   <%= render Discussion.where('date = ?', Date.today)
-                  .where(coop_id: current_user.coop_id)
-                  .order(meal: :desc) %>
+                  .where(coop_id: current_user.coop_id) %>
 </ol>
 
 <ol class="events">
   <%= render Event.where('date > ?', Date.yesterday)
-                  .where(coop_id: current_user.coop_id)
-                  .order(date: :asc) %>
+                  .where(coop_id: current_user.coop_id) %>
 </ol>
 
 <% if @announcements.any? %>

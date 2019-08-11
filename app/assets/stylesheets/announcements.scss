@@ -9,15 +9,15 @@
       padding: 5px 0;
     }
   }
-  .timestamp {
-    color: #9f9f9f;
-    font-size: 1.3rem;
-    margin: 0.5rem 0.25rem;
-  }
   .gravatar {
     float: left;
     margin-right: 10px;
     margin-top: 5px;
+  }
+  .timestamp {
+    color: var(--timestamp-gray);
+    font-size: 1.3rem;
+    margin: 0.5rem 0.25rem;
   }
   hr {
     margin: 2rem 0 1rem 0;
@@ -40,14 +40,14 @@ aside {
   position: relative;
   text-align: center;
   -webkit-box-shadow: none;
+  a {
+    padding: 0;
+  }
   hr {
     margin: 3px 0;
   }
   li {
     display: inline;
     list-style-type: none;
-  }
-  a {
-    padding: 0;
   }
 }

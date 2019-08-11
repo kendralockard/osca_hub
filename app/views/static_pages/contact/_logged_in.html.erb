@@ -5,24 +5,40 @@
     <h4>Check back here for contact information after you are approved to join your co-op's OSCA Hub.</h4>
 
   <% else %>
-    <h2><u><%= Coop.coops[current_user.coop_id] %> Student Contact</u></h2>
+    <h2><u><%= Coop.find(current_user.coop_id).name %> Student Contact</u></h2>
 
-    <% case current_user.coop_id %>
-      <% when 1 %>
-        <%= render 'contact/brown_bag' %>
-      <% when 2 %>
-        <%= render 'contact/fairkid' %>
-      <% when 3 %>
-        <%= render 'contact/harkness' %>
-      <% when 4 %>
-        <%= render 'contact/keep' %>
-      <% when 5 %>
-        <%= render 'contact/pyle' %>
-      <% when 6 %>
-        <%= render 'contact/tank' %>
-      <% when 7 %>
-        <%= render 'contact/twc' %>
-    <% end %>
+    <ul>
+      <li><strong>FSCs:</strong>
+        <%= Coop.fsc[current_user.coop_id] %> </li>
+
+      <li><strong>New Member Trainer:</strong>
+        <%= Coop.new_member_trainer[current_user.coop_id] %> </li>
+
+      <li><strong>MemCo:</strong>
+        <%= Coop.memco[current_user.coop_id] %> </li>
+
+      <li><strong>AccessCo:</strong>
+        <%= Coop.accessco[current_user.coop_id] %> </li>
+
+      <li><strong>NutCo:</strong>
+        <%= Coop.nutco[current_user.coop_id] %> </li>
+
+      <li><strong>KitchCo:</strong>
+        <%= Coop.kitcho[current_user.coop_id] %> </li>
+
+      <li><strong>DLECs:</strong>
+        <%= Coop.dlecs[current_user.coop_id] %> </li>
+
+      <li><strong>Treasurer:</strong>
+        <%= Coop.treasurer[current_user.coop_id] %> </li>
+
+      <li><strong>Board Rep:</strong>
+        <%= Coop.board_rep[current_user.coop_id] %> </li>
+
+      <li><strong>Food Unpacker/Recycler:</strong>
+        <%= Coop.food_unpacker_recycler[current_user.coop_id] %> </li>
+    </ul>
+    <br>
 
   <% end %>
 

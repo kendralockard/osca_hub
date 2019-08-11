@@ -11,16 +11,16 @@
   padding: 5px 0;
 }
 /* line 12, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
-.announcements .timestamp {
-  color: #9f9f9f;
-  font-size: 1.3rem;
-  margin: 0.5rem 0.25rem;
-}
-/* line 17, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
 .announcements .gravatar {
   float: left;
   margin-right: 10px;
   margin-top: 5px;
+}
+/* line 17, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
+.announcements .timestamp {
+  color: var(--timestamp-gray);
+  font-size: 1.3rem;
+  margin: 0.5rem 0.25rem;
 }
 /* line 22, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
 .announcements hr {
@@ -45,17 +45,17 @@ aside textarea {
   -webkit-box-shadow: none;
 }
 /* line 43, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
+.dropdown-menu.announcements a {
+  padding: 0;
+}
+/* line 46, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
 .dropdown-menu.announcements hr {
   margin: 3px 0;
 }
-/* line 46, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
+/* line 49, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
 .dropdown-menu.announcements li {
   display: inline;
   list-style-type: none;
-}
-/* line 50, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
-.dropdown-menu.announcements a {
-  padding: 0;
 }
 /*Notes about grid:
 Columns:      12
@@ -591,42 +591,70 @@ code {
 }
 /* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
 .comments {
-  color: #444;
+  color: var(--gray-dark);
   font-size: 1.3rem;
   margin-left: 7rem;
 }
 /* line 5, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
+.comments .comments-dropdown {
+  display: inline-block;
+}
+/* line 8, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
 .comments .content {
   padding: 0;
   margin-left: 30px;
 }
-/* line 9, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
+/* line 12, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
 .comments .timestamp {
-  color: #9f9f9f;
+  color: var(--timestamp-gray);
   font-size: 1.2rem;
   margin: 0.3rem;
 }
 
-/* line 16, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
-#view__comments {
-  background: #f6f6f6;
-  border-radius: 15px;
+/* line 19, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
+.comment__button {
   border: none;
-  color: #5b5b5b;
-  display: flex;
+  color: var(--comment-blue);
   font-size: 1.3rem;
-  margin: 1rem 0.5rem -1rem 60px;
-  width: auto;
+  margin: 0;
+  padding: 0.1rem 0.5rem;
 }
 /* line 25, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
-#view__comments:hover {
-  color: var(--comment-blue);
-  transition: 1s;
+.comment__button:hover {
+  background: var(--comment-gray-light);
 }
 
-/* line 31, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
+/* line 30, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
+.cancel__button {
+  border: none;
+  color: var(--gray);
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+
+/* line 37, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
+.comment-box {
+  border-radius: 3px;
+  color: var(--gray-dark);
+  display: flex;
+  font-size: 1.3rem;
+  height: 60px;
+  margin: 1rem 0 1rem 60px;
+  width: 45%;
+}
+
+/* line 47, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
+#post__button {
+  background: var(--comment-blue);
+  font-size: 1.3rem;
+  margin: 0 1rem 4rem 19rem;
+  padding: 0.3rem 0.6rem;
+  width: fit-content;
+}
+
+/* line 55, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
 #hide__comments {
-  background: #b4b4b4;
+  background: var(--comment-gray);
   border-radius: 15px;
   border: 1px groove;
   color: white;
@@ -636,48 +664,24 @@ code {
   width: auto;
 }
 
-/* line 42, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
-.comment__button {
-  border: none;
-  color: var(--comment-blue);
-  font-size: 1.3rem;
-  margin: 0;
-  padding: 0.1rem 0.5rem;
-}
-/* line 48, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
-.comment__button:hover {
-  background: #f6f6f6;
-}
-
-/* line 53, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
-.cancel__button {
+/* line 66, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
+#view__comments {
+  background: var(--comment-gray-light);
+  border-radius: 15px;
   border: none;
   color: var(--gray);
-  font-size: 1.3rem;
-  margin-bottom: 0;
-}
-
-/* line 60, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
-.comment-box {
-  border-radius: 3px;
-  color: #444;
   display: flex;
   font-size: 1.3rem;
-  height: 60px;
-  margin: 1rem 0 1rem 60px;
-  width: 45%;
+  margin: 1rem 0.5rem -1rem 60px;
+  width: auto;
+}
+/* line 75, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
+#view__comments:hover {
+  color: var(--comment-blue);
+  transition: 1s;
 }
 
-/* line 70, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
-#post__button {
-  background: var(--comment-blue);
-  font-size: 1.3rem;
-  margin: 0 1rem 4rem 19rem;
-  padding: 0.3rem 0.6rem;
-  width: fit-content;
-}
-
-/* line 78, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
+/* line 81, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
 .dropdown-menu.comments {
   float: right;
   font-size: 1rem;
@@ -688,12 +692,12 @@ code {
   text-align-last: center;
   -webkit-box-shadow: none;
 }
-/* line 87, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
+/* line 90, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
 .dropdown-menu.comments li {
   display: inline;
   list-style-type: none;
 }
-/* line 91, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
+/* line 94, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/comments.scss */
 .dropdown-menu.comments a {
   padding: 0rem;
 }
@@ -9483,62 +9487,52 @@ button.close {
     display: none !important;
   }
 }
-/* mixins, variables, etc. */
 /* universal */
-/* line 16, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 12, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 body {
-  padding-top: 60px;
   font-family: 'apercuregular', sans-serif;
+  padding-top: 60px;
 }
-/* line 19, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 15, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 body .popover {
   font-family: 'apercuregular';
 }
 
-/* line 24, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 20, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 section {
   overflow: auto;
 }
 
-/* line 28, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 24, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 textarea {
   resize: vertical;
 }
 
-/* line 32, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 28, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 .center {
   text-align: center;
 }
-/* line 34, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 30, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 .center h1 {
   margin-bottom: 10px;
 }
 
-/* line 39, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 35, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 .logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 250px;
   height: 250px;
-}
-
-/* line 47, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
-.voting {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 500px;
-  height: 500px;
+  width: 250px;
 }
 
 /* typography */
-/* line 57, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 47, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-/* line 61, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 51, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
@@ -9546,89 +9540,88 @@ h1 {
   text-align: center;
 }
 
-/* line 68, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 58, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 h2 {
+  color: #777777;
   font-size: 1.2em;
+  font-weight: normal;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
-  font-weight: normal;
-  color: #777777;
 }
 
-/* line 77, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 67, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 h5 {
   font-size: 1.2em;
   line-height: 1.5em;
 }
 
-/* line 82, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 72, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
 
 /* header */
-/* line 91, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 81, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 #logo {
-  float: left;
-  margin-right: 10px;
+  color: white;
   font-size: 1.7em;
-  color: #fff;
-  letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
+  float: left;
+  letter-spacing: -1px;
+  margin-right: 10px;
+  padding-top: 9px;
 }
-/* line 99, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 89, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 #logo:hover {
-  color: #377fc3;
+  color: var(--oscahub-blue);
   text-decoration: none;
 }
 
-/* line 105, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 95, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 #coop {
+  color: var(--coop-gray);
   float: left;
-  margin-right: 10px;
-  margin-left: 4px;
   font-size: 1.2em;
-  color: #858585;
-  letter-spacing: -1.5px;
-  padding-top: 15px;
   font-weight: lighter;
+  letter-spacing: -1.5px;
+  margin-left: 4px;
+  margin-right: 10px;
+  padding-top: 15px;
 }
 
 /* footer */
-/* line 118, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 108, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777777;
-  /* miscellaneous */
 }
-/* line 123, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 113, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 footer a {
   color: #555555;
 }
-/* line 125, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 115, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 footer a:hover {
   color: #222222;
 }
-/* line 129, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 119, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 footer small {
   float: left;
 }
-/* line 132, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 122, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 footer ul {
   float: right;
   list-style: none;
 }
-/* line 135, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 125, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 footer ul li {
   float: left;
   margin-left: 15px;
 }
-/* line 143, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 130, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 footer .debug_dump {
   clear: both;
   float: left;
@@ -9640,71 +9633,51 @@ footer .debug_dump {
 }
 
 /* forms */
-/* line 154, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 143, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
   margin-bottom: 15px;
+  width: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 161, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 150, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 input {
   height: auto !important;
 }
 
-/* line 165, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 154, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 #error_explanation {
   color: red;
 }
-/* line 167, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 156, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 #error_explanation ul {
   color: red;
   margin: 0 0 30px 0;
 }
 
-/* line 175, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 164, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 .field_with_errors .form-control {
   color: #a94442;
 }
 
-/* line 180, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 169, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
 }
-/* line 183, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 172, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 .checkbox span {
-  margin-left: 20px;
   font-weight: normal;
+  margin-left: 20px;
 }
 
-/* line 189, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
+/* line 178, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
 #session_remember_me {
   width: auto;
   margin-left: 0;
-}
-
-/* line 194, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
-.btn.btn-primary.toggle {
-  font-size: 1.3rem;
-  margin: 1rem;
-  padding: 0.2rem 0.6rem;
-  width: fit-content;
-}
-
-/* line 202, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
-.handsigns a {
-  color: var(--email-purple);
-}
-/* line 205, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/custom.scss */
-.handsigns span {
-  background: #ffffdd;
-  border: 1px dotted;
-  padding: 0.5rem;
-  text-align: center;
 }
 /* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
 .discussions .user {
@@ -9713,7 +9686,7 @@ input {
 }
 /* line 6, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
 .discussions .title {
-  color: #333;
+  color: var(--discussion-purple);
   font-weight: bolder;
 }
 /* line 10, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
@@ -9723,6 +9696,31 @@ input {
 /* line 13, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
 .discussions hr {
   margin: 2rem 0 1rem 0;
+}
+
+/* line 18, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
+.btn.btn-primary.toggle {
+  font-size: 1.3rem;
+  margin: 1rem;
+  padding: 0.2rem 0.6rem;
+  width: fit-content;
+}
+
+/* line 26, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
+.handsigns span {
+  background: var(--light-yellow);
+  border: 1px dotted;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+/* line 34, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
+.voting-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px;
+  width: 500px;
 }
 /* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dropdown.scss */
 .expand_caret {
@@ -9739,7 +9737,7 @@ a[aria-expanded='false'] > .expand_caret {
 /* line 10, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dropdown.scss */
 .comment_caret {
   transform: scale(1.1) rotate(-90deg);
-  color: #888;
+  color: var(--comment-gray);
   position: relative;
 }
 
@@ -9786,19 +9784,19 @@ a[aria-expanded='false'] > .mobile_caret {
 }
 
 /* line 14, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
+.btn.btn-default.cover {
+  background: var(--email-purple);
+  border: none;
+  color: white;
+  float: left;
+}
+
+/* line 21, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
 .btn.btn-default.delete {
   float: right;
   font-size: 1.3rem;
   padding: 0.5rem 1rem;
   color: var(--delete-red);
-}
-
-/* line 21, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
-.btn.btn-default.swap {
-  background: var(--email-purple);
-  border: none;
-  color: white;
-  float: left;
 }
 
 /* line 28, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
@@ -9810,16 +9808,16 @@ a[aria-expanded='false'] > .mobile_caret {
 }
 
 /* line 35, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
-.modal-body.request-message {
+.modal-body.message {
   font-size: 1.05em;
 }
 
-/* line 40, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
-.modal-title.subreq-form-title {
+/* line 39, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
+.modal-title.form-title {
   text-align: center;
 }
 
-/* line 44, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
+/* line 43, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
 .dropdown-menu.events {
   float: right;
   font-size: 1.3rem;
@@ -9830,7 +9828,7 @@ a[aria-expanded='false'] > .mobile_caret {
   text-align-last: center;
   -webkit-box-shadow: none;
 }
-/* line 53, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
+/* line 52, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
 .dropdown-menu.events a {
   padding: 0;
 }
@@ -9863,7 +9861,7 @@ a[aria-expanded='false'] > .mobile_caret {
 }
 /* line 24, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/menus.scss */
 .menus .timestamp {
-  color: #9f9f9f;
+  color: var(--timestamp-gray);
   font-size: 1.3rem;
   margin: 0.5rem 0.25rem;
 }
@@ -9876,7 +9874,7 @@ a[aria-expanded='false'] > .mobile_caret {
 
 /* line 36, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/menus.scss */
 h4 {
-  color: #535f67;
+  color: var(--gray);
   display: inline;
   font-size: 1em;
   font-style: italic;
@@ -9903,8 +9901,8 @@ aside section.user_info {
 }
 /* line 5, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/sidebar.scss */
 aside section {
-  padding: 10px 0;
   margin-top: 20px;
+  padding: 10px 0;
 }
 /* line 8, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/sidebar.scss */
 aside section:first-child {
@@ -9920,10 +9918,10 @@ aside section span {
 /* line 17, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/sidebar.scss */
 aside section h1 {
   font-size: 1.4em;
-  text-align: left;
   letter-spacing: -1px;
   margin-bottom: 3px;
   margin-top: 0px;
+  text-align: left;
 }
 
 /* line 27, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/sidebar.scss */
@@ -9949,22 +9947,22 @@ aside section h1 {
 }
 
 /* line 11, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/users.scss */
+.welcome {
+  padding: 6px;
+  font-size: 1.6rem;
+}
+
+/* line 16, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/users.scss */
+.btn.btn-default.join-coop {
+  background: var(--join-coop-pink);
+  color: white;
+}
+
+/* line 21, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/users.scss */
 .btn.btn-default.switch-coop {
   background: white;
   color: var(--delete-red);
   float: center;
-}
-
-/* line 17, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/users.scss */
-.btn.btn-default.join-coop {
-  background: #be5b9b;
-  color: white;
-}
-
-/* line 22, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/users.scss */
-.welcome {
-  padding: 6px;
-  font-size: 1.6rem;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which
@@ -9984,6 +9982,7 @@ aside section h1 {
 
 
  */
+/* custom font */
 @font-face {
   font-family: 'apercuregular';
   src: url(/assets/apercu-font/apercu_regular-webfont-6df0471c7309de0d5e2cd18ed3c13c228060797eaf9b0384c03d7d0e2c857403.eot);
@@ -9991,15 +9990,25 @@ aside section h1 {
   font-weight: normal;
   font-style: normal;
 }
-/* line 33, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/application.scss */
+/* colors */
+/* line 35, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/application.scss */
 :root {
-  --delete-red: #dd5959;
+  --comment-gray-light: #f6f6f6;
+  --comment-gray: #b4b4b4;
+  --coop-gray: #858585;
+  --gray: #666;
+  --gray-dark: #444;
+  --timestamp-gray: #9f9f9f;
   --comment-blue: #007ba0;
+  --oscahub-blue: #377fc3;
+  --subreq-pink: #ce0e5b;
+  --join-coop-pink: #be5b9b;
+  --discussion-purple: #56358b;
   --email-purple: #6574cd;
   --event-purple: #b778a1;
   --menu-purple: #a9518a;
-  --subreq-pink: #ce0e5b;
-  --gray: #666;
+  --delete-red: #dd5959;
+  --light-yellow: #ffffdd;
 }
 /*!
  * FullCalendar v3.9.0

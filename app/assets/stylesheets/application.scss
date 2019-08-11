@@ -17,6 +17,7 @@
  *= require fullcalendar
  */
 
+/* custom font */
  @font-face {
      font-family: 'apercuregular';
      src: asset-url('apercu-font/apercu_regular-webfont.eot');
@@ -29,12 +30,27 @@
 
  }
 
+/* colors */
 :root {
-   --delete-red: #dd5959;
+  --comment-gray-light: #f6f6f6;
+  --comment-gray: #b4b4b4;
+  --coop-gray: #858585;
+  --gray: #666;
+  --gray-dark: #444;
+  --timestamp-gray: #9f9f9f;
+
    --comment-blue: #007ba0;
+   --oscahub-blue: #377fc3;
+
+   --subreq-pink: #ce0e5b;
+   --join-coop-pink: #be5b9b;
+
+   --discussion-purple: #56358b;
    --email-purple: #6574cd;
    --event-purple: #b778a1;
    --menu-purple: #a9518a;
-   --subreq-pink: #ce0e5b;
-   --gray: #666;
+
+   --delete-red: #dd5959;
+
+   --light-yellow: #ffffdd;
 }
