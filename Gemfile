@@ -16,6 +16,7 @@ gem 'jbuilder',     '2.7.0'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem "rails_autolink"
+gem 'md_simple_editor'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
