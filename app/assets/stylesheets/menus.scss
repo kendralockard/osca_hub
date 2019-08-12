@@ -31,13 +31,12 @@
     margin-right: 10px;
     margin-top: 5px;
   }
-}
-
-h4 {
-  color: var(--gray);
-  display: inline;
-  font-size: 1em;
-  font-style: italic;
+  .food-group {
+    color: var(--gray);
+    display: inline;
+    font-size: 1em;
+    font-style: italic;
+  }
 }
 
 .dropdown-menu.menus {
