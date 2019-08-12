@@ -1,3 +1,4 @@
+<div id="announcements">
 <ol class="discussions">
   <%= render Discussion.where('date = ?', Date.today)
                   .where(coop_id: current_user.coop_id) %>
@@ -14,3 +15,4 @@
   </ol>
   <%= will_paginate @announcements %>
 <% end %>
+</div>

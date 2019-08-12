@@ -12227,6 +12227,17 @@ function showHandSignsImages() {
    document.getElementById('handsigns-text').style.display = "none";
 }
 ;
+function show_other_coop(coop_id) {
+  document.getElementById('announcements').style.display = "none";
+  document.getElementById('announcement-header').style.display = "none";
+  for (id = 2; id < 7; id++) {
+    if (document.getElementById('other-announcements-'+id).style.display = "block") {
+      document.getElementById('other-announcements-'+id).style.display = "none";
+    }
+  }
+  document.getElementById('other-announcements-'+coop_id).style.display = "block";
+}
+;
 $( document ).on('turbolinks:load', function() {
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
       $('[data-toggle="popover"]').popover('disable');
