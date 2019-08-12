@@ -2,8 +2,6 @@ class AnnouncementsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user,   only: :destroy
 
-  require 'rails_autolink'
-
   def create
     @announcement = current_user.announcements.build(announcement_params)
     set_coop_id

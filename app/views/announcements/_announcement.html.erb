@@ -12,7 +12,7 @@
     </span>
   </span>
 
-  <span class="content"><%= markdown((auto_link(announcement.content))) %></span>
+  <span class="content"><%= markdown(announcement.content) %></span>
 
   <%= render 'comments/new', announcement: announcement %>
   <%= render 'comments/feed', announcement: announcement %>

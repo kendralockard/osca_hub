@@ -15,7 +15,6 @@ gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
-gem "rails_autolink"
 gem 'redcarpet'
 gem 'coderay'
 
