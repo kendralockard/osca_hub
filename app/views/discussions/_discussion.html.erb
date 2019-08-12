@@ -3,7 +3,7 @@
 
   <%= link_to gravatar_for(discussion.user, size: 50), discussion.user %>
   <% time = discussion.meal ? 'Today' : 'Tonight' %>
-  <span class="title">Discussion <%= time %></span> about <%= discussion.title %>
+  <span class="title">Discussion <%= time %></span> - <%= discussion.title %>
   <br>
   <span class="content">
     <%= discussion.message %>

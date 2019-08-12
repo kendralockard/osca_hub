@@ -1,0 +1,8 @@
+<% @other_announcements = Announcement.where('created_at > ?', Date.yesterday)
+                                      .where(coop_id: coop) %>
+  <h3>Announcements: <%= Coop.find(coop).name %> </h3>
+    <ol class="announcements">
+    <% @other_announcements.each do |announcement| %>
+      <%= render 'announcements/announcement', announcement: announcement %>
+    <% end %>
+    </ol>

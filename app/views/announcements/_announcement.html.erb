@@ -1,6 +1,8 @@
 <hr>
 <li id="announcement-<%= announcement.id %>">
-  <%= render 'announcements/dropdown', announcement: announcement %>
+  <% if current_user.coop_id == announcement.coop_id %>
+    <%= render 'announcements/dropdown', announcement: announcement %>
+  <% end %>
 
   <%= link_to gravatar_for(announcement.user, size: 50), announcement.user %>
   <span class="user"><%= link_to announcement.user.name, announcement.user %>
@@ -13,6 +15,6 @@
   <span class="content"><%= auto_link(announcement.content) %></span>
 
   <%= render 'comments/new', announcement: announcement %>
-  <%= render 'comments/comments', announcement: announcement %>
+  <%= render 'comments/feed', announcement: announcement %>
 
 </li>

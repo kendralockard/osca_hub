@@ -51,3 +51,25 @@ aside {
     list-style-type: none;
   }
 }
+
+.other-announcements {
+  display: none;
+}
+
+#other-announcements {
+  color: var(--gray-dark);
+  padding: 0.3rem 1rem;
+  p {
+    font-size: 1.6rem;
+    margin-bottom: -1.5rem;
+  }
+}
+
+.btn.btn-primary.other-announcements {
+  background: white;
+  color: var(--oscahub-blue);
+  font-size: 1.3rem;
+  margin: 0.5rem 1.5rem;
+  padding: 0.2rem 0.6rem;
+  width: fit-content;
+}
