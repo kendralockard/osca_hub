@@ -1,9 +1,12 @@
 <%= form_for(@announcement) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
+
+  <%= md_simple_editor('btn-xs') do %>
     <%= f.text_area :content,
+                    class: "announcement-form",
                     placeholder: "Compose new announcement...",
-                    :required => true %>
-  </div>
+                    required: true %>
+  <% end %>
+
   <%= f.submit "Post Announcement", class: "btn btn-primary" %>
 <% end %>

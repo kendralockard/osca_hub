@@ -36,7 +36,7 @@ class UserMailer < ApplicationMailer
     email_images
     @user = user
     @coop = Coop.find(user.coop_id).name
-    @announcement = announcement
+    @announcement = markdown announcement
     recipients = User.where(coop_id: user.coop_id).map { |user| p user.email }
     mail(
       from: @coop,
