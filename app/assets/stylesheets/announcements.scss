@@ -27,8 +27,12 @@
 aside {
   textarea {
     height: 100px;
-    margin-bottom: 5px;
+    margin: -2rem 0 1rem 0;
   }
+}
+
+.btn-none {
+  display: none;
 }
 
 .dropdown-menu.announcements {
