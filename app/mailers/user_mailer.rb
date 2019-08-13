@@ -1,5 +1,7 @@
 class UserMailer < ApplicationMailer
 
+  require 'redcarpet/render_strip'
+
   def account_activation(user)
     email_images
     @user = user
@@ -36,7 +38,7 @@ class UserMailer < ApplicationMailer
     email_images
     @user = user
     @coop = Coop.find(user.coop_id).name
-    @announcement = markdown announcement
+    @announcement = Redcarpet::Markdown.new(Redcarpet::Render::StripDown).render(announcement)
     recipients = User.where(coop_id: user.coop_id).map { |user| p user.email }
     mail(
       from: @coop,

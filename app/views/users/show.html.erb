@@ -7,7 +7,7 @@
           <%= gravatar_for @user %>
           <%= @user.name %>
           <% if @user.coop_id == current_user.coop_id %>
-            <%= auto_link(@user.email) %>
+            <%= markdown @user.email %>
           <% end %>
         </h1>
 
