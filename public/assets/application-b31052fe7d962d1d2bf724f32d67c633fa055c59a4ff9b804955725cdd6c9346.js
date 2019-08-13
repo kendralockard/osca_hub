@@ -12231,7 +12231,7 @@ function showHandSignsImages() {
   var initializeEditor, insertAtCaret, md_simple_editor, preview;
 
   md_simple_editor = function() {
-    return $('.btn-toolbar .btn-group button').click(function() {
+    return $('.btn-toolbar button').click(function() {
       var att_class, option, rgex, text, textarea;
       att_class = this.classList;
       rgex = /md_/;
@@ -12240,7 +12240,7 @@ function showHandSignsImages() {
       });
       if (option.length !== 0) {
         option = option[0].toString();
-        text = option === 'md_h1' ? "# Your Title here" : option === 'md_h2' ? "## Your Title here" : option === 'md_h3' ? "### Your Title here" : option === 'md_h4' ? "#### Your Title here" : option === 'md_h5' ? "##### Your Title here" : option === 'md_italic' ? "_Your italic text here_" : option === 'md_bold' ? "__Your bold text here__" : option === 'md_list-ul' ? "\n\n* Item 1\n* Item 2\n* Item 3 \n\n<br>" : option === 'md_list-ol' ? "\n\n1. Item 1\n2. Item 2\n3. Item 3 \n\n<br> " : option === 'md_indent' ? ">Your indented text here" : option === 'md_underline' ? "<u>Your underlined text here </u>" : option === 'md_table' ? "\n|Header|Header|Header|\n|:------|:-------:|------:|\n|Left alignment|Centered|Right alignment|\n\n<br>" : option === 'md_minus' ? "\n<hr>\n" : option === 'md_square' ? "\n\t Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut aliquet velit. Nam fermentum, mi quis egestas ornare, massa velit pharetra ante, sed pellentesque tortor nisl non quam. Nunc eget egestas orci.\n\n<br> " : option === 'md_link' ? "\n[This is a link](http://google.com)\n" : option === 'md_camera-retro' ? "\n![Alt](https://www.google.com.co/images/srpr/logo11w.png)\n" : void 0;
+        text = option === 'md_h1' ? "# Your Title here" : option === 'md_h2' ? "## Your Title here" : option === 'md_h3' ? "### Your Title here" : option === 'md_h4' ? "#### Your Title here" : option === 'md_h5' ? "##### Your Title here" : option === 'md_italic' ? "_Your italic text here_" : option === 'md_bold' ? "__Your bold text here__" : option === 'md_list-ul' ? "* Item 1\n* Item 2\n* Item 3" : option === 'md_list-ol' ? "1. Item 1\n2. Item 2\n3. Item 3" : option === 'md_indent' ? ">Your indented text here" : option === 'md_underline' ? "<u>Your underlined text here</u>" : option === 'md_table' ? "\n|Header|Header|Header|\n|:------|:-------:|------:|\n|Left alignment|Centered|Right alignment|\n\n<br>" : option === 'md_minus' ? "<hr>" : option === 'md_square' ? "\n\t Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut aliquet velit. Nam fermentum, mi quis egestas ornare, massa velit pharetra ante, sed pellentesque tortor nisl non quam. Nunc eget egestas orci.\n\n<br> " : option === 'md_link' ? "\n[This is a link](http://google.com)\n" : option === 'md_camera-retro' ? "\n![Your image description here](https://www.google.com.co/images/srpr/logo11w.png)\n" : void 0;
         textarea = $('#md-editor #md-text textarea');
         return insertAtCaret(textarea.attr('id'), text);
       }
@@ -12301,6 +12301,12 @@ function showHandSignsImages() {
   };
 
   initializeEditor = function() {
+    $('.md_list-ol').hide();
+    $('.md_table').hide();
+    $('.md_square').hide();
+    $('.md_minus').hide();
+    $('.md_link').hide();
+    $('.md_camera-retro').hide();
     md_simple_editor();
     $(document).off('turbolinks:load page:load ready', initializeEditor);
     return $('.preview_md').click(function() {
@@ -12308,7 +12314,7 @@ function showHandSignsImages() {
     });
   };
 
-  $(document).on('turbolinks:load page:load ready', initializeEditor);
+  $(document).on('turbolinks:load', initializeEditor);
 
 }).call(this);
 function show_other_coop(coop_id) {

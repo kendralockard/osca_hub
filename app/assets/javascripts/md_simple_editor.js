@@ -72,19 +72,19 @@
   };
 
   initializeEditor = function() {
-    document.querySelector('.md_list-ol').style.display = "none";
-    document.querySelector('.md_table').style.display = "none";
-    document.querySelector('.md_square').style.display = "none";
-    document.querySelector('.md_minus').style.display = "none";
-    document.querySelector('.md_link').style.display = "none";
-    document.querySelector('.md_camera-retro').style.display = "none";
+    $('.md_list-ol').hide();
+    $('.md_table').hide();
+    $('.md_square').hide();
+    $('.md_minus').hide();
+    $('.md_link').hide();
+    $('.md_camera-retro').hide();
     md_simple_editor();
-    $(document).off('turbolinks:load page:load ready', initializeEditor);
+    $(document).off('page:load ready', initializeEditor);
     return $('.preview_md').click(function() {
       return preview();
     });
   };
 
-  $(document).on('turbolinks:load page:load ready', initializeEditor);
+  $(document).on('turbolinks:load', initializeEditor);
 
 }).call(this);
