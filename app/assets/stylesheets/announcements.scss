@@ -29,10 +29,18 @@ aside {
     height: 100px;
     margin: -2rem 0 1rem 0;
   }
+  .announcement-form {
+    height: 150px;
+  }
 }
 
-.btn-none {
-  display: none;
+.btn-toolbar {
+  margin: 0 2rem -1rem 2rem !important;
+}
+
+.btn-primary.preview_md {
+  background: white;
+  color: var(--oscahub-blue);
 }
 
 .dropdown-menu.announcements {

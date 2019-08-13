@@ -3,9 +3,10 @@
 
   <%= md_simple_editor('btn-xs') do %>
     <%= f.text_area :content,
+                    class: "announcement-form",
                     placeholder: "Compose new announcement...",
                     required: true %>
   <% end %>
-  
+
   <%= f.submit "Post Announcement", class: "btn btn-primary" %>
 <% end %>
