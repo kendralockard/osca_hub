@@ -14337,22 +14337,41 @@ aside .announcement-form {
 }
 
 /* line 93, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
+.dropdown-menu.mobile-announcements {
+  margin: -3rem 3rem;
+  min-width: fit-content;
+  position: absolute;
+  text-align: center;
+}
+
+/* line 100, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
 .other-announcements {
   display: none;
 }
 
-/* line 97, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
+/* line 105, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
+#coop-links p {
+  font-size: 1.6rem;
+  margin-bottom: -2rem;
+}
+/* line 109, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
+#coop-links li {
+  margin-left: 15px;
+  margin-top: 1rem;
+}
+
+/* line 115, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
 #other-announcements {
   color: var(--gray-dark);
   padding: 0.3rem 1rem;
 }
-/* line 100, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
+/* line 118, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
 #other-announcements p {
   font-size: 1.6rem;
   margin-bottom: -1.5rem;
 }
 
-/* line 106, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
+/* line 124, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
 .btn.btn-primary.other-announcements {
   background: white;
   color: var(--oscahub-blue);
@@ -24073,6 +24092,19 @@ a[aria-expanded='false'] > .mobile_caret {
 .dropdown-menu {
   min-width: fit-content;
   text-align: right;
+}
+
+/* line 38, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dropdown.scss */
+.announcement-mobile-caret {
+  transform: scale(2) rotate(-90deg);
+  color: var(--gray);
+  float: left;
+  margin-bottom: 2rem;
+}
+
+/* line 44, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dropdown.scss */
+a[aria-expanded='false'] > .announcement-mobile-caret {
+  transform: scale(2);
 }
 /* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
 .events .title {

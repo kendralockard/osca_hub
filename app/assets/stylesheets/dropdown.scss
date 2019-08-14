@@ -34,3 +34,13 @@ a[aria-expanded='false'] > .mobile_caret {
   min-width: fit-content;
   text-align: right;
 }
+
+.announcement-mobile-caret {
+    transform: scale(2) rotate(-90deg);
+    color: var(--gray);
+    float: left;
+    margin-bottom: 2rem;
+}
+a[aria-expanded='false'] > .announcement-mobile-caret {
+    transform: scale(2);
+}

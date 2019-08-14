@@ -90,8 +90,26 @@ aside {
   }
 }
 
+.dropdown-menu.mobile-announcements {
+  margin: -3rem 3rem;
+  min-width: fit-content;
+  position: absolute;
+  text-align: center;
+}
+
 .other-announcements {
   display: none;
+}
+
+#coop-links {
+  p {
+    font-size: 1.6rem;
+    margin-bottom: -2rem;
+  }
+  li {
+    margin-left: 15px;
+    margin-top: 1rem;
+  }
 }
 
 #other-announcements {
