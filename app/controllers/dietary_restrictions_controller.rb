@@ -25,7 +25,7 @@ class DietaryRestrictionsController < ApplicationController
     end
 
     def dietary_restrictions_params
-      params.require(:dietary_restrictions).permit(:vegetarian, :vegan, :honey, :honey_severe, :nuts, :nuts_severe, :gluten, :gluten_severe, :soy, :soy_severe, :other)
+      params.require(:dietary_restriction).permit(:vegetarian, :vegan, :honey, :honey_severe, :nuts, :nuts_severe, :gluten, :gluten_severe, :soy, :soy_severe, :other)
     end
 
     def correct_user

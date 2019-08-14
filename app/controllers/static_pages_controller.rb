@@ -50,6 +50,10 @@ class StaticPagesController < ApplicationController
   end
 
   def dietary_restrictions
+    if logged_in?
+      @dietary_restrictions = current_user.dietary_restrictions.build
+      @dietary_restrictions = current_user.dietary_restrictions.paginate(page: params[:page])
+    end
   end
 
 end

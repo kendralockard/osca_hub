@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190814203159) do
+ActiveRecord::Schema.define(version: 20190814205950) do
 
   create_table "announcements", force: :cascade do |t|
     t.text "content"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20190814203159) do
     t.text "gluten_severe"
     t.boolean "soy", default: false
     t.text "soy_severe"
-    t.text "other", default: "f"
+    t.text "other"
     t.integer "user_id"
     t.integer "coop_id"
     t.index ["coop_id"], name: "index_dietary_restrictions_on_coop_id"

@@ -48,5 +48,6 @@ Rails.application.routes.draw do
   resources :announcements do
     resources :comments
   end
-  resources :discussions,         only: [:create]
+  resources :discussions,          only: [:create]
+  resources :dietary_restrictions, only: [:create, :destroy]
 end
