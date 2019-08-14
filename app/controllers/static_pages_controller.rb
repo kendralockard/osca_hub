@@ -48,5 +48,8 @@ class StaticPagesController < ApplicationController
       @user = current_user
     end
   end
-  
+
+  def dietary_restrictions
+  end
+
 end
