@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190810182814) do
+ActiveRecord::Schema.define(version: 20190814203159) do
 
   create_table "announcements", force: :cascade do |t|
     t.text "content"
@@ -37,6 +37,24 @@ ActiveRecord::Schema.define(version: 20190810182814) do
   create_table "coops", force: :cascade do |t|
     t.string "name"
     t.integer "coop_id"
+  end
+
+  create_table "dietary_restrictions", force: :cascade do |t|
+    t.boolean "vegetarian", default: false
+    t.boolean "vegan", default: false
+    t.boolean "honey", default: false
+    t.text "honey_severe"
+    t.boolean "nuts", default: false
+    t.text "nuts_severe"
+    t.boolean "gluten", default: false
+    t.text "gluten_severe"
+    t.boolean "soy", default: false
+    t.text "soy_severe"
+    t.text "other", default: "f"
+    t.integer "user_id"
+    t.integer "coop_id"
+    t.index ["coop_id"], name: "index_dietary_restrictions_on_coop_id"
+    t.index ["user_id"], name: "index_dietary_restrictions_on_user_id"
   end
 
   create_table "discussions", force: :cascade do |t|

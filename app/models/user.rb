@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :discussions, dependent: :destroy
+  has_many :dietary_restrictions, dependent: :destroy
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
@@ -90,6 +91,10 @@ class User < ApplicationRecord
 
   def discussions_feed
     Discussion.where(coop_id: coop_id)
+  end
+
+  def dietary_restrictions_feed
+    DietaryRestriction.where(coop_id: coop_id)
   end
 
   private

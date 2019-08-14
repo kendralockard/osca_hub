@@ -1,0 +1,11 @@
+<%= form_for DietaryRestriction.new do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+
+
+
+    <br><br>
+
+    <%= f.submit "Add Restrictions", class: "btn btn-primary" %>
+  </div>
+<% end %>

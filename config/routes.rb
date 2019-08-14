@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/subrequests', to: 'static_pages#sub_requests'
   get '/handsigns', to: 'static_pages#hand_signs'
   get '/discussions', to: 'static_pages#discussions'
-  get '/restrictions', to: 'static_pages#dietary_restrictions'
+  get '/dietary_restrictions', to: 'static_pages#dietary_restrictions'
 
   delete '/events/destroy/:id', to: 'events#destroy'
   delete '/discussions/destroy/:id', to: 'discussions#destroy'
