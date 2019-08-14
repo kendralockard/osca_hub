@@ -24014,15 +24014,11 @@ input {
   font-weight: bolder;
 }
 /* line 10, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
-.discussions .content {
-  padding: 0.5rem;
-}
-/* line 13, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
 .discussions hr {
   margin: 2rem 0 1rem 0;
 }
 
-/* line 18, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
+/* line 15, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
 .btn.btn-primary.toggle {
   font-size: 1.3rem;
   margin: 1rem;
@@ -24030,7 +24026,7 @@ input {
   width: fit-content;
 }
 
-/* line 26, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
+/* line 23, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
 .handsigns span {
   background: var(--light-yellow);
   border: 1px dotted;
@@ -24038,7 +24034,7 @@ input {
   text-align: center;
 }
 
-/* line 34, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
+/* line 31, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/discussions.scss */
 .voting-image {
   display: block;
   margin-left: auto;
@@ -24112,15 +24108,11 @@ a[aria-expanded='false'] > .announcement-mobile-caret {
   font-weight: bolder;
 }
 /* line 6, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
-.events .content {
-  padding: 0.5rem;
-}
-/* line 9, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
 .events hr {
   margin: 2rem 0 1rem 0;
 }
 
-/* line 14, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
+/* line 11, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
 .btn.btn-default.cover {
   background: var(--email-purple);
   border: none;
@@ -24128,7 +24120,7 @@ a[aria-expanded='false'] > .announcement-mobile-caret {
   float: left;
 }
 
-/* line 21, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
+/* line 18, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
 .btn.btn-default.delete {
   float: right;
   font-size: 1.3rem;
@@ -24136,7 +24128,7 @@ a[aria-expanded='false'] > .announcement-mobile-caret {
   color: var(--delete-red);
 }
 
-/* line 28, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
+/* line 25, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
 .modal-body.submitted-by {
   color: #8b8b8b;
   font-style: italic;
@@ -24144,17 +24136,17 @@ a[aria-expanded='false'] > .announcement-mobile-caret {
   text-align: right;
 }
 
-/* line 35, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
+/* line 32, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
 .modal-body.message {
   font-size: 1.05em;
 }
 
-/* line 39, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
+/* line 36, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
 .modal-title.form-title {
   text-align: center;
 }
 
-/* line 43, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
+/* line 40, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
 .dropdown-menu.events {
   float: right;
   font-size: 1.3rem;
@@ -24165,7 +24157,7 @@ a[aria-expanded='false'] > .announcement-mobile-caret {
   text-align-last: center;
   -webkit-box-shadow: none;
 }
-/* line 52, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
+/* line 49, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/events.scss */
 .dropdown-menu.events a {
   padding: 0;
 }

@@ -7,7 +7,7 @@ class AnnouncementsController < ApplicationController
     set_coop_id
     if @announcement.save
       update_last_comment_at
-      flash[:success] = "Announcement created!"
+      flash[:success] = "Announcement posted!"
     end
     redirect_to root_url
   end
