@@ -88,3 +88,15 @@
   $(document).on('turbolinks:load', initializeEditor);
 
 }).call(this);
+
+function show_markdown_toolbar() {
+  $('.btn-toolbar').show();
+  $('#markdown-toolbar').hide();
+  $("#markdown-toolbar-hide").show();
+}
+
+function hide_markdown_toolbar() {
+  $('.btn-toolbar').hide();
+  $('#markdown-toolbar-hide').hide();
+  $("#markdown-toolbar").show();
+}

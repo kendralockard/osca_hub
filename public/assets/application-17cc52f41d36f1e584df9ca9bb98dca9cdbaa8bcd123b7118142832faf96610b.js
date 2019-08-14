@@ -12184,33 +12184,30 @@ return jQuery;
 
 }).call(this);
 function showComments(id) {
-   document.getElementById("reveal-"+id).style.display = "none";
-   document.getElementById("hide-"+id).style.display = "block";
+   $("#reveal-"+id).hide();
+   $("#hide-"+id).show()
    $("#comments-"+id).fadeIn(300);
 }
 
 function hideComments(id) {
-   document.getElementById("hide-"+id).style.display = "none";
-   document.getElementById("reveal-"+id).style.display = "block";
-   document.getElementById("comments-"+id).style.display = "none";
+   $("#hide-"+id).hide();
+   $("#reveal-"+id).show();
+   $("#comments-"+id).hide();
 }
 
 function postComment(id, comments) {
   if (comments) {
-    document.getElementById("reveal-"+id).style.display = "none";
-    if (document.getElementById("hide-"+id).style.display == "block") {
-      document.getElementById("hide-"+id).style.display = "none";
-    }
+    $("#reveal-"+id).hide();
   }
-   document.getElementById("post-comment-"+id).style.display = "block";
-   document.getElementById("comment__button-"+id).style.display = "none";
-   document.getElementById("cancel__comment-"+id).style.display = "inline-block";
+   $("#post-comment-"+id).show();
+   $("#comment__button-"+id).hide();
+   $("#cancel__comment-"+id).show();
 }
 
 function cancelComment(id, comments) {
-  document.getElementById("cancel__comment-"+id).style.display = "none";
-  document.getElementById("post-comment-"+id).style.display = "none";
-  document.getElementById("comment__button-"+id).style.display = "inline-block";
+  $("#cancel__comment-"+id).hide();
+  $("#post-comment-"+id).hide();
+  $("#comment__button-"+id).show();
   if (comments) {
     document.getElementById("reveal-"+id).style.display = "block";
     hideComments(id);
@@ -12218,13 +12215,13 @@ function cancelComment(id, comments) {
 }
 ;
 function showHandSignsText() {
-   document.getElementById('handsigns-text').style.display = "block";
-   document.getElementById('handsigns-images').style.display = "none";
+   $('#handsigns-text').show();
+   $('#handsigns-images').hide();
 }
 
 function showHandSignsImages() {
-   document.getElementById('handsigns-images').style.display = "block";
-   document.getElementById('handsigns-text').style.display = "none";
+   $('#handsigns-images').show();
+   $('#handsigns-text').hide();
 }
 ;
 (function() {
@@ -12317,15 +12314,28 @@ function showHandSignsImages() {
   $(document).on('turbolinks:load', initializeEditor);
 
 }).call(this);
+
+function show_markdown_toolbar() {
+  $('.btn-toolbar').show();
+  $('#markdown-toolbar').hide();
+  $("#markdown-toolbar-hide").show();
+}
+
+function hide_markdown_toolbar() {
+  $('.btn-toolbar').hide();
+  $('#markdown-toolbar-hide').hide();
+  $("#markdown-toolbar").show();
+}
+;
 function show_other_coop(coop_id) {
-  document.getElementById('announcements').style.display = "none";
-  document.getElementById('announcement-header').style.display = "none";
+  $('#announcements').hide();
+  $('#announcement-header').hide();
   for (id = 2; id < 7; id++) {
     if (document.getElementById('other-announcements-'+id).style.display = "block") {
-      document.getElementById('other-announcements-'+id).style.display = "none";
+      $('#other-announcements-'+id).hide();
     }
   }
-  document.getElementById('other-announcements-'+coop_id).style.display = "block";
+  $('#other-announcements-'+coop_id).show();
 }
 ;
 $( document ).on('turbolinks:load', function() {
