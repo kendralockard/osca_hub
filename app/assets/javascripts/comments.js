@@ -1,31 +1,28 @@
 function showComments(id) {
-   document.getElementById("reveal-"+id).style.display = "none";
-   document.getElementById("hide-"+id).style.display = "block";
+   $("#reveal-"+id).hide();
+   $("#hide-"+id).show()
    $("#comments-"+id).fadeIn(300);
 }
 
 function hideComments(id) {
-   document.getElementById("hide-"+id).style.display = "none";
-   document.getElementById("reveal-"+id).style.display = "block";
-   document.getElementById("comments-"+id).style.display = "none";
+   $("#hide-"+id).hide();
+   $("#reveal-"+id).show();
+   $("#comments-"+id).hide();
 }
 
 function postComment(id, comments) {
   if (comments) {
-    document.getElementById("reveal-"+id).style.display = "none";
-    if (document.getElementById("hide-"+id).style.display == "block") {
-      document.getElementById("hide-"+id).style.display = "none";
-    }
+    $("#reveal-"+id).hide();
   }
-   document.getElementById("post-comment-"+id).style.display = "block";
-   document.getElementById("comment__button-"+id).style.display = "none";
-   document.getElementById("cancel__comment-"+id).style.display = "inline-block";
+   $("#post-comment-"+id).show();
+   $("#comment__button-"+id).hide();
+   $("#cancel__comment-"+id).show();
 }
 
 function cancelComment(id, comments) {
-  document.getElementById("cancel__comment-"+id).style.display = "none";
-  document.getElementById("post-comment-"+id).style.display = "none";
-  document.getElementById("comment__button-"+id).style.display = "inline-block";
+  $("#cancel__comment-"+id).hide();
+  $("#post-comment-"+id).hide();
+  $("#comment__button-"+id).show();
   if (comments) {
     document.getElementById("reveal-"+id).style.display = "block";
     hideComments(id);

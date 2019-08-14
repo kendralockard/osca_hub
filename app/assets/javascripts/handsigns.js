@@ -1,9 +1,9 @@
 function showHandSignsText() {
-   document.getElementById('handsigns-text').style.display = "block";
-   document.getElementById('handsigns-images').style.display = "none";
+   $('#handsigns-text').show();
+   $('#handsigns-images').hide();
 }
 
 function showHandSignsImages() {
-   document.getElementById('handsigns-images').style.display = "block";
-   document.getElementById('handsigns-text').style.display = "none";
+   $('#handsigns-images').show();
+   $('#handsigns-text').hide();
 }

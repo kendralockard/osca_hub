@@ -11,7 +11,7 @@
       });
       if (option.length !== 0) {
         option = option[0].toString();
-        text = option === 'md_h1' ? "# " : option === 'md_h2' ? "## " : option === 'md_h3' ? "### " : option === 'md_h4' ? "#### " : option === 'md_h5' ? "##### " : option === 'md_italic' ? "*...*" : option === 'md_bold' ? "__...__" : option === 'md_list-ul' ? "* \n* \n* " : option === 'md_indent' ? "> " : option === 'md_underline' ? "<u>...</u>" : option === 'md_camera-retro' ? "![image description](https://www.your-photo-link-here.com)\n" : void 0;
+        text = option === 'md_h1' ? "# title" : option === 'md_h2' ? "## title" : option === 'md_h3' ? "### title" : option === 'md_h4' ? "#### title" : option === 'md_h5' ? "##### title" : option === 'md_italic' ? "*italic text*" : option === 'md_bold' ? "__bold text__" : option === 'md_list-ul' ? "* item 1\n* item 2\n* item 3" : option === 'md_indent' ? "> indented text" : option === 'md_underline' ? "<u>underlined text</u>" : option === 'md_camera-retro' ? "![image description](https://www.your-photo-link-here.com)\n" : void 0;
         textarea = $('#md-editor #md-text textarea');
         return insertAtCaret(textarea.attr('id'), text);
       }
@@ -88,3 +88,15 @@
   $(document).on('turbolinks:load', initializeEditor);
 
 }).call(this);
+
+function show_markdown_toolbar() {
+  $('.btn-toolbar').show();
+  $('#markdown-toolbar').hide();
+  $("#markdown-toolbar-hide").show();
+}
+
+function hide_markdown_toolbar() {
+  $('.btn-toolbar').hide();
+  $('#markdown-toolbar-hide').hide();
+  $("#markdown-toolbar").show();
+}
