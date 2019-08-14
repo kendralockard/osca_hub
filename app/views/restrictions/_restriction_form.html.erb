@@ -1,44 +1,44 @@
-<h5>Add your Dietary Restrictions</h5>
+<div id="restrictions-form">
+  <%= form_for DietaryRestriction.new do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
 
-<%= form_for DietaryRestriction.new do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
+    <div class="restriction_form">
+      <%= f.check_box :vegetarian, style: "position: absolute" %>
+      <%= f.label :vegetarian, style: "padding-left: 25px" %><hr>
 
-  <div class="restriction_form">
-    <%= f.check_box :vegetarian, style: "position: absolute" %>
-    <%= f.label :vegetarian, style: "padding-left: 25px" %><hr>
+      <%= f.check_box :vegan, style: "position: absolute" %>
+      <%= f.label :vegan, style: "padding-left: 25px" %><hr>
 
-    <%= f.check_box :vegan, style: "position: absolute" %>
-    <%= f.label :vegan, style: "padding-left: 25px" %><hr>
+      <%= f.check_box :honey, style: "position: absolute" %>
+      <%= f.label :honey, "No honey", style: "padding-left: 25px" %><br>
 
-    <%= f.check_box :honey, style: "position: absolute" %>
-    <%= f.label :honey, "No honey", style: "padding-left: 25px" %><br>
+      <%= f.label "Severity" %>
+      <%= f.text_field :honey_severe %><hr>
 
-    <%= f.label "Severity" %>
-    <%= f.text_field :honey_severe %><hr>
+      <%= f.check_box :nuts, style: "position: absolute" %>
+      <%= f.label :nuts, "No nuts", style: "padding-left: 25px" %><br>
 
-    <%= f.check_box :nuts, style: "position: absolute" %>
-    <%= f.label :nuts, "No nuts", style: "padding-left: 25px" %><br>
+      <%= f.label "Severity" %>
+      <%= f.text_field :nuts_severe %><hr>
 
-    <%= f.label "Severity" %>
-    <%= f.text_field :nuts_severe %><hr>
+      <%= f.check_box :gluten, style: "position: absolute" %>
+      <%= f.label :gluten, "No gluten", style: "padding-left: 25px" %><br>
 
-    <%= f.check_box :gluten, style: "position: absolute" %>
-    <%= f.label :gluten, "No gluten", style: "padding-left: 25px" %><br>
+      <%= f.label "Severity" %>
+      <%= f.text_field :gluten_severe %><hr>
 
-    <%= f.label "Severity" %>
-    <%= f.text_field :gluten_severe %><hr>
+      <%= f.check_box :soy, style: "position: absolute" %>
+      <%= f.label :soy, "No soy", style: "padding-left: 25px" %><br>
 
-    <%= f.check_box :soy, style: "position: absolute" %>
-    <%= f.label :soy, "No soy", style: "padding-left: 25px" %><br>
+      <%= f.label "Severity" %>
+      <%= f.text_field :soy_severe %><hr>
 
-    <%= f.label "Severity" %>
-    <%= f.text_field :soy_severe %><hr>
+      <%= f.label "Other", style: "padding-bottom: 20px" %>
+      <%= f.text_area :other %>
 
-    <%= f.label "Other", style: "padding-bottom: 20px" %>
-    <%= f.text_area :other %>
+      <br><br>
 
-    <br><br>
-
-    <%= f.submit "Add Restrictions", class: "btn btn-primary" %>
-  </div>
-<% end %>
+      <%= f.submit "Add Restrictions", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

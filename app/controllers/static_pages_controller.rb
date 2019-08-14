@@ -51,8 +51,13 @@ class StaticPagesController < ApplicationController
 
   def dietary_restrictions
     if logged_in?
-      @dietary_restrictions = current_user.dietary_restrictions.build
-      @dietary_restrictions = current_user.dietary_restrictions.paginate(page: params[:page])
+      @vegetarian = DietaryRestriction.where(vegetarian: true, coop_id: current_user.coop_id)
+      @vegan = DietaryRestriction.where(vegan: true, coop_id: current_user.coop_id)
+      @no_honey = DietaryRestriction.where(honey: true, coop_id: current_user.coop_id)
+      @no_nuts = DietaryRestriction.where(nuts: true, coop_id: current_user.coop_id)
+      @no_gluten = DietaryRestriction.where(gluten: true, coop_id: current_user.coop_id)
+      @no_soy = DietaryRestriction.where(soy: true, coop_id: current_user.coop_id)
+      @other = DietaryRestriction.where(coop_id: current_user.coop_id).map { |r| r.other }
     end
   end
 

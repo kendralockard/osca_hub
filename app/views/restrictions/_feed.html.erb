@@ -1,7 +1,52 @@
 <h4>Vegetarian</h4>
+<div class="names">
+  <% @vegetarian.each do |vegetarian| %>
+    <%= vegetarian.user.name %><br>
+  <% end %>
+</div><hr>
+
 <h4>Vegan</h4>
+<div class="names">
+<% @vegan.each do |vegan| %>
+  <%= vegan.user.name %><br>
+<% end %>
+</div><hr>
+
 <h4>No honey</h4>
+<div class="names">
+<% @no_honey.each do |no_honey| %>
+  <%= no_honey.user.name %>
+  <%= no_honey.honey_severe %><br>
+<% end %>
+</div><hr>
+
 <h4>No nuts</h4>
+<div class="names">
+<% @no_nuts.each do |no_nuts| %>
+  <%= no_nuts.user.name %>
+  <%= no_nuts.nuts_severe %><br>
+<% end %>
+</div><hr>
+
 <h4>No gluten</h4>
+<div class="names">
+<% @no_gluten.each do |no_gluten| %>
+  <%= no_gluten.user.name %>
+  <%= no_gluten.gluten_severe %><br>
+<% end %>
+</div><hr>
+
 <h4>No soy</h4>
+<div class="names">
+<% @no_soy.each do |no_soy| %>
+  <%= no_soy.user.name %>
+  <%= no_soy.soy_severe %><br>
+<% end %>
+</div><hr>
+
 <h4>Other</h4>
+<% @other.each do |other| %>
+  <% if !other.nil? %>
+    <%= other %>
+  <% end %>
+<% end %>
