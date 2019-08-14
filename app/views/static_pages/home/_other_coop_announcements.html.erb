@@ -1,0 +1,15 @@
+<section id="other-announcements">
+  <p>Recent Announcements in...</p><br>
+  <%= button_to Coop.find(current_user.coop_id).name, root_url,
+      method: :get,
+      class: "btn btn-primary other-announcements" %>
+  <% for id in 2..6 %>
+    <% if id != current_user.coop_id %>
+      <input type="button"
+             id="coop-<%= id %>"
+             class="btn btn-primary other-announcements"
+             value="<%= Coop.find(id).name %>"
+             onclick="show_other_coop(<%= id %>)" /><br>
+    <% end %>
+  <% end %>
+</section>

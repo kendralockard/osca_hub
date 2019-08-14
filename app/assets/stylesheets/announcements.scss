@@ -94,6 +94,17 @@ aside {
   display: none;
 }
 
+#coop-links {
+  p {
+    font-size: 1.6rem;
+    margin-bottom: -2rem;
+  }
+  li {
+    margin-left: 15px;
+    margin-top: 1rem;
+  }
+}
+
 #other-announcements {
   color: var(--gray-dark);
   padding: 0.3rem 1rem;
