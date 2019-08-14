@@ -12,8 +12,8 @@ class DietaryRestrictionsController < ApplicationController
   end
 
   def destroy
-    @dietary_restrictions = DietaryRestriction.find(params[:dietary_restrictions_id])
-    @dietary_restrictions.destroy
+    @restriction = DietaryRestriction.find(params[:id])
+    @restriction.destroy
     flash[:success] = "Dietary restrictions deleted"
     redirect_to dietary_restrictions_path
   end
