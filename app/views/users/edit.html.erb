@@ -19,16 +19,15 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.label "Profile photo" %>
-      <%= f.file_field :avatar %>
+      <div class="avatar_edit">
+        <%= avatar_for @user %>
+        <%= f.file_field :avatar %>
+      </div>
 
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <%= f.submit "Save changes", class: "btn btn-primary", style: "margin-top: 2rem;" %>
     <% end %>
 
-    <div class="avatar_edit">
-      <%= avatar_for @user %>
-    </div>
-
-    <br>
+    <br><br>
 
     <%= render 'switch_coop_button' %>
 

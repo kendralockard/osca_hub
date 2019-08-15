@@ -3,13 +3,11 @@
   <div class="row">
     <aside class="col-md-4">
       <section class="user_info">
-        <h1>
           <%= avatar_for @user %>
-          <%= @user.name %>
+          <p><%= @user.name %></p>
           <% if @user.coop_id == current_user.coop_id %>
-            <%= markdown @user.email %>
+            <br><%= markdown @user.email %>
           <% end %>
-        </h1>
 
         <% if @user.coop_id.nil? %>
           <% if current_user == @user %>

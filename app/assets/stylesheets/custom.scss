@@ -40,7 +40,12 @@ textarea {
   width: 250px;
 }
 
-
+.static {
+  p {
+    font-size: 1.55rem;
+    line-height: 2.5rem;
+  }
+}
 
 /* typography */
 
@@ -90,6 +95,7 @@ p {
   &:hover {
     color: var(--oscahub-blue);
     text-decoration: none;
+    transition: 0.6s;
   }
 }
 

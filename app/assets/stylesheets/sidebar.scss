@@ -1,6 +1,11 @@
 aside {
   section.user_info {
     margin-top: 20px;
+    p {
+      display: inline-block;
+      font-size: 1.7rem;
+      margin-bottom: 0;
+    }
   }
   section {
     margin-top: 20px;
@@ -26,9 +31,14 @@ aside {
 
 .avatar {
   float: left;
+  height: 50px;
   margin-right: 10px;
 }
 
 .avatar_edit {
-  margin-top: 15px;
+  display: flex;
+  input[type="file"] {
+    margin: 1rem;
+    width: fit-content;
+  }
 }
