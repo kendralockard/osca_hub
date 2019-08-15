@@ -41,7 +41,7 @@ aside {
 }
 
 .pencil {
-  background: image-url('pencil.png'); /* 16px x 16px */
+  background: image-url('pencil.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border: none;
@@ -55,7 +55,7 @@ aside {
 }
 
 .cancel {
-  background: image-url('cancel.png'); /* 16px x 16px */
+  background: image-url('cancel.png');
   background-repeat: no-repeat;
   background-size: 70% 70%;
   border: none;
@@ -134,6 +134,24 @@ aside {
   border: 1px solid;
   border-radius: 5px;
   color: var(--email-purple);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   padding: 0.2rem 0.6rem;
+  margin-left: 1rem;
+}
+
+.paperclip {
+  background: image-url('paperclip.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: none;
+  float: left;
+  width: 23px;
+  height: 100px;
+}
+
+#announcement_attachment {
+  border: none;
+  display: none;
+  margin: 0 1rem;
+  width: 200px;
 }
