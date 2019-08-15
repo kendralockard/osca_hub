@@ -14243,7 +14243,7 @@ button.close {
   padding: 5px 0;
 }
 /* line 12, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/announcements.scss */
-.announcements .gravatar {
+.announcements .avatar {
   float: left;
   margin-right: 10px;
   margin-top: 5px;
@@ -24221,7 +24221,7 @@ a[aria-expanded='false'] > .announcement-mobile-caret {
   margin: 0.5rem 0.25rem;
 }
 /* line 29, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/menus.scss */
-.menus .gravatar {
+.menus .avatar {
   float: left;
   margin-right: 10px;
   margin-top: 5px;
@@ -24279,13 +24279,13 @@ aside section h1 {
 }
 
 /* line 27, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/sidebar.scss */
-.gravatar {
+.avatar {
   float: left;
   margin-right: 10px;
 }
 
 /* line 32, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/sidebar.scss */
-.gravatar_edit {
+.avatar_edit {
   margin-top: 15px;
 }
 /* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/users.scss */
@@ -24317,6 +24317,11 @@ aside section h1 {
   background: white;
   color: var(--delete-red);
   float: center;
+}
+
+/* line 27, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/users.scss */
+#user_avatar {
+  border: none;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which

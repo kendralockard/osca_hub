@@ -4,7 +4,7 @@
     <aside class="col-md-4">
       <section class="user_info">
         <h1>
-          <%= gravatar_for @user %>
+          <%= avatar_for @user %>
           <%= @user.name %>
           <% if @user.coop_id == current_user.coop_id %>
             <%= markdown @user.email %>

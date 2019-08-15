@@ -3,7 +3,7 @@
     <%= render 'menus/dropdown', menu: menu %>
   <% end %>
 
-  <%= link_to gravatar_for(menu.user, size: 50), menu.user %>
+  <%= link_to avatar_for(menu.user, size: 50), menu.user %>
 
   <span class="title">
     <%= menu.created_at.strftime("%A") %>
