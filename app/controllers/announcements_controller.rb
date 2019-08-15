@@ -34,7 +34,7 @@ class AnnouncementsController < ApplicationController
     end
 
     def announcement_params
-      params.require(:announcement).permit(:content)
+      params.require(:announcement).permit(:content, :attachment)
     end
 
     def correct_user

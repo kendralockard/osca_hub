@@ -9,5 +9,8 @@
                     required: true %>
   <% end %>
 
+  <%= f.label "attachments" %>
+  <%= f.file_field :attachment %>
+
   <%= f.submit "Post Announcement", class: "btn btn-primary" %>
 <% end %>

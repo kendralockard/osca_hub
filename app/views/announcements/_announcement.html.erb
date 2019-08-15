@@ -14,6 +14,10 @@
 
   <span class="content"><%= markdown announcement.content %></span>
 
+  <% if announcement.attachment.attached? %>
+    <%= link_to 'attachment', rails_blob_path(announcement.attachment, only_path: true), class: 'button is-primary is-big' %>
+  <% end %>
+
   <%= render 'comments/new', announcement: announcement %>
   <%= render 'comments/feed', announcement: announcement %>
 
