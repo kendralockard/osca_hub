@@ -6,7 +6,13 @@
                         data: { confirm: "Delete restrictions?" } %>
 <% else %>
   <input type=button
-         id="add-restrictions-btn"
+         id="myBtn"
          class="add-restrictions"
          value="+ add your dietary restrictions"/><img>
 <% end %>
+
+<script type="text/javascript">
+  $('#add-restrictions-btn').on('click', function() {
+      $('#restrictions-form').show();
+  });
+</script>

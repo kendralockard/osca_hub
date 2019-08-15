@@ -6,6 +6,7 @@
       <h1>Dietary Restrictions</h1>
 
       <% if !current_user.coop_id.nil? %>
+        <div id="newRestriction"></div>
         <%= render 'restrictions/buttons' %>
       <% end %>
       <hr>
