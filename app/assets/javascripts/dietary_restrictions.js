@@ -1,4 +1,3 @@
-function show_restrictions_form() {
-  $('#add-restrictions-btn').hide();
-  $("#restrictions-form").show();
-}
+$('#add-restrictions-btn').on('click', function() {
+    $('#restrictions-form').show();
+});

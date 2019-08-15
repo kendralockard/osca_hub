@@ -1,52 +1,84 @@
-<h4>Vegetarian</h4>
-<div class="names">
-  <% @vegetarian.each do |vegetarian| %>
-    <%= vegetarian.user.name %><br>
-  <% end %>
-</div><hr>
+<div class="restrictions-group">
 
-<h4>Vegan</h4>
-<div class="names">
-<% @vegan.each do |vegan| %>
-  <%= vegan.user.name %><br>
-<% end %>
-</div><hr>
+  <div>
+    <h4>Vegetarian</h4><br>
+        <div class="names">
+          <% @vegetarian.each do |vegetarian| %>
+            <%= vegetarian.user.name %><br><br>
+          <% end %>
+        </div>
+  </div>
 
-<h4>No honey</h4>
-<div class="names">
-<% @no_honey.each do |no_honey| %>
-  <%= no_honey.user.name %>
-  <%= no_honey.honey_severe %><br>
-<% end %>
-</div><hr>
+  <div>
+    <h4>Vegan</h4>
+      <div class="names">
+        <% @vegan.each do |vegan| %>
+          <%= vegan.user.name %><br><br>
+        <% end %>
+      </div>
+  </div>
 
-<h4>No nuts</h4>
-<div class="names">
-<% @no_nuts.each do |no_nuts| %>
-  <%= no_nuts.user.name %>
-  <%= no_nuts.nuts_severe %><br>
-<% end %>
-</div><hr>
+  <div>
+    <h4>No honey</h4>
+      <div class="names">
+      <% @no_honey.each do |no_honey| %>
+          <%= no_honey.user.name %><br>
+          <% if !no_honey.honey_severe.blank? %>
+            <em>> <%= no_honey.honey_severe %></em><br><br>
+          <% end %>
+          <br>
+        <% end %>
+      </div>
+  </div>
 
-<h4>No gluten</h4>
-<div class="names">
-<% @no_gluten.each do |no_gluten| %>
-  <%= no_gluten.user.name %>
-  <%= no_gluten.gluten_severe %><br>
-<% end %>
-</div><hr>
+  <div>
+    <h4>No nuts</h4>
+      <div class="names">
+        <% @no_nuts.each do |no_nuts| %>
+          <%= no_nuts.user.name %><br>
+          <% if !no_nuts.nuts_severe.blank? %>
+            <em>> <%= no_nuts.nuts_severe %></em><br><br>
+          <% end %>
+        <% end %>
+      </div>
+  </div>
 
-<h4>No soy</h4>
-<div class="names">
-<% @no_soy.each do |no_soy| %>
-  <%= no_soy.user.name %>
-  <%= no_soy.soy_severe %><br>
-<% end %>
-</div><hr>
+  <div>
+    <h4>No gluten</h4>
+      <div class="names">
+        <% @no_gluten.each do |no_gluten| %>
+          <%= no_gluten.user.name %><br>
+          <% if !no_gluten.gluten_severe.blank? %>
+            <em>> <%= no_gluten.gluten_severe %></em><br><br>
+          <% end %>
+          <br>
+        <% end %>
+      </div>
+  </div>
 
-<h4>Other</h4>
-<% @other.each do |other| %>
-  <% if !other.nil? %>
-    <%= other %>
-  <% end %>
-<% end %>
+  <div>
+    <h4>No soy</h4>
+      <div class="names">
+        <% @no_soy.each do |no_soy| %>
+          <%= no_soy.user.name %><br>
+          <% if !no_soy.soy_severe.blank? %>
+            <em>> <%= no_soy.soy_severe %></em><br><br>
+          <% end %>
+          <br>
+        <% end %>
+      </div>
+  </div>
+
+  <div>
+    <h4>Other</h4>
+      <div class="names">
+        <% @other.each do |other| %>
+          <% if !other.other.blank? %>
+            <%= other.user.name %><br>
+            <em>><%= other.other %></em><br><br>
+          <% end %>
+        <% end %>
+      </div>
+  </div>
+
+</div>

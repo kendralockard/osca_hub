@@ -1,13 +1,12 @@
 <% if DietaryRestriction.where(user_id: current_user.id).any? %>
-<%= button_to "delete my restrictions",
-                      DietaryRestriction.where(user_id: current_user.id).first,
-                      class: "delete-restrictions-btn",
-                      method: :delete,
-                      data: { confirm: "Delete restrictions?" } %>
+  <%= link_to "delete my restrictions",
+                        DietaryRestriction.where(user_id: current_user.id).first,
+                        class: "delete-restrictions",
+                        method: :delete,
+                        data: { confirm: "Delete restrictions?" } %>
 <% else %>
   <input type=button
          id="add-restrictions-btn"
          class="add-restrictions"
-         value="+ add your dietary restrictions"
-         onclick="show_restrictions_form()" /><img>
+         value="+ add your dietary restrictions"/><img>
 <% end %>

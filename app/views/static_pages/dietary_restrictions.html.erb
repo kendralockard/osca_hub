@@ -1,21 +1,15 @@
 <% if logged_in? %>
 <% provide(:title, 'Dietary Restrictions') %>
   <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
+
+    <div class="restrictions">
+      <h1>Dietary Restrictions</h1>
+
+      <% if !current_user.coop_id.nil? %>
         <%= render 'restrictions/buttons' %>
-      </section>
-      <section class="restriction_form">
-        <%= render 'restrictions/restriction_form' %>
-      </section>
-    </aside>
-    <div class="col-md-8 restrictions">
-      <h3>Dietary Restrictions</h3><hr>
-      <% if current_user.coop_id.nil? %>
-        <h2 style="text-align: left">Check back here for the Dietary Restrictions chart after you
-          are approved to join your co-op's OSCA Hub.</h2>
       <% end %>
+      <hr>
+
       <%= render 'restrictions/feed' %>
     </div>
   </div>

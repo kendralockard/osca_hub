@@ -1,5 +1,4 @@
-<div id="restrictions-form">
-  <%= form_for DietaryRestriction.new do |f| %>
+<%= form_for DietaryRestriction.new do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
 
     <div class="restriction_form">
@@ -41,4 +40,3 @@
       <%= f.submit "Add Restrictions", class: "btn btn-primary" %>
     </div>
   <% end %>
-</div>
