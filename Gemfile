@@ -18,6 +18,7 @@ gem 'momentjs-rails'
 gem 'redcarpet'
 gem 'coderay'
 gem 'md_simple_editor'
+gem 'aws-sdk-s3'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
