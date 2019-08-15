@@ -11569,6 +11569,23 @@ return jQuery;
   }
 
 })( jQuery );
+function show_other_coop(coop_id) {
+  $('#announcements').hide();
+  $('#announcement-header').hide();
+  for (id = 2; id < 7; id++) {
+    if (document.getElementById('other-announcements-'+id).style.display == "block") {
+      $('#other-announcements-'+id).hide();
+    }
+  }
+  $('#other-announcements-'+coop_id).show();
+}
+
+function show_attachment_upload() {
+  $('.paperclip').hide();
+  document.getElementById('announcement_attachment').click();
+  $('#announcement_attachment').show();
+}
+;
 (function() {
   var context = this;
 
@@ -12318,6 +12335,7 @@ function showHandSignsImages() {
 function show_markdown_toolbar() {
   $('.btn-toolbar').show();
   $('#markdown-toolbar').hide();
+  $('.paperclip').hide();
   $("#markdown-toolbar-hide").show();
 }
 
@@ -12325,17 +12343,7 @@ function hide_markdown_toolbar() {
   $('.btn-toolbar').hide();
   $('#markdown-toolbar-hide').hide();
   $("#markdown-toolbar").show();
-}
-;
-function show_other_coop(coop_id) {
-  $('#announcements').hide();
-  $('#announcement-header').hide();
-  for (id = 2; id < 7; id++) {
-    if (document.getElementById('other-announcements-'+id).style.display = "block") {
-      $('#other-announcements-'+id).hide();
-    }
-  }
-  $('#other-announcements-'+coop_id).show();
+  $('.paperclip').show();
 }
 ;
 $( document ).on('turbolinks:load', function() {

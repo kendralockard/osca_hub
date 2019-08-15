@@ -6,6 +6,10 @@
   <span class="title">Discussion <%= time %></span> - <%= discussion.title %>
   <br>
   <span class="content">
-    <%= markdown discussion.message %>
+    <% if discussion.message.blank? %>
+      <br>
+    <% else %>
+      <%= markdown discussion.message %>
+    <% end %>
   </span>
 </li>

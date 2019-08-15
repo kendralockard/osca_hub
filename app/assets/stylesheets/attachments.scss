@@ -1,0 +1,26 @@
+#announcement_attachment {
+  border: none;
+  display: none;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.paperclip {
+  background: image-url('paperclip.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: none;
+  float: left;
+  width: 23px;
+  height: 100px;
+}
+
+.btn-attachment {
+  border: 1px solid;
+  border-radius: 10px;
+  color: var(--email-purple);
+  font-size: 1.2rem;
+  padding: 0.2rem 0.6rem;
+  margin-left: 1rem;
+}

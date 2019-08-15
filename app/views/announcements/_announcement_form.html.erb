@@ -2,6 +2,12 @@
   <%= render 'shared/error_messages', object: f.object %>
   <%= render 'announcements/markdown' %>
 
+  <input type=button
+         class="paperclip"
+         onclick="show_attachment_upload()" />
+
+  <%= f.file_field :attachment %>
+
   <%= md_simple_editor('btn-xs') do %>
     <%= f.text_area :content,
                     class: "announcement-form",

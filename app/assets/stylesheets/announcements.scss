@@ -35,40 +35,6 @@ aside {
   }
 }
 
-.btn-toolbar {
-  margin: 0 2rem !important;
-  display: none;
-}
-
-.pencil {
-  background: image-url('pencil.png'); /* 16px x 16px */
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border: none;
-  float: left;
-  width: 23px;
-  height: 100px;
-}
-
-#markdown-toolbar-hide {
-  display: none;
-}
-
-.cancel {
-  background: image-url('cancel.png'); /* 16px x 16px */
-  background-repeat: no-repeat;
-  background-size: 70% 70%;
-  border: none;
-  float: left;
-  width: 23px;
-  height: 100px;
-}
-
-.btn-primary.preview_md {
-  background: white;
-  color: var(--oscahub-blue);
-}
-
 .dropdown-menu.announcements {
   float: right;
   font-size: 1.3rem;
@@ -101,17 +67,6 @@ aside {
   display: none;
 }
 
-#coop-links {
-  p {
-    font-size: 1.6rem;
-    margin-bottom: -2rem;
-  }
-  li {
-    margin-left: 15px;
-    margin-top: 1rem;
-  }
-}
-
 #other-announcements {
   color: var(--gray-dark);
   padding: 0.3rem 1rem;
@@ -122,10 +77,21 @@ aside {
 }
 
 .btn.btn-primary.other-announcements {
-  background: white;
-  color: var(--oscahub-blue);
+  color: white;
+  background: var(--oscahub-blue);
   font-size: 1.3rem;
   margin: 0.5rem 1.5rem;
   padding: 0.2rem 0.6rem;
   width: fit-content;
+}
+
+#coop-links {
+  p {
+    font-size: 1.6rem;
+    margin-bottom: -2rem;
+  }
+  li {
+    margin-left: 15px;
+    margin-top: 1rem;
+  }
 }
