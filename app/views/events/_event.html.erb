@@ -2,7 +2,7 @@
 <li class="events">
   <%= render 'events/dropdown', event: event %>
 
-  <%= link_to gravatar_for(event.user, size: 50), event.user %>
+  <%= link_to avatar_for(event.user, size: 50), event.user %>
   <span class="title">*Sub Needed*</span> for
     <span class="user"><%= link_to event.user.name, event.user,
       style: "color: var(--gray);" %></span>

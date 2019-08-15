@@ -4,7 +4,7 @@
     <%= render 'announcements/dropdown', announcement: announcement %>
   <% end %>
 
-  <%= link_to gravatar_for(announcement.user, size: 50), announcement.user %>
+  <%= link_to avatar_for(announcement.user, size: 50), announcement.user %>
   <span class="user"><%= link_to announcement.user.name, announcement.user %>
 
     <span class="timestamp">

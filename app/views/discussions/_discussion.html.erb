@@ -1,7 +1,7 @@
 <hr>
 <li class="discussions">
 
-  <%= link_to gravatar_for(discussion.user, size: 50), discussion.user %>
+  <%= link_to avatar_for(discussion.user, size: 50), discussion.user %>
   <% time = discussion.meal ? 'Today' : 'Tonight' %>
   <span class="title">Discussion <%= time %></span> - <%= discussion.title %>
   <br>
