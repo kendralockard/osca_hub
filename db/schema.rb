@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_15_165714) do
+ActiveRecord::Schema.define(version: 2019_08_18_215130) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 2019_08_15_165714) do
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.integer "coop_id"
+    t.string "theme", default: "light-mode"
     t.index ["coop_id"], name: "index_users_on_coop_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end

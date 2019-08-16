@@ -84,7 +84,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :avatar, :email, :password,
-                                   :password_confirmation, :coop_id)
+                                   :password_confirmation, :coop_id, :theme)
     end
 
     # Confirms the correct user

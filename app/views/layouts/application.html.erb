@@ -3,8 +3,14 @@
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all',
+
+    <% theme = current_user.nil? ? "light-mode" : current_user.theme %>
+
+    <%= stylesheet_link_tag    'application-all', media: 'all',
                                               'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag    'application-'+theme, media: 'all' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= render 'layouts/shim' %>
     <%= favicon_link_tag asset_path('oscalogo.png') %>

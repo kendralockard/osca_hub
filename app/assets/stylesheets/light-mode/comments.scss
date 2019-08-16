@@ -1,0 +1,32 @@
+.comments {
+  color: var(--gray-dark);
+}
+
+.comment__button {
+  color: var(--comment-blue);
+  &:hover {
+    background: var(--comment-gray-light);
+  }
+}
+
+.cancel__button {
+  color: var(--gray);
+}
+
+.comment-box {
+  color: var(--gray-dark);
+}
+
+#post__button {
+  background: var(--comment-blue);
+}
+
+#view__comments {
+  background: var(--comment-gray-light);
+  color: var(--gray);
+}
+
+#hide__comments {
+  background: transparent;
+  background: var(--comment-gray);
+}

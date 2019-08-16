@@ -1,0 +1,35 @@
+.comments {
+  color: var(--text);
+}
+
+.comment__button {
+  background: var(--navbar-background);
+  color: var(--comment-blue);
+  &:hover {
+    background: white;
+  }
+}
+
+.cancel__button {
+  background: var(--navbar-background);
+  color: var(--text);
+}
+
+.comment-box {
+  background: var(--form-background);
+  color: var(--text);
+}
+
+#post__button {
+  background: var(--comment-blue);
+}
+
+#view__comments, #hide__comments {
+  background: transparent;
+  border: 1px solid;
+  color: var(--gray-light);
+}
+
+.dropdown-menu.comments {
+  background: var(--navbar-background);
+}

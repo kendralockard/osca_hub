@@ -6,23 +6,37 @@
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
+      <%= f.label :name, "Name" %>
       <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email %>
+      <%= f.label :email, "Email" %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <div style="display: flex;">
+      <%= f.label :password, "New password", style: "margin-right: 20rem" %>
+      <%= f.label :password_confirmation, "Confirm password" %>
+      </div>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <div style="display: flex">
+      <%= f.password_field :password, class: 'form-control', style: "width: 48%; margin-right: 30px" %>
+
+      <%= f.password_field :password_confirmation, class: 'form-control', style: "width: 48%" %>
+      </div>
 
       <%= f.label "Profile photo" %>
       <div class="avatar_edit">
         <%= avatar_for @user %>
         <%= f.file_field :avatar %>
-      </div>
+      </div><br>
+
+      <%= f.label :theme %><br>
+      <div class="radio-inline">
+        <%= f.radio_button :theme, 'light-mode' %>
+        <%= f.label :theme, "Light mode" %><br>
+
+        <%= f.radio_button :theme, 'dark-mode' %>
+        <%= f.label :theme, "Dark mode" %>
+      </div><br>
 
       <%= f.submit "Save changes", class: "btn btn-primary", style: "margin-top: 2rem;" %>
     <% end %>

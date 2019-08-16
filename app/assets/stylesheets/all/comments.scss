@@ -1,5 +1,4 @@
 .comments {
-  color: var(--gray-dark);
   font-size: 1.3rem;
   margin-left: 7rem;
   .comments-dropdown {
@@ -21,13 +20,9 @@
 
 .comment__button {
   border: none;
-  color: var(--comment-blue);
   font-size: 1.3rem;
   margin: 0;
   padding: 0.1rem 0.5rem;
-  &:hover {
-    background: var(--comment-gray-light);
-  }
 }
 
 .cancel__button {
@@ -39,7 +34,6 @@
 
 .comment-box {
   border-radius: 3px;
-  color: var(--gray-dark);
   display: flex;
   font-size: 1.3rem;
   height: 60px;
@@ -48,7 +42,6 @@
 }
 
 #post__button {
-  background: var(--comment-blue);
   font-size: 1.3rem;
   margin: 0 1rem 4rem 19rem;
   padding: 0.3rem 0.6rem;
@@ -56,7 +49,6 @@
 }
 
 #hide__comments {
-  background: var(--comment-gray);
   border-radius: 15px;
   border: 1px groove;
   color: white;
@@ -67,10 +59,8 @@
 }
 
 #view__comments {
-  background: var(--comment-gray-light);
   border-radius: 15px;
   border: none;
-  color: var(--gray);
   display: flex;
   font-size: 1.3rem;
   margin: 1rem 0.5rem -1rem 60px;

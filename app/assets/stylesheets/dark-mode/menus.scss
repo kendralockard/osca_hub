@@ -1,0 +1,15 @@
+.menus {
+  .title {
+    color: var(--purple);
+  }
+  .food-group {
+    color: #b7bbc3;
+  }
+}
+
+.dropdown-menu.menus {
+  background: var(--navbar-background);
+  &:hover {
+    background: white;
+  }
+}
