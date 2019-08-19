@@ -1,0 +1,35 @@
+.events {
+  .title {
+    color: var(--red);
+  }
+}
+
+.fc-unthemed td.fc-today {
+  background: var(--yellow);
+}
+
+.fc-button {
+  background: var(--softblue);
+  color: var(--purple);
+  text-shadow: none;
+}
+
+
+.btn.btn-default.delete {
+  background: var(--purple);
+}
+
+.modal-header, .modal-body, .modal-footer {
+  background: var(--purple-light);
+}
+
+.modal-title.form-title {
+  color: var(--purple);
+}
+
+.dropdown-menu.events {
+  background: var(--purple-very-light);
+  &:hover {
+    background: white;
+  }
+}

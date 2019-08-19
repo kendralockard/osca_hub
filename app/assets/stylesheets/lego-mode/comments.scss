@@ -1,9 +1,5 @@
-.comments {
-  color: var(--text);
-}
-
 .comment__button {
-  background: var(--navbar-background);
+  background: var(--purple-very-light);
   color: var(--comment-blue);
   &:hover {
     background: white;
@@ -11,17 +7,20 @@
 }
 
 .cancel__button {
-  background: var(--navbar-background);
-  color: var(--text);
+  background: var(--purple-very-light);
+  color: #666;
 }
 
 .comment-box {
-  background: var(--form-background);
-  color: var(--text);
+  color: var(--purple);
 }
 
 #post__button {
   background: var(--comment-blue);
+  color: white;
+  &:hover {
+    background: var(--red);
+  }
 }
 
 #view__comments, #hide__comments {
@@ -31,5 +30,5 @@
 }
 
 .dropdown-menu.comments {
-  background: var(--navbar-background);
+  background: var(--purple-very-light);
 }

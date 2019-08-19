@@ -1,14 +1,14 @@
 .menus {
   .title {
-    color: var(--purple);
+    color: var(--orange);
   }
   .food-group {
-    color: #b7bbc3;
+    color: var(--red);
   }
 }
 
 .dropdown-menu.menus {
-  background: var(--navbar-background);
+  background: var(--purple-very-light);
   &:hover {
     background: white;
   }

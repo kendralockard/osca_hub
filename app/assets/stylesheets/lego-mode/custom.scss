@@ -1,0 +1,145 @@
+/* colors */
+
+:root {
+  --cyan: #2addbd;
+  --blue: #2291e5;
+  --pink: #ff6585;
+  --green: #0fd08a;
+  --green-dark: #15835b;
+  --red: #f35252;
+  --red-dark: #c32727;
+  --red-light: #f68b8b;
+  --orange: #fdc549;
+  --yellow: #ffee62;
+  --gray: #eee;
+  --purple-light: #aaa3d5;
+  --purple-very-light: #f2e5f2;
+  --purple: #25204a;
+  --softblue: #87c2ec;
+  --softgreen: #c1ec98;
+}
+
+/* universal */
+
+.navbar.navbar-fixed-top.navbar-inverse {
+  background: white;
+  .navbar-nav {
+    li {
+      .dropdown-menu {
+        background: var(--purple-light);
+      }
+      a {
+        color: var(--purple);
+        &:hover {
+          color: var(--red);
+        }
+      }
+    }
+  }
+}
+
+.popover-title {
+  background: var(--orange);
+}
+
+.popover {
+  background: var(--yellow);
+  color: var(--red-dark);
+}
+
+body {
+  background: var(--purple);
+  color: white;
+  font-family: 'apercuregular', sans-serif;
+  padding-top: 60px;
+  .popover {
+    font-family: 'apercuregular';
+  }
+}
+
+a {
+  color: var(--orange);
+  &:hover {
+    color: var(--yellow);
+  }
+}
+
+h2 {
+  color: var(--dark-purple);
+  font-size: 1.2em;
+}
+
+/* header */
+
+#logo {
+  color: var(--purple);
+  &:hover {
+    color: var(--red);
+    text-decoration: none;
+    transition: 0.6s;
+  }
+}
+
+#coop {
+  color: var(--purple-light);
+}
+
+/* footer */
+
+footer {
+  a {
+    color: white;
+    &:hover {
+      color: var(--yellow);
+    }
+  }
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+.form-control {
+  background: var(--gray);
+  color: var(--purple);
+}
+
+::placeholder {
+  color: var(--purple-light);
+}
+
+#error_explanation {
+  color: var(--red);
+  ul {
+    color: var(--red-dark);
+    margin: 0 0 30px 0;
+  }
+}
+
+.btn-primary {
+  background: var(--softblue);
+  border: none;
+  color: var(--red);
+  &:hover {
+    background: var(--orange);
+    color: var(--red);
+  }
+}
+
+/* alerts */
+
+.alert-success {
+  background: var(--softgreen);
+  color: var(--green-dark);
+}
+
+.alert-danger {
+  background: var(--red-light);
+  color: var(--red-dark);
+}
