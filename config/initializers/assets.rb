@@ -14,4 +14,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile << /\.(?:svg|eot|ttf)$/
 
-Rails.application.config.assets.precompile += %w( application-all.css application-light-mode.css application-dark-mode.css application-pink-blue-mode.css )
+Rails.application.config.assets.precompile += %w( application-all.css
+                                                  application-light-mode.css
+                                                  application-dark-mode.css
+                                                  application-pink-blue-mode.css
+                                                )
