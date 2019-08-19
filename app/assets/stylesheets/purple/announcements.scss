@@ -1,0 +1,15 @@
+.dropdown-menu.announcements {
+  background: var(--navbar-background);
+}
+
+#other-announcements {
+  color: var(--gray-dark);
+  p {
+    color: var(--text);
+  }
+}
+
+.btn.btn-primary.other-announcements {
+  color: white;
+  background: var(--link);
+}
