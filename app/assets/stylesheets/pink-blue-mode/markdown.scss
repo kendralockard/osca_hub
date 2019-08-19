@@ -4,20 +4,20 @@
 }
 
 .pencil {
-  background: image-url('pencil-dark-mode.png');
+  background: image-url('pencil.png');
   background-size: 100% 100%;
 }
 
 .cancel {
-  background: image-url('cancel-dark-mode.png');
+  background: image-url('cancel.png');
   background-repeat: no-repeat;
   background-size: 70% 70%;
 }
 
 .btn-primary.preview_md {
-  background: var(--orange);
-  border: none;
-  color: var(--red);
+  background: var(--blue);
+  border: 1px solid;
+  color: var(--off-white-light);
 }
 
 #markdown-toolbar-hide {
