@@ -14236,360 +14236,137 @@ button.close {
 
 
 */
-/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/announcements.scss */
-.dropdown-menu.announcements {
-  background: var(--navbar-background);
-}
-
-/* line 5, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/announcements.scss */
+/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/announcements.scss */
 #other-announcements {
   color: var(--gray-dark);
 }
-/* line 7, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/announcements.scss */
-#other-announcements p {
-  color: var(--text);
-}
 
-/* line 12, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/announcements.scss */
+/* line 5, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/announcements.scss */
 .btn.btn-primary.other-announcements {
   color: white;
-  background: var(--link);
+  background: var(--oscahub-blue);
 }
-/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/attachments.scss */
+/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/attachments.scss */
 .paperclip {
-  background: url(/assets/paperclip-dark-mode-c193c43efdc3e1424f3e8f2fb87a6de158d70fd5bad3c0fef9d3e63bac715ea6.png);
+  background: url(/assets/icons/paperclip-1d35d301b0ffba4981ed0b768198474b672e7607f77f1ca65a477e30faccec8a.png);
   background-size: 100% 100%;
 }
 
-/* line 6, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/attachments.scss */
+/* line 6, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/attachments.scss */
 .btn-attachment {
-  color: var(--orange);
+  color: var(--email-purple);
 }
-/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/comments.scss */
+/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
 .comments {
-  color: var(--text);
+  color: var(--gray-dark);
 }
 
-/* line 5, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/comments.scss */
+/* line 5, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
 .comment__button {
-  background: var(--navbar-background);
   color: var(--comment-blue);
 }
-/* line 8, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/comments.scss */
+/* line 7, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
 .comment__button:hover {
-  background: white;
+  background: var(--comment-gray-light);
 }
 
-/* line 13, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/comments.scss */
+/* line 12, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
 .cancel__button {
-  background: var(--navbar-background);
-  color: var(--text);
+  color: var(--gray);
 }
 
-/* line 18, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/comments.scss */
+/* line 16, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
 .comment-box {
-  background: var(--form-background);
-  color: var(--text);
+  color: var(--gray-dark);
 }
 
-/* line 23, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/comments.scss */
+/* line 20, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
 #post__button {
   background: var(--comment-blue);
 }
 
-/* line 27, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/comments.scss */
-#view__comments, #hide__comments {
+/* line 24, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
+#view__comments {
+  background: var(--comment-gray-light);
+  color: var(--gray);
+}
+
+/* line 29, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
+#hide__comments {
   background: transparent;
-  border: 1px solid;
-  color: var(--gray-light);
+  background: var(--comment-gray);
 }
-
-/* line 33, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/comments.scss */
-.dropdown-menu.comments {
-  background: var(--navbar-background);
-}
-/* colors */
-/* line 4, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-:root {
-  --navbar-background: #1d232d;
-  --background: #282c35;
-  --gray-light: #ced5e1;
-  --coop-gray: #aab2c1;
-  --form-gray: #333842;
-  --form-background: #2e333e;
-  --link: #61afef;
-  --hover-link: #56b6c2;
-  --text: #d2d7e1;
-  --green: #97c379;
-  --pink: #e06d75;
-  --purple: #c578dd;
-  --orange: #d09966;
-}
-
 /* universal */
-/* line 25, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-.navbar.navbar-fixed-top.navbar-inverse {
-  background: var(--navbar-background);
-}
-/* line 29, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-.navbar.navbar-fixed-top.navbar-inverse .navbar-nav li .dropdown-menu {
-  background: var(--navbar-background);
-}
-/* line 32, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-.navbar.navbar-fixed-top.navbar-inverse .navbar-nav li a {
-  color: var(--text);
-}
-/* line 34, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-.navbar.navbar-fixed-top.navbar-inverse .navbar-nav li a:hover {
-  color: var(--hover-link);
-}
-
-/* line 42, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-.popover-title {
-  background: #282c35;
-}
-
-/* line 46, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-.popover {
-  background: #383f4b;
-  color: white;
-}
-
-/* line 51, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
+/* line 4, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
 body {
-  background: var(--background);
-  color: var(--text);
   font-family: 'apercuregular', sans-serif;
   padding-top: 60px;
 }
-/* line 56, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
+/* line 7, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
 body .popover {
   font-family: 'apercuregular';
 }
 
-/* line 61, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-a {
-  color: var(--link);
-}
-/* line 63, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-a:hover {
-  color: var(--hover-link);
-}
-
-/* line 68, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
+/* line 12, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
 h2 {
-  color: var(--text);
   font-size: 1.2em;
 }
 
 /* header */
-/* line 75, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
+/* line 19, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
 #logo {
-  color: var(--text);
+  color: white;
 }
-/* line 77, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
+/* line 21, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
 #logo:hover {
-  color: var(--link);
+  color: var(--oscahub-blue);
+  text-decoration: none;
+  transition: 0.6s;
 }
 
-/* line 82, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
+/* line 28, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
 #coop {
   color: var(--coop-gray);
 }
 
-/* footer */
-/* line 89, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-footer a {
-  color: var(--text);
-}
-/* line 91, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-footer a:hover {
-  color: var(--hover-link);
-}
-
 /* forms */
-/* line 99, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
+/* line 34, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
 input, textarea, select, .uneditable-input {
   margin-bottom: 15px;
 }
 
-/* line 103, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
+/* line 38, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
 input {
   height: auto !important;
 }
-
-/* line 107, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-.form-control {
-  background: var(--form-gray);
-  color: white;
-}
-
-/* line 112, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-::placeholder {
-  color: white;
-}
-
-/* line 116, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-#error_explanation {
-  color: var(--pink);
-}
-/* line 118, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-#error_explanation ul {
-  color: var(--pink);
-  margin: 0 0 30px 0;
-}
-
-/* line 124, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-.btn-primary {
-  background: var(--link);
-  border: none;
-}
-/* line 127, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-.btn-primary:hover {
-  background: var(--hover-link);
-}
-
-/* alerts */
-/* line 134, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-.alert-success {
-  background: #d6ffba;
-  color: #3c691d;
-}
-
-/* line 139, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/custom.scss */
-.alert-danger {
-  background: var(--pink);
-  color: #742a29;
-}
-/* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/discussions.scss */
+/* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/discussions.scss */
 .discussions .title {
-  color: var(--purple);
+  color: var(--discussion-purple);
 }
 
-/* line 8, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/discussions.scss */
+/* line 8, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/discussions.scss */
 .handsigns span {
-  background: var(--navbar-background);
-  color: var(--text);
+  background: var(--light-yellow);
 }
-/* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/events.scss */
+/* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/events.scss */
 .events .title {
   color: var(--pink);
 }
-
-/* line 7, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/events.scss */
-.fc-unthemed td.fc-today {
-  background: var(--orange);
-}
-
-/* line 11, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/events.scss */
-.fc-button {
-  background: var(--navbar-background);
-  color: white;
-  text-shadow: none;
-}
-
-/* line 18, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/events.scss */
-.btn.btn-default.delete {
-  background: var(--navbar-background);
-}
-
-/* line 22, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/events.scss */
-.modal-body.submitted-by {
-  color: var(--text);
-}
-
-/* line 26, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/events.scss */
-.modal-body.message {
-  color: var(--text);
-}
-
-/* line 30, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/events.scss */
-.modal-header, .modal-body, .modal-footer {
-  background: var(--background);
-}
-
-/* line 34, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/events.scss */
-.modal-title.form-title {
-  background: var(--background);
-}
-
-/* line 38, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/events.scss */
-.dropdown-menu.events {
-  background: var(--navbar-background);
-}
-/* line 40, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/events.scss */
-.dropdown-menu.events:hover {
-  background: white;
-}
-/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/markdown.scss */
-.btn-toolbar {
-  margin: 0 2rem !important;
-  display: none;
-}
-
-/* line 6, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/markdown.scss */
-.pencil {
-  background: url(/assets/pencil-dark-mode-adf609ea0967ea81e19feffd110200fa43c3be1438a1bb723e0b18d3059855a7.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border: none;
-  float: left;
-  width: 23px;
-  height: 100px;
-}
-
-/* line 16, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/markdown.scss */
-.cancel {
-  background: url(/assets/cancel-dark-mode-27f03bd53ded4ed30fc96e8e479941e359acabc6dbcf0451081f8651277e2160.png);
-  background-repeat: no-repeat;
-  background-size: 70% 70%;
-  border: none;
-  float: left;
-  width: 23px;
-  height: 100px;
-}
-
-/* line 26, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/markdown.scss */
+/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/markdown.scss */
 .btn-primary.preview_md {
-  background: var(--navbar-background);
-  border: 1px solid;
-  color: var(--link);
-}
-
-/* line 32, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/markdown.scss */
-#markdown-toolbar-hide {
-  display: none;
-}
-
-/* line 36, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/markdown.scss */
-#md-editor #md-text textarea {
-  background: var(--form-background);
-  color: var(--text);
-}
-/* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/menus.scss */
-.menus .title {
-  color: var(--purple);
-}
-/* line 5, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/menus.scss */
-.menus .food-group {
-  color: #b7bbc3;
-}
-
-/* line 10, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/menus.scss */
-.dropdown-menu.menus {
-  background: var(--navbar-background);
-}
-/* line 12, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/menus.scss */
-.dropdown-menu.menus:hover {
   background: white;
+  color: var(--oscahub-blue);
 }
-/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/users.scss */
+/* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/menus.scss */
+.menus .title {
+  color: var(--event-purple);
+}
+/* line 5, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/menus.scss */
+.menus .food-group {
+  color: var(--gray);
+}
+/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/users.scss */
 .btn.btn-default.join-coop {
-  background: var(--purple);
+  background: var(--pink);
   color: white;
-}
-
-/* line 6, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/dark-mode/users.scss */
-.btn.btn-default.switch-coop {
-  background: var(--navbar-background);
 }

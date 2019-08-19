@@ -1,0 +1,15 @@
+.menus {
+  .title {
+    color: var(--cyan-dark);
+  }
+  .food-group {
+    color: var(--gray);
+  }
+}
+
+.dropdown-menu.menus {
+  background: var(--off-white-light);
+  &:hover {
+    background: white;
+  }
+}

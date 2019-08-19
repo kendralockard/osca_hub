@@ -4,27 +4,22 @@
 }
 
 .pencil {
-  background: image-url('icons/pencil-dark-mode.png');
+  background: image-url('icons/pencil.png');
   background-size: 100% 100%;
 }
 
 .cancel {
-  background: image-url('icons/cancel-dark-mode.png');
+  background: image-url('icons/cancel.png');
   background-repeat: no-repeat;
   background-size: 70% 70%;
 }
 
 .btn-primary.preview_md {
-  background: var(--navbar-background);
+  background: var(--blue);
   border: 1px solid;
-  color: var(--link);
+  color: var(--off-white-light);
 }
 
 #markdown-toolbar-hide {
   display: none;
-}
-
-#md-editor #md-text textarea {
-  background: var(--form-background);
-  color: var(--text);
 }

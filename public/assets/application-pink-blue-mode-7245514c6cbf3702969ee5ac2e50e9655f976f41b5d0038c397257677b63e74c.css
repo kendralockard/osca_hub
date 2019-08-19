@@ -14236,137 +14236,331 @@ button.close {
 
 
 */
-/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/announcements.scss */
-#other-announcements {
-  color: var(--gray-dark);
+/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/announcements.scss */
+.dropdown-menu.announcements {
+  background: var(--off-white-light);
+}
+/* line 5, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/announcements.scss */
+.dropdown-menu.announcements li a:hover {
+  background: white;
 }
 
-/* line 5, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/announcements.scss */
-.btn.btn-primary.other-announcements {
-  color: white;
-  background: var(--oscahub-blue);
+/* line 12, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/announcements.scss */
+#other-announcements {
+  color: var(--blue);
 }
-/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/attachments.scss */
+
+/* line 16, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/announcements.scss */
+.btn.btn-primary.other-announcements {
+  background: var(--pink);
+  color: white;
+}
+/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/attachments.scss */
 .paperclip {
-  background: url(/assets/paperclip-1d35d301b0ffba4981ed0b768198474b672e7607f77f1ca65a477e30faccec8a.png);
+  background: url(/assets/icons/paperclip-1d35d301b0ffba4981ed0b768198474b672e7607f77f1ca65a477e30faccec8a.png);
   background-size: 100% 100%;
 }
 
-/* line 6, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/attachments.scss */
+/* line 6, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/attachments.scss */
 .btn-attachment {
-  color: var(--email-purple);
+  color: var(--cyan-dark);
 }
-/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
-.comments {
-  color: var(--gray-dark);
-}
-
-/* line 5, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
+/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/comments.scss */
 .comment__button {
+  background: var(--off-white-light);
   color: var(--comment-blue);
 }
-/* line 7, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
+/* line 4, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/comments.scss */
 .comment__button:hover {
-  background: var(--comment-gray-light);
+  background: white;
 }
 
-/* line 12, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
+/* line 9, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/comments.scss */
 .cancel__button {
-  color: var(--gray);
+  background: var(--off-white);
+  color: #666;
 }
 
-/* line 16, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
+/* line 14, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/comments.scss */
 .comment-box {
-  color: var(--gray-dark);
+  color: var(--blue);
 }
 
-/* line 20, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
+/* line 18, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/comments.scss */
 #post__button {
   background: var(--comment-blue);
+  color: white;
+}
+/* line 21, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/comments.scss */
+#post__button:hover {
+  background: var(--pink);
 }
 
-/* line 24, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
+/* line 26, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/comments.scss */
 #view__comments {
-  background: var(--comment-gray-light);
-  color: var(--gray);
+  border: none;
+  background: var(--off-white-light);
+  color: var(--grey-darker);
 }
 
-/* line 29, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/comments.scss */
+/* line 32, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/comments.scss */
 #hide__comments {
-  background: transparent;
-  background: var(--comment-gray);
+  background: var(--grey);
+  color: white;
 }
+
+/* line 37, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/comments.scss */
+.dropdown-menu.comments {
+  background: var(--off-white-light);
+}
+/* line 39, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/comments.scss */
+.dropdown-menu.comments:hover {
+  background: white;
+}
+/* colors */
+/* line 4, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+:root {
+  --pink: #ac3b61;
+  --red: #d23535;
+  --peach: #edc7b7;
+  --blue: #123c69;
+  --cyan-light: #9fd4d5;
+  --cyan: #14babf;
+  --cyan-dark: #109498;
+  --grey: #bab2b5;
+  --grey-darker: #948e90;
+  --off-white: #eee2dc;
+  --off-white-light: #f9f6f4;
+}
+
 /* universal */
-/* line 4, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
+/* line 24, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+.navbar.navbar-fixed-top {
+  background: var(--pink);
+}
+/* line 28, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+.navbar.navbar-fixed-top .navbar-nav li .dropdown-menu {
+  background: var(--pink);
+}
+/* line 31, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+.navbar.navbar-fixed-top .navbar-nav li a {
+  color: white;
+}
+/* line 33, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+.navbar.navbar-fixed-top .navbar-nav li a:hover, .navbar.navbar-fixed-top .navbar-nav li a:focus {
+  background: var(--blue);
+  color: var(--cyan);
+}
+
+/* line 42, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+.popover-title {
+  background: var(--peach);
+}
+
+/* line 46, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+.popover {
+  background: var(--off-white);
+  color: var(--blue);
+}
+
+/* line 51, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
 body {
+  background: var(--off-white);
+  color: var(--blue);
   font-family: 'apercuregular', sans-serif;
   padding-top: 60px;
 }
-/* line 7, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
+/* line 56, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
 body .popover {
   font-family: 'apercuregular';
 }
 
-/* line 12, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
+/* line 61, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+a {
+  color: var(--pink);
+}
+/* line 63, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+a:hover {
+  color: var(--cyan);
+}
+
+/* line 68, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
 h2 {
+  color: var(--blue);
   font-size: 1.2em;
 }
 
 /* header */
-/* line 19, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
+/* line 75, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
 #logo {
   color: white;
 }
-/* line 21, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
+/* line 77, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
 #logo:hover {
-  color: var(--oscahub-blue);
+  color: var(--blue);
   text-decoration: none;
   transition: 0.6s;
 }
 
-/* line 28, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
+/* line 84, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
 #coop {
-  color: var(--coop-gray);
+  color: var(--peach);
+}
+
+/* footer */
+/* line 91, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+footer a {
+  color: var(--pink);
+}
+/* line 93, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+footer a:hover {
+  color: var(--cyan);
 }
 
 /* forms */
-/* line 34, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
+/* line 101, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
 input, textarea, select, .uneditable-input {
   margin-bottom: 15px;
 }
 
-/* line 38, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/custom.scss */
+/* line 105, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
 input {
   height: auto !important;
 }
-/* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/discussions.scss */
-.discussions .title {
-  color: var(--discussion-purple);
+
+/* line 109, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+.form-control {
+  background: white;
+  color: var(--blue);
 }
 
-/* line 8, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/discussions.scss */
-.handsigns span {
-  background: var(--light-yellow);
+/* line 114, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+::placeholder {
+  color: var(--blue);
 }
-/* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/events.scss */
-.events .title {
+
+/* line 118, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+.btn-primary {
+  background: var(--pink);
+  border: none;
+  color: white;
+}
+/* line 122, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/custom.scss */
+.btn-primary:hover {
+  background: var(--peach);
   color: var(--pink);
 }
-/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/markdown.scss */
-.btn-primary.preview_md {
+/* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/discussions.scss */
+.discussions .title {
+  color: var(--cyan-dark);
+}
+
+/* line 8, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/discussions.scss */
+.handsigns span {
+  background: var(--cyan-light);
+  color: var(--blue);
+}
+/* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/events.scss */
+.events .title {
+  color: var(--red);
+}
+
+/* line 7, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/events.scss */
+.fc-unthemed td.fc-today {
+  background: var(--cyan-light);
+}
+
+/* line 11, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/events.scss */
+.fc-button {
+  background: var(--pink);
+  color: var(--cyan-light);
+  text-shadow: none;
+}
+
+/* line 18, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/events.scss */
+.btn.btn-default.delete {
+  background: var(--off-white-light);
+  color: var(--delete-red);
+}
+
+/* line 23, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/events.scss */
+.modal-header, .modal-body, .modal-footer {
+  background: var(--off-white);
+  color: var(--blue);
+}
+
+/* line 28, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/events.scss */
+.modal-title.form-title {
+  color: var(--blue);
+}
+
+/* line 32, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/events.scss */
+.modal-body.submitted-by {
+  color: var(--blue);
+}
+
+/* line 36, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/events.scss */
+.dropdown-menu.events {
+  background: var(--off-white-light);
+}
+/* line 38, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/events.scss */
+.dropdown-menu.events:hover {
   background: white;
-  color: var(--oscahub-blue);
 }
-/* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/menus.scss */
+/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/markdown.scss */
+.btn-toolbar {
+  margin: 0 2rem !important;
+  display: none;
+}
+
+/* line 6, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/markdown.scss */
+.pencil {
+  background: url(/assets/icons/pencil-126bc91d5f105274f1c24351180b93e1318c5ecc86d201ede6752253fe1c079d.png);
+  background-size: 100% 100%;
+}
+
+/* line 11, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/markdown.scss */
+.cancel {
+  background: url(/assets/icons/cancel-7305d874a39b8ad2bac68345e347f647e31f0253ee388089f158240cf54843d5.png);
+  background-repeat: no-repeat;
+  background-size: 70% 70%;
+}
+
+/* line 17, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/markdown.scss */
+.btn-primary.preview_md {
+  background: var(--blue);
+  border: 1px solid;
+  color: var(--off-white-light);
+}
+
+/* line 23, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/markdown.scss */
+#markdown-toolbar-hide {
+  display: none;
+}
+/* line 2, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/menus.scss */
 .menus .title {
-  color: var(--event-purple);
+  color: var(--cyan-dark);
 }
-/* line 5, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/menus.scss */
+/* line 5, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/menus.scss */
 .menus .food-group {
   color: var(--gray);
 }
-/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/light-mode/users.scss */
+
+/* line 10, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/menus.scss */
+.dropdown-menu.menus {
+  background: var(--off-white-light);
+}
+/* line 12, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/menus.scss */
+.dropdown-menu.menus:hover {
+  background: white;
+}
+/* line 1, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/users.scss */
 .btn.btn-default.join-coop {
-  background: var(--pink);
+  background: var(--cyan-dark);
   color: white;
+}
+
+/* line 6, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/pink-blue-mode/users.scss */
+.btn.btn-default.switch-coop {
+  background: var(--off-white-light);
 }

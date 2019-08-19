@@ -1,0 +1,41 @@
+.events {
+  .title {
+    color: var(--red);
+  }
+}
+
+.fc-unthemed td.fc-today {
+  background: var(--cyan-light);
+}
+
+.fc-button {
+  background: var(--pink);
+  color: var(--cyan-light);
+  text-shadow: none;
+}
+
+
+.btn.btn-default.delete {
+  background: var(--off-white-light);
+  color: var(--delete-red);
+}
+
+.modal-header, .modal-body, .modal-footer {
+  background: var(--off-white);
+  color: var(--blue);
+}
+
+.modal-title.form-title {
+  color: var(--blue);
+}
+
+.modal-body.submitted-by {
+  color: var(--blue);
+}
+
+.dropdown-menu.events {
+  background: var(--off-white-light);
+  &:hover {
+    background: white;
+  }
+}

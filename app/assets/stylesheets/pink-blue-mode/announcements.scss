@@ -1,0 +1,19 @@
+.dropdown-menu.announcements {
+  background: var(--off-white-light);
+  li {
+    a {
+      &:hover {
+        background: white;
+      }
+    }
+  }
+}
+
+#other-announcements {
+  color: var(--blue);
+}
+
+.btn.btn-primary.other-announcements {
+  background: var(--pink);
+  color: white;
+}

@@ -1,0 +1,125 @@
+/* colors */
+
+:root {
+  --pink: #ac3b61;
+  --red: #d23535;
+  --peach: #edc7b7;
+
+  --blue: #123c69;
+
+  --cyan-light: #9fd4d5;
+  --cyan: #14babf;
+  --cyan-dark: #109498;
+
+  --grey: #bab2b5;
+  --grey-darker: #948e90;
+
+  --off-white: #eee2dc;
+  --off-white-light: #f9f6f4;
+}
+
+/* universal */
+
+.navbar.navbar-fixed-top {
+  background: var(--pink);
+  .navbar-nav {
+    li {
+      .dropdown-menu {
+        background: var(--pink);
+      }
+      a {
+        color: white;
+        &:hover, &:focus {
+          background: var(--blue);
+          color: var(--cyan);
+        }
+      }
+    }
+  }
+}
+
+.popover-title {
+  background: var(--peach);
+}
+
+.popover {
+  background: var(--off-white);
+  color: var(--blue);
+}
+
+body {
+  background: var(--off-white);
+  color: var(--blue);
+  font-family: 'apercuregular', sans-serif;
+  padding-top: 60px;
+  .popover {
+    font-family: 'apercuregular';
+  }
+}
+
+a {
+  color: var(--pink);
+  &:hover {
+    color: var(--cyan);
+  }
+}
+
+h2 {
+  color: var(--blue);
+  font-size: 1.2em;
+}
+
+/* header */
+
+#logo {
+  color: white;
+  &:hover {
+    color: var(--blue);
+    text-decoration: none;
+    transition: 0.6s;
+  }
+}
+
+#coop {
+  color: var(--peach);
+}
+
+/* footer */
+
+footer {
+  a {
+    color: var(--pink);
+    &:hover {
+      color: var(--cyan);
+    }
+  }
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+.form-control {
+  background: white;
+  color: var(--blue);
+}
+
+::placeholder {
+  color: var(--blue);
+}
+
+.btn-primary {
+  background: var(--pink);
+  border: none;
+  color: white;
+  &:hover {
+    background: var(--peach);
+    color: var(--pink);
+  }
+}

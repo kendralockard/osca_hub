@@ -1,0 +1,42 @@
+.comment__button {
+  background: var(--off-white-light);
+  color: var(--comment-blue);
+  &:hover {
+    background: white;
+  }
+}
+
+.cancel__button {
+  background: var(--off-white);
+  color: #666;
+}
+
+.comment-box {
+  color: var(--blue);
+}
+
+#post__button {
+  background: var(--comment-blue);
+  color: white;
+  &:hover {
+    background: var(--pink);
+  }
+}
+
+#view__comments {
+  border: none;
+  background: var(--off-white-light);
+  color: var(--grey-darker);
+}
+
+#hide__comments {
+  background: var(--grey);
+  color: white;
+}
+
+.dropdown-menu.comments {
+  background: var(--off-white-light);
+  &:hover {
+    background: white;
+  }
+}
