@@ -23826,3 +23826,10 @@ aside section h1 {
 #user_avatar {
   border: none;
 }
+
+/* line 25, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/users.scss */
+.bio {
+  margin-top: 2rem;
+  padding: 6px;
+  font-size: 1.6rem;
+}
