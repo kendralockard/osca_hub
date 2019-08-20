@@ -6,10 +6,10 @@
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name, "Name" %>
+      <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email, "Email" %>
+      <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
 
       <div style="display: flex;">
@@ -22,6 +22,9 @@
 
       <%= f.password_field :password_confirmation, class: 'form-control', style: "width: 48%" %>
       </div>
+
+      <%= f.label :bio %>
+      <%= f.text_area :bio, class: 'form-control' %>
 
       <%= f.label "Profile photo" %>
       <div class="avatar_edit">
