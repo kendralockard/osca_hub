@@ -16,4 +16,8 @@
 </div>
 
 <br><br>
-<%= link_to image_tag("logos/logo-"+current_user.theme+".png", alt: "OSCA Hub logo", class: "logo"), '/' %>
+<% if logged_in? %>
+  <%= link_to image_tag("logos/logo-"+current_user.theme+".png", alt: "OSCA Hub logo", class: "logo"), '/' %>
+<% else %>
+  <%= link_to image_tag("logos/logo-light-mode.png", alt: "OSCA Hub logo", class: "logo"), '/' %>
+<% end %>
