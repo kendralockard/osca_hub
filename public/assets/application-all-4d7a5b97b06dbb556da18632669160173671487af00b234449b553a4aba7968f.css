@@ -23333,13 +23333,21 @@ textarea {
   line-height: 2.5rem;
 }
 
+/* line 86, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+.center.jumbotron {
+  background-color: #e5eaef;
+  margin-left: auto;
+  margin-right: auto;
+  width: 850px;
+}
+
 /* typography */
-/* line 88, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 95, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-/* line 92, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 99, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
@@ -23347,7 +23355,7 @@ h1 {
   text-align: center;
 }
 
-/* line 99, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 106, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 h2 {
   color: #777777;
   font-size: 1.2em;
@@ -23357,13 +23365,13 @@ h2 {
   text-align: center;
 }
 
-/* line 108, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 115, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 h5 {
   font-size: 1.2em;
   line-height: 1.5em;
 }
 
-/* line 113, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 120, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 p {
   display: block;
   font-size: 1em;
@@ -23371,7 +23379,7 @@ p {
 }
 
 /* header */
-/* line 123, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 130, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 #logo {
   font-size: 1.7em;
   font-weight: bold;
@@ -23381,7 +23389,7 @@ p {
   padding-top: 9px;
 }
 
-/* line 132, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 139, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 #coop {
   float: left;
   font-size: 1.2em;
@@ -23393,36 +23401,36 @@ p {
 }
 
 /* footer */
-/* line 144, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 151, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 footer {
   color: #777777;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
 }
-/* line 149, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 156, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 footer a {
   color: #555555;
 }
-/* line 151, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 158, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 footer a:hover {
   color: #222222;
 }
-/* line 155, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 162, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 footer small {
   float: left;
 }
-/* line 158, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 165, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 footer ul {
   float: right;
   list-style: none;
 }
-/* line 161, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 168, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 footer ul li {
   float: left;
   margin-left: 15px;
 }
-/* line 166, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 173, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 footer .debug_dump {
   clear: both;
   float: left;
@@ -23433,14 +23441,14 @@ footer .debug_dump {
   box-sizing: border-box;
 }
 
-/* line 175, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 182, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 ul, ol {
   list-style-type: none;
   margin-left: -40px;
 }
 
 /* forms */
-/* line 182, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 189, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   margin-bottom: 15px;
@@ -23450,44 +23458,44 @@ input, textarea, select, .uneditable-input {
   box-sizing: border-box;
 }
 
-/* line 189, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 196, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 input {
   height: auto !important;
 }
 
-/* line 193, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 200, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 #error_explanation {
   color: red;
 }
-/* line 195, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 202, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 #error_explanation ul {
   color: red;
   margin: 0 0 30px 0;
 }
 
-/* line 203, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 210, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 .field_with_errors .form-control {
   color: #a94442;
 }
 
-/* line 208, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 215, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
 }
-/* line 211, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 218, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 .checkbox span {
   font-weight: normal;
   margin-left: 20px;
 }
 
-/* line 217, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 224, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 #session_remember_me {
   width: auto;
   margin-left: 0;
 }
 
-/* line 224, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
+/* line 231, /Users/kendra.lockard/rd_projects/osca_hub/app/assets/stylesheets/all/custom.scss */
 .dropdown-menu.header li a {
   text-align: right;
 }

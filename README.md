@@ -16,7 +16,7 @@ and so on.
 were created by Hayley Drapkin, Rosie Kerwin, Kendra Lockard,
 Natalie Mattson, Sophie Shalit, and Cece Tannous-Taylor.
 
-This is `oscahub-v3`. You can find the deployed site at [oscahub.herokuapp.com](http://oscahub.herokuapp.com).
+This is `oscahub-v3`. You can find the deployed site at [oscahub.com](http://oscahub.com).
 OSCA Hub v3 was created by Kendra Lockard and remains in development.
 
 ## Resources
