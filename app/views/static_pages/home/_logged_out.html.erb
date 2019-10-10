@@ -1,12 +1,8 @@
-<div class="center jumbotron">
-  <%= link_to image_tag("logos/logo-light-mode.png", alt: "OSCA Hub logo", class: "logo"), '/' %>
+<% if mobile? %>
+  <div class="center jumbotron" style="background-color: #e5eaef;">
+<% else %>
+  <div class="center jumbotron desktop" style="background-color: #e5eaef;">
+<% end %>
 
-<br>
-
-  <h4>a communication platform for Oberlin College's dining cooperatives </h4>
-
-<br>
-
-  <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
-  <%= link_to "Log in", login_path, class: "btn btn-lg btn-primary-inverse", style: "background: white;" %>
+<%= render 'static_pages/home/content'%>
 </div>
